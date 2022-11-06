@@ -1,0 +1,126 @@
+﻿.Pricing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Pricing h2 {
+    margin: 100px 20px 0px 20px;
+    font-weight: 700;
+    text-align: center;
+}
+.Pricing h2 span {
+    color: var(--Primary);
+}
+.Pricing h4 {
+    text-align: center;
+    margin: 5px 20px;
+    color: var(--Paragraph);
+}
+
+.Pricing .marketing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, var(--Delete), var(--Primary));
+    padding: 40px 20px;
+}
+
+.Pricing .marketing .imageMarketing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Pricing .marketing .imageMarketing img {
+    width: 150px;
+}
+.Pricing .marketing .textMarketing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pricing .marketing .textMarketing h3{
+    font-weight: 700;
+    text-align: center;
+    color: var(--White);
+    font-size: 28px;
+}
+
+.Pricing .marketing .textMarketing h4 {
+    text-align: center;
+    margin: 10px 0;
+    color: var(--White);
+}
+.Pricing .marketing .textMarketing a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+    color: var(--Description);
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: var(--White);
+    font-weight: 700;
+}
+.Pricing .future{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 950px;
+    background-color: var(--BorderHover);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 6px;
+}
+
+.Pricing .future h3 {
+    margin: 5px 0px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--Primary);
+}
+.Pricing .future h4 {
+    margin: 2px 0px;
+    color: var(--Paragraph);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.Pricing .future h4 svg {
+    color: var(--Primary);
+    margin-right: 5px;
+}
+
+@media (max-width: 950px) {
+
+    .Pricing .future{
+        width: 90%;
+    }
+
+    @media (max-width: 650px) {
+        .Pricing .future{
+            width: 95%;
+            padding: 10px;
+            margin: 20px 10px;
+        }
+    }
+    
+}
