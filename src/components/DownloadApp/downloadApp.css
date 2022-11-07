@@ -5,7 +5,7 @@
     flex-direction: row;
     width: 90%;
     border-radius: 20px;
-    height: 300px;
+    height: 250px;
     background-image: url("../../assets/images/background2.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     background-position: center; /* Center the image */
@@ -23,6 +23,7 @@
     height: 100%;
     border-radius: 20px;
     background-color: rgba(170,0,0, 0.8);
+    padding: 0 40px;
 }
 
 .DownloadApp .textSession {
@@ -31,7 +32,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    padding: 100px;
+    padding: 20px;
 }
 
 .DownloadApp .textSession h1 {
@@ -108,12 +109,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
+    width: 50%;
 }
 
 .DownloadApp .imageApp img {
-    height: 280px;
-    margin: 0 20px;
+    height: 220px;
+    margin: 0 40px;
 }
 
 @media (max-width: 1280px) {

@@ -8,15 +8,15 @@ export function DownloadApp() {
         <div className="DownloadApp">
             <div className="back">
             <div className="textSession">
-                <h1>As melhores ofertas de imóveis na palma da sua mão!</h1>
-                <h4>Em breve nas melhores lojas de aplicativos.</h4>
+                <h1>Seus imóveis na palma da sua mão!</h1>
+                <h4>Aplicativo para controle e gestão.</h4>
                 <div className="Apps">
                 <div className="buttonsApps">
                     <div className="iconApp">
                         <IoLogoGooglePlaystore />
                     </div>
                     <div className="TextApp">
-                        <h6>Em breve no</h6>
+                        <h6>Em breve na</h6>
                         <h4>Play Store</h4>
                     </div>
                 </div>
