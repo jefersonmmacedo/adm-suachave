@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 90%;
+    width: 80%;
     border-radius: 20px;
     height: 250px;
     background-image: url("../../assets/images/background2.jpg"); /* The image used */
@@ -11,7 +11,7 @@
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    margin: 80px auto;
+    margin: 50px auto;
 }
 
 .DownloadApp .back {
@@ -32,7 +32,6 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
 }
 
 .DownloadApp .textSession h1 {
@@ -58,7 +57,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
-    width: 250px;
+    width: 200px;
     height: 60px;
     border-radius: 6px;
     border: 1px solid var(--White);
@@ -109,11 +108,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 50%;
+    width: 200px;
 }
 
 .DownloadApp .imageApp img {
-    height: 220px;
+    width: 220px;
     margin: 0 40px;
 }
 
@@ -132,48 +131,41 @@
 
     
     @media (max-width: 1120px) {
-        /* .DownloadApp .imageApp img {
-            width: 35%;
-            margin: 0 20px;
-        } */
+        .DownloadApp {
+            width: 95%;
+            height: 250px;
 
-        .DownloadApp .textSession {
-            padding: 50px;
         }
+
 
         @media (max-width: 1035px) {
             /* .DownloadApp .imageApp img {
                 width: 40%;
                 margin: 0 20px;
             } */
-            .DownloadApp {
-                width: 95%;
+            .DownloadApp .imageApp {
+                width: 180px;
             }
-
-            .DownloadApp .textSession {
-                padding: 30px;
+            
+            .DownloadApp .imageApp img {
+                width: 180px;
+                margin: 0 40px;
             }
 
             
         }
 
+       
+        
         @media (max-width: 900px) {
-            /* .DownloadApp .imageApp img {
-                width: 40%;
-                margin: 0 20px;
+            .DownloadApp .imageApp {
+                display: none;
             }
-     */
             .DownloadApp .textSession {
                 padding: 10px;
             }
-
-            @media (max-width: 900px) {
-                .DownloadApp .imageApp {
-                    display: none;
-                }
-                .DownloadApp .textSession {
-                    padding: 50px;
-                }
+            @media (max-width: 830px) {
+             }
 
                 @media (max-width: 650px) {
 
@@ -184,7 +176,6 @@
                    
                       .DownloadApp .textSession {
                         width: 100%;
-                        padding: 20px;
                         text-align: center;
                     }
                       .DownloadApp .textSession h1 {
@@ -204,10 +195,7 @@
             
             
         }
-            
         }
-        
-    }
 
 
 

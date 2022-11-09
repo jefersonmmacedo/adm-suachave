@@ -1,7 +1,17 @@
 ﻿import "./signInCompany.css";
 import Logo from "../../assets/images/Logo2.png";
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export function SignInCompany() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("suachave") !== null) {
+          navigate("/home")
+        }
+      },[navigate]);
+      
     return (
         <div className="SignInCompany">
             <div className="professional">

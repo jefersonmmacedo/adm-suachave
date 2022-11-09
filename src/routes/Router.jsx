@@ -1,6 +1,5 @@
 import {Route, Routes, Navigate} from 'react-router-dom';
 import { Pricing } from '../pages/Pricing/Pricing';
-
 import { SignInCompany } from '../pages/SignInCompany/SignInCompany';
 import { Dashboard } from '../pages/Dashboard/Dashboard';
 import { NewProperty } from '../pages/NewProperty/NewProperty';
@@ -13,7 +12,6 @@ import { MenuAdm } from '../pages/MenuAdm/MenuAdm';
 import { SchedulingAdm } from '../pages/SchedulingAdm/SchedulingAdm';
 import { Checkout } from '../pages/Checkout/Checkout';
 import { PaymentCompleted } from '../pages/PaymentCompleted/PaymentCompleted';
-
 import { WebApp } from '../pages/WebApp/WebApp';
 import { MyPropertiesList } from '../pages/MyPropertiesList/MyPropertiesList';
 import { EditProperty } from '../pages/EditProperty/EditProperty';
@@ -30,7 +28,7 @@ const Local = localStorage.getItem("suachave");
 const userLocal = JSON.parse(Local)
 
 function PrivateRoute({children} ) {
-    return userLocal !== null ? children : <Navigate to="/home"/>
+    return userLocal !== null ? children : <Navigate to="/"/>
 }
 
     return (
