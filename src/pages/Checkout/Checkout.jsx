@@ -1,9 +1,113 @@
-﻿import { IoCheckbox } from "react-icons/io5";
+﻿import { IoCheckbox, IoCheckmarkCircle, IoCloseOutline } from "react-icons/io5";
 import Navbar2 from "../../components/Nav/Navbar";
-import qrcode from "../../assets/images/qrcode.png";
+import Modal from 'react-modal';
 import "./checkout.css"
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+import api from "../../services/api";
+
+import { ref, getDownloadURL, uploadBytes } from 'firebase/storage';
+import {toast} from 'react-toastify';
+import { v4 as uuidv4} from 'uuid';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/Auth";
+import { storage } from '../../services/firebaseConnection';
 
 export function Checkout() {
+    const {id} = useParams();
+    const {createPayment} = useContext(AuthContext);
+    const [isOpenModalSearch, setIsOpenModaSearch] = useState(false);
+    const Local = localStorage.getItem("suachave");
+    const user = JSON.parse(Local);
+
+    const [avatarUrl, setAvatarUrl] = useState(null);
+    const [imageAvatar, setImageAvatar] = useState(''); 
+    
+    useEffect(() => {
+        async function loadPlainSelected() {
+            await api.get(`/plains/plain/${id}`).then((res) => {
+                setPlain(res.data[0])
+                console.log(res.data[0])
+            }).catch((error) => {
+                console.log(error)
+            })
+        }
+        
+        loadPlainSelected()
+    }, [])
+    const [plain, setPlain] = useState();
+
+
+    function handleFile(e) {
+        console.log(e.target.files[0])
+        
+        if(e.target.files[0]){
+            const image = e.target.files[0];
+            console.log(image)
+
+             if(image.type === 'image/jpeg' || image.type === 'image/jpg' || image.type === 'image/png'  || image.type === 'application/pdf') {
+                setImageAvatar(image);
+               setAvatarUrl(URL.createObjectURL(e.target.files[0]));
+               console.log(avatarUrl);
+               toast.success('Comprovante carregado com sucesso. Finalize seu pagamento!');
+            } else {
+                    toast.error('Tipo dearquivo não aceito. Envie uma imagem dos tipos: .jpg, .jpeg, .png ou .PDF');
+                    console.log('Tipo dearquivo não aceito. Envie uma imagem dos tipos: .jpg, .jpeg, .png');
+                    setImageAvatar(null);
+                    return null;
+                }
+        }
+    }
+
+
+
+    async function handleUploadVoucher(e) {
+        e.preventDefault();
+        if(avatarUrl === null) {
+            toast.error("Favor anexar um comprovante Válido!");
+            return;
+        }
+        toast.info("Salvando a foto. Aguarde...")
+        const uuid = uuidv4();
+        let newAvatarUrlFirebase = ref(storage, `images/comprovant/${uuid}`);
+        
+        let uploadAvatar = await uploadBytes(newAvatarUrlFirebase, imageAvatar);
+        let photoUrlAvatar = await getDownloadURL(uploadAvatar.ref);
+        
+        console.log(uploadAvatar.ref.name, photoUrlAvatar);
+
+        handleNewPayment(photoUrlAvatar)
+    }
+
+
+
+    function handleOpenModalSearch(e) {
+        e.preventDefault();
+        console.log("Olá")
+          setIsOpenModaSearch(true)
+        }
+      
+        function handleCloseModalSearch(e) {
+          e.preventDefault();
+          setIsOpenModaSearch(false);
+        }
+
+    function handleNewPayment(photoUrlAvatar) {
+        const status = "Pendente"
+        const status2 = "Ativo"
+        const aceptTerms = "Sim"
+
+        createPayment({
+            idPlain: plain?.id, idCompany: user.id, email: user.email,
+            namePlain: plain?.name, value: plain?.value, period: plain?.period,
+            linkComprovant: photoUrlAvatar, aceptTerms, status, status2
+        })
+    }
+
+    
+
+    Modal.setAppElement('#root');
     return (
         <div className="Checkout">
             <Navbar2 />
@@ -12,24 +116,22 @@ export function Checkout() {
             <div className="PlainSelected">
                     <h3>Plano Selecionado</h3>
                     <div className="plain">
-                        <h4><span>Plano</span> Básico</h4>
+                        <h4><span>Plano</span> {plain?.name}</h4>
 
                         <a href="/planos">Alterar plano</a>
                     </div>
 
                     <div className="text">
-                    <p><IoCheckbox /> Imóveis ilimitadas</p>
-                    <p><IoCheckbox /> Área administrativa</p>
-                    <p><IoCheckbox /> App administrativo [Breve]</p>
-                    <p><IoCheckbox /> Site individual para sua empresa</p>
-                    <p><IoCheckbox /> Imóveis em seu site</p>
-                    <p><IoCheckbox /> Imóveis no site Sua Chave</p>
-                    <p><IoCheckbox /> Imóveis no app Sua Chave [Breve]</p>
-                    <p><IoCheckbox /> Plano sem fidelidade</p>
+                    {plain?.infos.map((info) => {
+                        return (
+                            <p><IoCheckbox /> {info.info}</p>
+                        )
+                    })}
+                   
                 </div>
                 <div className="pricePlain">
                     <p>Valor Total</p>
-                    <h3>149,99/Mensal</h3>
+                    <h3>{plain?.value}/Mensal</h3>
                 </div>
             </div>
 
@@ -38,18 +140,58 @@ export function Checkout() {
                 <p>Atualmente aceitamos pagamentos apenas via pix. Com pagamento efetuado via qr code e
                 chave aleatória e envio de comprovante via site nas etapas a seguir</p>
                 <br />
+                <br />
+                <p>Dados do Recebedor: INFINITY UP AGÊNCIA</p>
+                <p>CNPJ: 22.322.664/0001-00</p>
+                <br />
                 <p>Recomendado: Adicionar o e-mail de cadastro na descrição do comprovante</p>
 
                 <div className="Method">
                 <h4>Escaneie o QR-CODE</h4>
-                <img src={qrcode} alt="" />
+                <img src={plain?.linkQrCode} alt="" />
 
                 <h4>Chave aleatória</h4>
-                <p>chna415sisjns-5s8dcnnsjs5dwdw5-5d8dw-mdwwd-101kl</p>
+                <p>{plain?.keyPix}</p>
                 </div>
-                <a href="/">Enviar comprovante</a>
+                {/* <a href="/pagamentofinalizado">Enviar comprovante</a> */}
+                <button onClick={handleOpenModalSearch}>Enviar comprovante</button>
+                <br />
+                <p>Ao finalizar o pagamento você confirma que está de acordo com nossos termos de uso e política de privacidade</p>
             </div>
             </div>
+
+
+            <Modal isOpen={isOpenModalSearch} onRequestClose={handleCloseModalSearch}
+            overlayClassName="react-modal-overlay"
+            className="react-modal-content">
+            <button type="button" className="react-modal-button" onClick={handleCloseModalSearch}>
+            <IoCloseOutline /> 
+            </button>
+            <div className="content-modal-home-Search">
+            <div className="itensModalHome-Search">
+
+               
+                <div className="infos">
+                        <h5><IoCheckbox /> Não envie tela de confirmação.</h5>
+                        <h5><IoCheckbox /> Não envie comprovante resumido.</h5>
+                        <h5><IoCheckbox /> Não envie linha de extrato.</h5>
+                        <h5><IoCheckbox /> Não rasure ou corte o comprovante.</h5>
+                        <h5><IoCheckbox /> O envio de comprovante fora dos padrões poderá atrapalhar a validação.</h5>
+                </div>
+                <div className="infos2">
+                        <h5><IoCheckbox /> Ao concluir a transação, clique no botão COMPROVANTE COMPLETO OU COMPARTILHAR COMPROVANTE.</h5>
+                        <h5><IoCheckbox /> O comprovante deve estar completo.</h5>
+                        <h5><IoCheckbox /> ENVIE COMPROVANTE EM PDF OU PRINT DO COMPROVANTE</h5>
+                </div>
+                <h6>Anexar comprovante:</h6>
+                <input type="file" accept="application/pdf|image/*" onChange={handleFile} />
+
+                <button onClick={handleUploadVoucher}>Enviar comprovante</button>
+            </div>
+            </div>
+            </Modal>
+
+
         </div>
     )
 }

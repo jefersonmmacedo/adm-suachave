@@ -1,8 +1,37 @@
-﻿import { IoCheckmarkCircle } from "react-icons/io5";
+﻿import { useEffect, useState } from "react";
+import { IoCheckmarkCircle } from "react-icons/io5";
 import Navbar2 from "../../components/Nav/Navbar";
-import "./paymentCompleted.css"
+import api from "../../services/api";
+import "./paymentCompleted.css";
+import { parseISO, format} from 'date-fns';
+import { DateFormat } from "../../components/DateFormat/DateFormat";
 
 export function PaymentCompleted() {
+  const Local = localStorage.getItem("suachave");
+  const user = JSON.parse(Local);
+
+  const [myPayment, setMyPayment] = useState();
+
+  useEffect(() => {
+    async function loadPayments() {
+      await api.get(`/payments/${user.id}`).then((res) => {
+        setMyPayment(res.data[0]);
+        console.log(res.data[0]);
+      })
+    }
+
+    loadPayments()
+
+
+  }, [])
+
+  function hadleDirection(e) {
+    e.preventDefault();
+
+    window.open("/planos", "_self");
+  }
+
+  const idFormat = myPayment?.id.substring(0, 13);
     return (
         <div className="PaymentCompleted">
             <Navbar2 />
@@ -12,15 +41,15 @@ export function PaymentCompleted() {
                     <h3><IoCheckmarkCircle />Pagamento Finalizado</h3>
                   <div className="pricePlain">
                     <h5>ID Pedido:</h5>
-                    <h4>10203020</h4>
+                    <h4>{idFormat}</h4>
                 </div>
-                  <div className="pricePlain">
+                  {/* <div className="pricePlain">
                     <h5>Data:</h5>
-                    <h4>05 de Novembro de 2022</h4>
-                </div>
+                    <h4><DateFormat date={myPayment?.created_at}/></h4>
+                </div> */}
                   <div className="pricePlain">
                     <h5>Total</h5>
-                    <h4>R$ 149,99</h4>
+                    <h4>R$ {myPayment?.value}</h4>
                 </div>
                 <div className="pricePlain">
                     <h5>Tipo de pagamento</h5>
@@ -41,7 +70,7 @@ export function PaymentCompleted() {
                 <h5>Obs.: O pagamento será confirmado em até 48h, você receberá um e-mail de confirmação. <br />
                 Não se preocupe, seu acesso ja está liberado!</h5>
 
-                <a href="/painel/planos">Ir para o meu painel</a>
+                <button onClick={hadleDirection}>Ir para o meu painel</button>
             </div>
             </div>
         </div>

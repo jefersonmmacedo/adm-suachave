@@ -1,79 +1,116 @@
 ﻿import "./toolBar.css";
 import LogoImg from '../../assets/images/imob2.png'
-import {IoSpeedometer, IoPerson,  IoNotifications, IoLogOutOutline, IoChatboxEllipses,
-    IoHome, IoLaptopOutline, IoCalendar, IoLogoWhatsapp, IoQrCode, IoPeople, IoKey, IoRocket, IoTimerOutline, IoTimer } from 'react-icons/io5';
-import {FaLaptopHouse, FaHouseUser, FaDollarSign } from 'react-icons/fa';
+import {IoSpeedometerOutline, IoPersonOutline,  IoNotificationsOutline, IoLogOutOutline, IoChatboxEllipsesOutline,
+    IoHomeOutline, IoLaptopOutline, IoCalendarOutline, IoLogoWhatsapp, IoQrCodeOutline, IoPeopleOutline, IoKeyOutline, IoRocketOutline,
+    IoTimerOutlineOutline, IoTimerOutline, IoSearchOutline } from 'react-icons/io5';
+
+import {TbCurrencyDollar } from 'react-icons/tb';
+import {BsBank } from 'react-icons/bs';
+import { useEffect } from "react";
+import { useState } from "react";
+import api from "../../services/api";
 export function ToolBar() {
+    const Local = localStorage.getItem("suachave");
+    const user = JSON.parse(Local);
+    
+  const [plain, setPlain] = useState();
+  const [myPayment, setMyPayment] = useState();
+
+    useEffect(() => {
+        async function loadMyPlain() {
+          await api.get(`/myplain/${user.id}`).then((res) => {
+            loadPlains(res.data[0].idPlain)
+          })
+        }
+    
+        async function loadPlains(id) {
+          await api.get(`/plains/plain/${id}`).then((res) => {
+            setPlain(res.data[0])
+          })
+        }
+        loadMyPlain()
+      }, [])
+      
     return (
         <div className="ToolBar">
             <div className="image">
-                <img src={LogoImg} alt="" />
+                <img src={user.logo} alt="" />
             </div>
             <div className="Tools">
                 <div className="ToolUnic">
                    <a href="/home">
-                    <IoSpeedometer /><p>Painel</p>                    
+                    <IoSpeedometerOutline /><p>Painel</p>                    
                     </a>
                 </div>
                 <div className="ToolUnic">
                    <a href="/chat">
-                    <IoChatboxEllipses /><p>Chat</p>
+                    <IoChatboxEllipsesOutline /><p>Chat</p>
                     </a>
                 </div>
                 <div className="ToolUnic3">
                    <a href="/imoveis">
-                    <IoHome /><p>Imóveis</p>
+                    <IoHomeOutline /><p>Imóveis</p>
                     </a>
                 </div>
                 <div className="ToolUnic">
                    <a href="/agendamentos">
-                    <IoCalendar /><p>Agenda</p>
+                    <IoCalendarOutline /><p>Agenda</p>
                     </a>
                 </div>
                 <div className="ToolUnic2">
                    <a href="/alugueis">
-                    <IoKey /><p>Aluguéis</p>
+                    <IoKeyOutline /><p>Aluguéis</p>
                     </a>
                 </div>
                 <div className="ToolUnic2">
                    <a href="/vendas">
-                    <IoRocket /><p>Vendas</p>
-                    </a>
-                </div>
-                <div className="ToolUnic2">
-                   <a href="/avaliacoes">
-                    <FaHouseUser /><p>Avaliações</p>
+                    <IoRocketOutline /><p>Vendas</p>
                     </a>
                 </div>
 
+                {plain?.name !== "Plano Web" ? "" :
                 <div className="ToolUnic2">
-                   <a href="/financeiro">
-                   <FaDollarSign /><p>Financeiro</p>
+                   <a href="/avaliacoes">
+                    <IoSearchOutline /><p>Avaliações</p>
                     </a>
                 </div>
+                }
+
                 <div className="ToolUnic2">
-                   <a href="/planos">
-                    <IoQrCode /><p>Meu plano</p>
+                   <a href="/financeiro">
+                   <TbCurrencyDollar /><p>Financeiro</p>
                     </a>
                 </div>
                 <div className="ToolUnic2">
                    <a href="/corretores">
-                    <IoPeople /><p>Corretores</p>
+                    <IoPeopleOutline /><p>Corretores</p>
+                    </a>
+                </div>
+                <div className="ToolUnic2">
+                   <a href="/planos">
+                    <IoQrCodeOutline /><p>Meu plano</p>
+                    </a>
+                </div>
+                <div className="ToolUnic2">
+                   <a href="/planos">
+                    <BsBank /><p>Conta/PIX</p>
                     </a>
                 </div>
                 <div className="ToolUnic">
                    <a href="/minhaconta">
-                    <IoPerson /><p>Conta</p>
+                    <IoPersonOutline /><p>Conta</p>
                     </a>
                 </div>
+                {plain?.name !== "Plano Web" ? "" :
                 <div className="ToolUnic2">
                    <a href="/web">
                     <IoLaptopOutline /><p>Site/App</p>
                     </a>
                 </div>
+                }
                 <div className="ToolUnic2">
                    <a href="/historico">
-                   <IoTimer /><p>Histórico</p>
+                   <IoTimerOutline /><p>Histórico</p>
                     </a>
                 </div>
                    <button className="btnToolBar">Atendimento</button>

@@ -23,7 +23,7 @@
 }
 
 .PlainsAdm .Payment {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -32,7 +32,8 @@
 }
 
 .PlainsAdm .Payment .PlainSelected {
-    width: 350px;
+    max-width: 350px;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -121,7 +122,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 10px 0;
 }
@@ -138,7 +139,7 @@
     justify-content: center;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     color: var(--Description);
 }
@@ -157,7 +158,78 @@
     padding: 10px;
     color: var(--White);
     border-radius: 3px;
+    margin-bottom: 10px;
 }
+.PlainsAdm .Payment .PaymentPlayn .payments {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--BorderInput2);
+    padding: 10px;
+    margin: 5px 0;
+    color: var(--Paragraph);
+    border-radius: 3px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.PlainsAdm .Payment .PaymentPlayn .payments .itensPayment {
+margin: 3px;
+}
+.PlainsAdm .Payment .PaymentPlayn .payments .itensPayment h5 {
+    margin: 3px 0;
+    font-weight: 700;
+}
+.PlainsAdm .Payment .PaymentPlayn .payments .itensPayment .link {
+    margin: 3px 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.content-modal-home-Search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--BorderInput2);
+}
+
+.content-modal-home-Search .itensModalHome-Search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    overflow:auto; 
+    max-height: 500px;
+    margin: 20px 10px;
+    padding: 20px;
+}
+
+
+.content-modal-home-Search .itensModalHome-Search img {
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .PlainsAdm .Payment {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .PlainsAdm .Payment .PlainSelected {
+        min-width: 90%;
+    }
+
+    .PlainsAdm .Payment .PaymentPlayn {
+        width: 90%;
+    }
 
 @media (max-width: 700px) {
     .PlainsAdm .Payment {
@@ -165,5 +237,16 @@
     }
     .PlainsAdm .aside {
         padding-left: 0px;
+        
     }
+
+    .PlainsAdm .Payment .PlainSelected {
+        min-width: 95%;
+    }
+
+    .PlainsAdm .Payment .PaymentPlayn {
+        width: 95%;
+        margin-bottom: 80px;
+    }
+}
 }

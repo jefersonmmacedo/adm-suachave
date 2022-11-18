@@ -14,10 +14,20 @@
     align-items: center;
     justify-content: flex-start;
     padding-left: 170px;
-    padding-top: 80px;
+    padding-top: 65px;
+    background-color: var(--White);
 }
-.Dashboard .aside h2 {
-    margin: 20px 0 40px 0;
+.Dashboard .aside .textDashboard {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+
+}
+.Dashboard .aside .textDashboard h4 {
     font-weight: bold;
     text-align: center;
 }
@@ -32,15 +42,18 @@
 .Dashboard .aside .informations .infoData {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
     width: 180px;
     height: 80px;
-    background-color: var(--Primary);
+    background-color: var(--BorderInput2);
     border-radius: 6px;
     margin: 10px;
     padding: 10px;
-    color: var(--White);
+    color: var(--Gray);
+}
+.Dashboard .aside .informations .infoData:hover {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 .Dashboard .aside .informations .infoData .topInfo {
     display: flex;
@@ -52,13 +65,15 @@
 }
 
 .Dashboard .aside .informations .infoData h5 {
-    font-weight: 700;
+    font-weight: 500;
+    text-align: right;
 }
 .Dashboard .aside .informations .infoData .topInfo h3 {
     font-weight: 700;
 }
 .Dashboard .aside .informations .infoData .topInfo svg {
     font-size: 24px;
+    color: var(--Primary);
 }
 .Dashboard .aside .PlainDashboard {
     display: flex;

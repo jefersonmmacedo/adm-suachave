@@ -120,7 +120,7 @@
     font-weight: 700;
 }
 .FinancerAdm .financerList {
-    width: 700px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -167,7 +167,7 @@ color: var(--Description);
     align-items: center;
     justify-content: space-between;
     margin: 5px 0;
-    padding: 5px 10px;
+    padding: 5px;
     background-color: var(--BorderHover);
     border-radius: 6px;
     color: var(--Gray);
@@ -191,10 +191,27 @@ color: var(--Description);
 .FinancerAdm .financerList .FinancerListUnic .date {
     justify-content: center;
 }
-.FinancerAdm .financerList .FinancerListUnic  button {
+.FinancerAdm .financerList .FinancerListUnic  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: var(--BorderHover);
+    border-radius: 6px;
+    color: var(--Gray);
+}
+.FinancerAdm .financerList .FinancerListUnic .buttons  button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background-color: var(--BorderHover);
     border: none;
     color: var(--Gray);
+    padding: 2px;
+    border-radius: 6px;
 }
 
 
@@ -207,20 +224,189 @@ color: var(--Description);
 }
 
 
-@media (max-width: 870px) {
+
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%
+}
+
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form input::placeholder {
+    color: var(--Gray);
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form select {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form textarea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+    resize: none;
+}
+
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 5px;
+    padding: 10pxx;
+    width: 100%;
+}
+
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Aproved);
+    background-color: rgba(0,168,89, 0.05);
+    margin: 5px;
+    padding: 20px 20px;
+    color: var(--Aproved);
+    font-size: 16px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Primary);
+    background-color: rgba(224, 40, 47, 0.05);
+    margin: 5px;
+    padding: 20px 20px;
+    color: var(--Primary);
+    font-size: 16px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    margin: 5px;
+    border: 1px solid var(--Aproved);
+    background-color: var(--AprovedHover);
+    padding: 20px 20px;
+    color: var(--White);
+    font-size: 16px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType4 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    margin: 5px;
+    border: 1px solid var(--Primary);
+    background-color: var(--PrimaryHover);
+    padding: 20px 20px;
+    color: var(--White);
+    font-size: 16px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Primary);
+    background-color: var(--PrimaryHover);
+    margin: 5px;
+    padding: 10px 20px;
+    color: var(--White);
+}
+
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form button svg {
+    margin-right: 5px;
+    font-size: 20px;
+}
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .dataForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .dataForm h4 {
+    color: var(--Gray);
+    margin: 5px;
+}
+
+
+@media (max-width: 990px) {
     .FinancerAdm .financerList {
-        width: 100%;
+        width: 90%;
     }
     .FinancerAdm .infosFinancer {
-        width: 100%;
+        width: 90%;
     }
+
+    /* .FinancerAdm .infosFinancer .infoFinancerUnic {
+        width: 50%;
+    }
+    .FinancerAdm .infosFinancer .infoFinancerUnicTotal {
+        width: 50%;
+    }
+    .FinancerAdm .infosFinancer .infoFinancerUnicTotal2 {
+        width: 50%;
+    } */
 @media (max-width: 700px) {
     .FinancerAdm .aside {
         padding-left: 0px;
+        padding-bottom: 80px;
     }
+    .react-modal-content .content-modal-home-Search .itensModalHome-Search .form {
+        width: 100%
+    }
+
+    
     @media (max-width: 550px) {
+
+
+        .FinancerAdm .financerList {
+            width: 95%;
+        }
+
         .FinancerAdm .infosFinancer {
-            width: 100%;
+            width: 95%;
             display: flex;
             flex-direction: column;
             align-items: center;

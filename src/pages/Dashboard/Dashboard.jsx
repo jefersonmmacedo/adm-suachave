@@ -2,12 +2,14 @@
 import NavbarAdm from "../../components/Nav/Navbar"
 import { ToolBar } from "../../components/ToolBar/ToolBar"
 import "./dashboard.css";
-import {IoHome, IoCalendar, IoLogoWhatsapp, IoCall,IoAlertCircle, IoHeart} from 'react-icons/io5'
+import {IoHomeOutline, IoCalendarOutline, IoLogoWhatsapp, IoCallOutline,IoAlertCircle,
+    IoHeartOutline, IoKeyOutline, IoRocketOutline, IoSearchOutline} from 'react-icons/io5'
 
 
 export function Dashboard() {
 
-
+    const Local = localStorage.getItem("suachave");
+    const user = JSON.parse(Local);
 
 
     return (
@@ -15,39 +17,42 @@ export function Dashboard() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
-                <h2>Olá, Sua Chave. Seja bem vindo!</h2>
+                <div className="textDashboard">
+                <h4>Olá, {user.fantasyName}. Seja bem vindo!</h4>
+                {/* <h4>Sair</h4> */}
+                </div>
             <div className="informations">
                 <div className="infoData">
                     <div className="topInfo">
-                        <IoHome />
+                        <IoHomeOutline />
                         <h3>150</h3>
                     </div>
                     <h5>Imóveis publicados</h5>
                 </div>
                 <div className="infoData">
                 <div className="topInfo">
-                        <IoHome />
+                        <IoKeyOutline />
                         <h3>20</h3>
                     </div>
                     <h5>Imóveis alugados</h5>
                 </div>
                 <div className="infoData">
                 <div className="topInfo">
-                        <IoHome />
+                        <IoRocketOutline />
                         <h3>30</h3>
                     </div>
                     <h5>Imóveis vendidos</h5>
                 </div>
                 <div className="infoData">
                 <div className="topInfo">
-                        <IoHome />
+                        <IoSearchOutline />
                         <h3>15</h3>
                     </div>
                     <h5>Imóveis avaliados</h5>
                 </div>
                 <div className="infoData">
                 <div className="topInfo">
-                        <IoCalendar />
+                        <IoCalendarOutline />
                         <h3>10</h3>
                     </div>
                     <h5>Agendamentos de hoje</h5>
@@ -61,14 +66,14 @@ export function Dashboard() {
                 </div>
                 <div className="infoData">
                 <div className="topInfo">
-                        <IoCall />
+                        <IoCallOutline />
                         <h3>380</h3>
                     </div>
                     <h5>Contatos via ligação</h5>
                 </div>
                 <div className="infoData">
                 <div className="topInfo">
-                        <IoHeart />
+                        <IoHeartOutline />
                         <h3>180</h3>
                     </div>
                     <h5>Salvos no favoritos</h5>

@@ -31,7 +31,7 @@ export function MyPropertiesList() {
                 <h5><span>200</span> Imóveis indisponíveis</h5>
                     </div>
                 </div>
-                <a className="link" href="/painel/novoimovel">Novo anúncio</a>
+                <a className="link" href="/novoimovel">Novo anúncio</a>
 
                 <div className="search">
                     <input type="text" placeholder="Busque por: Título, código ou cidade" />

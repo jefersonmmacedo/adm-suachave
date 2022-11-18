@@ -140,7 +140,7 @@
     color: var(--Gray);
 }
 
-.PaymentCompleted .Payment .PaymentPlayn a {
+.PaymentCompleted .Payment .PaymentPlayn button {
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -151,9 +151,11 @@
     color: var(--White);
     border-radius: 3px;
     margin-top: 60px;
+    border: none;
+    font-size: 16px;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 750px) {
     .PaymentCompleted .Payment {
         width: 100%;
         display: flex;

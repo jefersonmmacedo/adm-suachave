@@ -45,7 +45,7 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <EditProperty /> </PrivateRoute>} />
             <Route path="/imoveis"
                     element={ <PrivateRoute> <MyPropertiesList /> </PrivateRoute>} />
-            <Route path="/plano"
+            <Route path="/plano/:id"
                     element={ <PrivateRoute> <Checkout /> </PrivateRoute>} />
             <Route path="/planos"
                     element={ <PrivateRoute> <PlainsAdm /> </PrivateRoute>} />
