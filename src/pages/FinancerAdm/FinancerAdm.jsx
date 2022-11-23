@@ -1,6 +1,5 @@
-﻿import { FaThumbsDown} from "react-icons/fa"
 import { FiDollarSign, FiThumbsDown} from "react-icons/fi"
-import { IoArrowUpCircleOutline, IoArrowDownCircleOutline, IoEyeOutline, IoTrashOutline, IoCloseOutline} from "react-icons/io5"
+import { IoArrowUpCircleOutline, IoArrowDownCircleOutline, IoEyeOutline, IoCloseOutline} from "react-icons/io5"
 import NavbarAdm from "../../components/Nav/Navbar"
 import { ToolBar } from "../../components/ToolBar/ToolBar";
 import "./financerAdm.css";
@@ -38,7 +37,7 @@ export function FinancerAdm() {
         }
 
         loadFinancer()
-    }, [])
+    }, [user.id])
 
     function handleNewFincancer(e) {
         e.preventDefault();

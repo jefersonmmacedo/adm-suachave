@@ -1,6 +1,6 @@
 import { initializeApp} from 'firebase/app';
 import { getStorage } from 'firebase/storage';
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import 'firebase/compat/firestore';
 
 let firebaseConfig = {
@@ -17,4 +17,4 @@ let firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 export const storage = getStorage(firebaseApp);
-const analytics = getAnalytics(firebaseApp);
+// const analytics = getAnalytics(firebaseApp);

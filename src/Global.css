@@ -145,7 +145,7 @@ button {
 .react-modal-content {
   width: 100%;
   max-width: 700px;
-  background-color: var(--BorderHover);
+  background-color: var(--White);
   position: relative;
   border-radius: 8px;
   border: none;
@@ -167,6 +167,11 @@ button {
   top: 0;
   margin: 15px;
   border: none;
+  color: var(--Paragraph);
+}
+
+.react-modal-button svg {
+  color: var(--Description);
 }
 
 @media(max-width: 900px) {

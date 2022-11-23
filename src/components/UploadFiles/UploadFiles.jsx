@@ -35,7 +35,7 @@ export const MyButtonComponent = ({id, uploadFiles2}) => {
             }
           },
           path: {   // Each supports path variables (e.g. {ORIGINAL_FILE_EXT}). See your
-           folderPath: `/uploads/suachave/imóveis/${user.id}/${id} | ${new Date().getDate()}-${new Date().getMonth()+1}-${new Date().getFullYear()} | ${new Date().getHours()}:${new Date().getMinutes()}`     // API key's config in the Upload Dashboard for all path variables.
+           folderPath: `/uploads/suachave/imóveis/${user.id}/IMOV-${id} | ${new Date().getDate()}-${new Date().getMonth()+1}-${new Date().getFullYear()} | ${new Date().getHours()}:${new Date().getMinutes()}`     // API key's config in the Upload Dashboard for all path variables.
           },
      }
 

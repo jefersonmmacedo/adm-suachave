@@ -41,7 +41,6 @@ export function Plains() {
 
             {plains.map((plain) => {
                 return (
-                    user?.type === "Imobiliária" && plain.name === "Plano Home-Office" ? "" :
                     <div className="plain">
                     <h3>{plain.name}</h3>
                     <div className="title">
@@ -58,7 +57,7 @@ export function Plains() {
                     {myPlain.idPlain === plain.id ?
                     <a href="http://adm.suachave.com.br/planos" target="_blank">Seu plano atual</a>
                     :
-                    <a href={user !== null && user?.type === "Imobiliária" || user?.type === "Corretor" ? `/plano/${plain.id}` :"/cadastro-profissional"}>Contratar plano</a>
+                    <a href={user !== null && user?.type === "Imobiliária" || user !== null && user?.type === "Corretor" ? `/plano/${plain.id}` :"/cadastro-profissional"}>Contratar plano</a>
                 }
                     <p>{plain.note}</p>
                 </div>

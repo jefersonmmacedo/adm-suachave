@@ -1,11 +1,12 @@
-﻿import "./toolBar.css";
+import "./toolBar.css";
 import LogoImg from '../../assets/images/imob2.png'
 import {IoSpeedometerOutline, IoPersonOutline,  IoNotificationsOutline, IoLogOutOutline, IoChatboxEllipsesOutline,
     IoHomeOutline, IoLaptopOutline, IoCalendarOutline, IoLogoWhatsapp, IoQrCodeOutline, IoPeopleOutline, IoKeyOutline, IoRocketOutline,
     IoTimerOutlineOutline, IoTimerOutline, IoSearchOutline } from 'react-icons/io5';
 
 import {TbCurrencyDollar } from 'react-icons/tb';
-import {BsBank } from 'react-icons/bs';
+import {TbHeadset } from 'react-icons/tb';
+import {AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { useEffect } from "react";
 import { useState } from "react";
 import api from "../../services/api";
@@ -57,18 +58,21 @@ export function ToolBar() {
                     <IoCalendarOutline /><p>Agenda</p>
                     </a>
                 </div>
+                {plain?.name === "Lite" ? "" :
                 <div className="ToolUnic2">
                    <a href="/alugueis">
                     <IoKeyOutline /><p>Aluguéis</p>
                     </a>
                 </div>
+                }
+                {plain?.name === "Lite" ? "" :
                 <div className="ToolUnic2">
                    <a href="/vendas">
                     <IoRocketOutline /><p>Vendas</p>
                     </a>
                 </div>
-
-                {plain?.name !== "Plano Web" ? "" :
+                }
+                {plain?.name === "Lite" ? "" :
                 <div className="ToolUnic2">
                    <a href="/avaliacoes">
                     <IoSearchOutline /><p>Avaliações</p>
@@ -82,18 +86,20 @@ export function ToolBar() {
                     </a>
                 </div>
                 <div className="ToolUnic2">
+                   <a href="/clientes">
+                   <AiOutlineUsergroupAdd /><p>Clientes</p>
+                    </a>
+                </div>
+                {plain?.name === "Lite" ? "" :
+                <div className="ToolUnic2">
                    <a href="/corretores">
                     <IoPeopleOutline /><p>Corretores</p>
                     </a>
                 </div>
+                }
                 <div className="ToolUnic2">
                    <a href="/planos">
                     <IoQrCodeOutline /><p>Meu plano</p>
-                    </a>
-                </div>
-                <div className="ToolUnic2">
-                   <a href="/planos">
-                    <BsBank /><p>Conta/PIX</p>
                     </a>
                 </div>
                 <div className="ToolUnic">
@@ -101,22 +107,22 @@ export function ToolBar() {
                     <IoPersonOutline /><p>Conta</p>
                     </a>
                 </div>
-                {plain?.name !== "Plano Web" ? "" :
                 <div className="ToolUnic2">
                    <a href="/web">
                     <IoLaptopOutline /><p>Site/App</p>
                     </a>
                 </div>
-                }
+
                 <div className="ToolUnic2">
                    <a href="/historico">
                    <IoTimerOutline /><p>Histórico</p>
                     </a>
                 </div>
-                   <button className="btnToolBar">Atendimento</button>
-                {/* <button className="btnToolBar"><IoLogoWhatsapp />Financeiro</button>
-                <button className="btnToolBar"><IoLogoWhatsapp />Comercial</button> */}
-                <button><IoLogOutOutline />Sair</button>
+                <div className="ToolUnic2">
+                   <a href="/planos">
+                    <TbHeadset /><p>Call Center</p>
+                    </a>
+                </div>
             </div>
         </div>
     )

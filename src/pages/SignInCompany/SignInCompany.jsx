@@ -1,4 +1,4 @@
-﻿import "./signInCompany.css";
+import "./signInCompany.css";
 import Logo from "../../assets/images/Logo2.png";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';

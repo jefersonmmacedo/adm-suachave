@@ -264,45 +264,6 @@ async function notifications(idPatrono, text,idAccount, idFriend, type,idPost) {
     })
 }
 
-async function CreateInviteNewUsew({code, name, email, phone,idAccount, username, patron, type, patronNickname}) {
-    const text = `Parabens ${name}! %0AVocê foi convidado por ${patronNickname} a fazer parte de uma rede de relacionamento, exclusivo para casais, solteiros e solteiras. suachave foi criado com o objetivo de aproximar pessoas com o mesmo pensamento de relacionamento de forma livre, segura e respeitosa. %0A%0AEsse convite é valido por 10 dias e intransferível. %0A%0APara criar seu perfil agora, acesse: %0A https://suachave.com.br/signup/${email}/${code}/${patron}/${type} %0A%0AEm caso de dúvida, fale conosco. %0AContato@suachave.com.br %0A%0Asuachave https://www.suachave.com.br`
-    
-    const findAccountEmail = await api.get(`/accounts/find/${email}`);
-
-    if(findAccountEmail.data.lenght > 1) {
-        toast.error("Já existe uma conta com este e-mail!")
-        return
-    } 
-
-    await api.post("/invites", {code, name, email, phone, idAccount, username, type, patron}).then(() =>{
-        window.open("https://wa.me/55"+ phone + "?text=" + text,
-        '_blank')
-    }).catch(error => {
-        console.log("Convite não cadastrado" + error)
-        toast.error("Já existe um covite com este e-mail!")
-    })  
-}
-
-async function CreateInviteMail({code, name, email, phone,idAccount, username, patron, patronNickname, type}) {
-  
-    const findAccountEmail = await api.get(`/accounts/find/${email}`);
-
-    if(findAccountEmail.data.length > 0) {
-        toast.error("Já existe uma conta com este e-mail!")
-        return
-    } 
-
-    await api.post("/invites", {code, name, email, phone, idAccount, username, type, patron}).then(async () =>{
-        const data = {mail: email, name, code, patron, type, patronNickname}
-        const res = await api.post("/mail/invite", data);
-        if(res.status === 200) {
-            toast.success("Convite enviado com sucesso!")
-        }
-    }).catch(error => {
-        console.log("Convite não cadastrado" + error)
-        toast.error("Já existe um covite com este e-mail!")
-    })  
-}
 
 
 
@@ -325,6 +286,32 @@ async function newVisit(idAccount, username, idFriend) {
     await api.post("/visits", data).then(() => {
     })
 }
+
+// Propriedade
+async function newProperty({
+    id, idCompany, title, road, district, city, uf, description, type, subType, status,
+    availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+    iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
+    images, featuredImage, platformVideo, video, slider, financing, characteristcs }) {
+
+    const data  = {
+        id, idCompany, title, road, district, city, uf, description, type, subType, status,
+        availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+        iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
+        images, featuredImage, platformVideo, video, slider, financing, characteristcs
+        }
+    console.log(data)
+    await api.post("/property", data).then(() => {
+        toast.success("Imóvel cadastrado com sucesso!");
+        setTimeout(() => {
+            window.open("/imoveis", "_self")
+          }, "2000")
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+// Fim Propriedade
 
 // Fim da Sessão grupos
     async function logout(idAccount) {
@@ -371,8 +358,6 @@ async function newVisit(idAccount, username, idFriend) {
             newFinancer,
             loading,
             logout,
-            CreateInviteNewUsew,
-            CreateInviteMail,
             deleteActualMessage,
             newVisit,
             comentsPosts,
@@ -384,7 +369,8 @@ async function newVisit(idAccount, username, idFriend) {
             recoverPasswordNew,
             inactivityTime,
             createPayment,
-            deleteConversation
+            deleteConversation,
+            newProperty
         }}>
             {children}
         </AuthContext.Provider>
