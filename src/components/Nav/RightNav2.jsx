@@ -1,7 +1,9 @@
-import React from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import {IoSpeedometer, IoPerson, IoHeart, IoNotifications, IoLogOutOutline, IoChatboxEllipses, IoHome, IoLaptopOutline, IoCalendar, IoOptions } from 'react-icons/io5';
+import {IoSpeedometerOutline, IoPersonOutline, IoHeart, IoNotificationsOutline, IoLogOutOutline, IoChatboxEllipsesOutline,
+        IoHomeOutline, IoLaptopOutline, IoCalendarOutline, IoOptionsOutline } from 'react-icons/io5';
+import { AuthContext } from '../../contexts/Auth';
 
 const UlAdm = styled.ul`
   list-style: none;
@@ -13,8 +15,8 @@ const UlAdm = styled.ul`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding:2px 10px;
-    font-weight: 700;
+    padding:5px;
+    font-weight: 500;
   }
   .nav-item2 {
     display: none;
@@ -26,9 +28,9 @@ const UlAdm = styled.ul`
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--White);
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 6px;
     margin-left: -15px;
   }
@@ -37,33 +39,32 @@ const UlAdm = styled.ul`
     font-size: 16px;
   }
   li a p {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
   }
   li a:hover{
-    padding: 5px 10px;
+    padding: 5px;
     color: var(--White);
-    background-color: var(--Primary);
+    border-bottom: 1px solid var(--White);
+    border-radius: 0px;
   }
   button {
     display: none;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 5px 10px;
-    background: rgba(170,0,0);
+    padding: 5px;
     border-radius: 6px;
     margin: 5px 0;
     color: var(--White);
-    border: none;
+    border: 1px solid var(--White);
     align-items: center;
     justify-content: center;
-    font-size: 16px;
     font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
-
+  font-size: 12px;
+    font-weight: 500;
   }
 
   button:hover{
@@ -98,7 +99,7 @@ const UlAdm = styled.ul`
 
   @media (max-width: 900px) {
     flex-flow: column nowrap;
-    background: rgba(170,0,0, 0.9);
+        border-bottom: 1px solid var(--White);
     backdrop-filter: blur(4px);
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
@@ -116,7 +117,7 @@ const UlAdm = styled.ul`
       align-items: center;
       justify-content: flex-start;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 500;
       color: var(--White);
       padding: 10px 20px;
       border-radius: 6px;
@@ -132,7 +133,7 @@ const UlAdm = styled.ul`
       align-items: center;
       justify-content: flex-start;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 500;
       color: var(--White);
       padding: 10px 20px;
       background-color: var(--Primary);
@@ -189,42 +190,49 @@ const UlAdm = styled.ul`
   }
 `;
 
-function HandleOpen(e) {
-  e.preventDefault();
-}
+
 const RightNav2 = ({ open }) => {
+
+  const {logout} = useContext(AuthContext);
+
+function HandleLogout(e) {
+  e.preventDefault();
+  logout()
+}
+
+
   return (
     <UlAdm open={open}>
 
        <li className='nav-item'>
             <Link to='/home'>
-           <IoSpeedometer /> <p>Painel</p> 
+           <IoSpeedometerOutline /> <p>Painel</p> 
             </Link>
           </li>
           <li className='nav-item'>
             <Link to='/imoveis' >
-           <IoHome /> <p>Imóveis</p>
+           <IoHomeOutline /> <p>Imóveis</p>
             </Link>
           </li>
-          <li className='nav-item'>
+          {/* <li className='nav-item'>
             <Link to='/chat' >
-           <IoChatboxEllipses /> <p>Chat</p> 
+           <IoChatboxEllipsesOutline /> <p>Chat</p> 
             </Link>
-          </li>
+          </li> */}
           <li className='nav-item'>
             <Link to='/agendamentos' >
-           <IoCalendar /> <p>Agenda</p> 
+           <IoCalendarOutline /> <p>Agenda</p> 
             </Link>
           </li>
 
           <li className='nav-item'>
             <Link to='/notificacoes' >
-            <IoNotifications /> <p>Alertas</p> 
+            <IoNotificationsOutline /> <p>Alertas</p> 
             </Link>
           </li> 
           <li className='nav-item'>
             <Link to='/minhaconta' >
-           <IoPerson /> <p>Perfil</p> 
+           <IoPersonOutline /> <p>Perfil</p> 
             </Link>
           </li> 
           <li className='nav-item2'>
@@ -234,11 +242,11 @@ const RightNav2 = ({ open }) => {
           </li> 
           <li className='nav-item2'>
             <Link to='/menu' >
-           <IoOptions /> <p>Mais opções</p> 
+           <IoOptionsOutline /> <p>Mais opções</p> 
             </Link>
           </li> 
           <div className="account">
-        <button onClick={HandleOpen}><IoLogOutOutline />Sair</button>
+        <button onClick={HandleLogout}><IoLogOutOutline />Sair</button>
       </div>       
     </UlAdm>
   )

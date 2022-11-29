@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 170px;
     padding-top: 50px;
 }
 .ChatAdmList .aside h3 {
@@ -42,7 +41,7 @@
     overflow: auto;
     position: fixed;
     background-color: var(--BorderInput);
-    right: 0;
+    left: 0;
 }
 
 .ChatAdmList .aside .informations .ListConversations::-webkit-scrollbar {

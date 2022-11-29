@@ -80,10 +80,10 @@ export function Dashboard() {
                 </div>
 
             </div>
-            <div className="PlainDashboard">
+            {/* <div className="PlainDashboard">
                 <h4><IoAlertCircle />Seu plano vence em 5 dias.</h4>
                 <a href="/planos">Renovar agora</a>
-            </div>
+            </div> */}
             <DownloadApp />
             </div>
         </div>

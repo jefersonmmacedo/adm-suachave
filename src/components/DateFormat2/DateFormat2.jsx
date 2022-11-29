@@ -6,7 +6,7 @@ function DateFormat2({date, type}) {
     const Newdate = parseISO(date);
     const datePost = format(
         Newdate, 
-    "dd'/'MM'/'yy'"
+        "dd'/'MM'/'yyyy' às 'HH:mm'h'"
     );
 
     return (

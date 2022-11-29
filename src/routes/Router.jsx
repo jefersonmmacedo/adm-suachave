@@ -22,21 +22,22 @@ import { MySales } from '../pages/MySales/MySales';
 import { MyAssessments } from '../pages/MyAssessments/MyAssessments';
 import { FinancerAdm } from '../pages/FinancerAdm/FinancerAdm';
 import { AccessAdm } from '../pages/AccessAdm/AccessAdm';
+import { SupportAdm } from '../pages/SupportAdm/SupportAdm';
+import { NewClientsAdm } from '../pages/NewClientsAdm/NewClientsAdm';
+import { MyClientsList } from '../pages/MyClientsList/MyClientsList';
 
 function Router () {
 const Local = localStorage.getItem("suachave");
 const userLocal = JSON.parse(Local)
 
 function PrivateRoute({children} ) {
-    return userLocal !== null ? children : <Navigate to="/"/>
+    return userLocal !== null || userLocal.type === "client" ? children : <Navigate to="/"/>
 }
 
     return (
             <Routes>
             <Route path="/" element={<SignInCompany />}/>
 
-            
-            /* Rotas fechadas/login */
             <Route path="/home"
                     element={ <PrivateRoute> <Dashboard /> </PrivateRoute>} />
             <Route path="/novoimovel"
@@ -79,8 +80,14 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <FinancerAdm /> </PrivateRoute>} />
             <Route path="/historico"
                     element={ <PrivateRoute> <AccessAdm /> </PrivateRoute>} />
+            <Route path="/suporte"
+                    element={ <PrivateRoute> <SupportAdm /> </PrivateRoute>} />
             <Route path="/menu"
                     element={ <PrivateRoute> <MenuAdm /> </PrivateRoute>} />
+            <Route path="/clientes"
+                    element={ <PrivateRoute> <MyClientsList /> </PrivateRoute>} />
+            <Route path="/novocliente"
+                    element={ <PrivateRoute> <NewClientsAdm /> </PrivateRoute>} />
             </Routes>
            
     )

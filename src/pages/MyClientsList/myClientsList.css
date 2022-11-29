@@ -1,4 +1,4 @@
-﻿.MyAppointments {
+﻿.MyClientsList {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -7,7 +7,7 @@
     justify-content: flex-start;
 }
 
-.MyAppointments .aside {
+.MyClientsList .aside {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -16,14 +16,14 @@
     padding-left: 170px;
     padding-top: 100px;
 }
-.MyAppointments .aside h3 {
+.MyClientsList .aside h3 {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
     color: var(--Primary);
 }
 
-.MyAppointments .aside .infoData {
+.MyClientsList .aside .infoData {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@
   margin-bottom: 20px;
 }
 
-.MyAppointments .aside .infoData .textInfo{
+.MyClientsList .aside .infoData .textInfo{
   padding: 10px 20px;
   display: flex;
   flex-direction: row;
@@ -44,17 +44,17 @@
   margin: 5px;
 }
 
-.MyAppointments .aside .infoData .textInfo h5 {
+.MyClientsList .aside .infoData .textInfo h5 {
   font-weight: 600;
   text-align: center;
   color: var(--Gray);
 }
-.MyAppointments .aside .infoData .textInfo h5 span {
+.MyClientsList .aside .infoData .textInfo h5 span {
   font-weight: 900;
   color: var(--Primary);
 }
 
-.MyAppointments .aside .link {
+.MyClientsList .aside .link {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -67,7 +67,7 @@
 }
 
 
-.MyAppointments .informations {
+.MyClientsList .informationsClients {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,9 +76,9 @@
     padding-bottom: 100px;
 }
 
-.MyAppointments .informations .propertyListAdm{
+.MyClientsList .informationsClients .clientListAdm{
     width: 90%;
-    border-radius: 4px;
+    border-radius:6px;
     background-color: var(--BorderHover);
     display: flex;
     align-items: center;
@@ -87,32 +87,34 @@
     margin: 5px 10px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
-.MyAppointments .informations .propertyListAdm .image{
-    border-radius: 4px 0 0 4px;
-    width: 120px;
-    height: 100%;
+.MyClientsList .informationsClients .clientListAdm .image{
+    border-radius: 6px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
+    margin: 3px;
 }
-.MyAppointments .informations .propertyListAdm .image img{
-    border-radius: 4px 0 0 4px;
-    width: 120px;
-    height: 100%;
+.MyClientsList .informationsClients .clientListAdm .image img{
+    border-radius: 6px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 }
 
-.MyAppointments .informations .propertyListAdm .textpropertyListAdm{
+.MyClientsList .informationsClients .clientListAdm .textclientListAdm{
+
     background-color: var(--BorderInput);
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px 10px;
     text-align:left;
     width: 100%;
     height: 100%;
     background-color: var(--BorderHover);
 }
-.MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm{
+.MyClientsList .informationsClients .clientListAdm .textclientListAdm .textDataclientListAdm{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -121,16 +123,16 @@
     width: 100%;
     height: 100%;
 }
-.MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm h3 {
+.MyClientsList .informationsClients .clientListAdm .textclientListAdm .textDataclientListAdm h4 {
     color: var(--Primary);
     font-weight: 700;
-    margin: 0 10px;
+    margin: 0;
     text-align:left;
   }
 
-  .MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm h5 {
+  .MyClientsList .informationsClients .clientListAdm .textclientListAdm .textDataclientListAdm h6 {
     color: var(--Gray);
-    margin: 0 9px;
+    margin: 0 0 0 -10px;
     text-align:left;
     display: flex;
     align-items: flex-start;
@@ -138,131 +140,109 @@
     flex-direction: row;
     font-weight: 700;
   }
-  .MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm h6 {
+  .MyClientsList .informationsClients .clientListAdm .textclientListAdm .textDataclientListAdm h6 svg {
+    margin: 0 3px 0 10px;
+  }
+  /* .MyClientsList .informationsClients .clientListAdm .textclientListAdm .textDataclientListAdm h6 {
     color: var(--Gray);
     margin: 5px 10px 0 10px;
     text-align:left;
-  }
-  .MyAppointments .informations .propertyListAdm .textpropertyListAdm h4 {
-    margin: 0 5px;
+  } */
+  .MyClientsList .informationsClients .clientListAdm .textclientListAdm h5 {
+    margin: 5px 0 0 0;
     text-align:center;
-    padding: 3px 5px;
+    padding: 1px 5px;
     background-color: var(--Aproved);
     color: var(--White);
     border-radius: 3px;
+    font-size: 12px;
   }
-  .MyAppointments .informations .propertyListAdm .infosContactData {
+  .MyClientsList .informationsClients .clientListAdm .infosContactData {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
-    padding: 3px 0;
+    padding: 10px 0;
     width: 100%;
     flex-wrap: wrap;
   }
-  .MyAppointments .informations .propertyListAdm .infosContactData .infoUnicData {
+  .MyClientsList .informationsClients .clientListAdm .infosContactData .infoUnicData {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
     padding: 10px;
-    margin: 3px;
+    margin: 5px;
     border-radius: 6px;
     border: 1px solid var(--Border);
   }
 
-  .MyAppointments .informations .propertyListAdm .infosContactData .infoUnicData svg {
+  .MyClientsList .informationsClients .clientListAdm .infosContactData .infoUnicData svg {
     color: var(--Gray);
     margin-right: 5px;
   }
-  .MyAppointments .informations .propertyListAdm .infosContactData .infoUnicData  h5 {
+  .MyClientsList .informationsClients .clientListAdm .infosContactData .infoUnicData  h5 {
     font-weight: 600;
     color: var(--Gray);
   }
 
-  .MyAppointments .informations .propertyListAdm .infosContactData .infoUnicData:hover {
+  .MyClientsList .informationsClients .clientListAdm .infosContactData .infoUnicData:hover {
     background-color: var(--BorderInput2);
   }
 
-  .MyAppointments .informations .propertyListAdm .buttons{
+  .MyClientsList .informationsClients .clientListAdm .buttonsClients{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 5px;
+    flex-direction: row;
+    padding: 10px;
     border-left: 1px solid var(--Border);
+    height: 100%;
 }
 
-.MyAppointments .informations .propertyListAdm .buttons .linkEdit {
-  padding: 7px;
+.MyClientsList .informationsClients .clientListAdm .buttonsClients .linkEdit {
+  padding: 10px;
   border: none;
   border-radius: 6px;
   background-color: var(--Edit);
   color: var(--White);
-  margin: 5px;
+  margin: 3px;
   font-size: 16px;
   font-weight: 700;
-              display: flex;
+                display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: row;
 }
-.MyAppointments .informations .propertyListAdm .buttons .delete {
-  padding: 7px;
+.MyClientsList .informationsClients .clientListAdm .buttonsClients .delete {
+  padding: 10px;
   border: none;
   border-radius: 6px;
   background-color: var(--Button);
   color: var(--White);
-  margin: 5px;
+  margin: 3px;
   font-size: 16px;
   font-weight: 700;
-              display: flex;
+                display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: row;
 }
-.MyAppointments .informations .propertyListAdm .buttons .notView {
-  padding: 7px;
+.MyClientsList .informationsClients .clientListAdm .buttonsClients .notView {
+  padding: 10px;
   border: none;
   border-radius: 6px;
   background-color: var(--Aproved);
   color: var(--White);
-  margin: 5px;
+  margin: 3px;
   font-size: 16px;
   font-weight: 700;
-              display: flex;
+                display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: row;
 }
-.MyAppointments .informations .propertyListAdm .user {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  width: 100%;
-  padding: 3px;
-  margin: 3px 0;
-}
-
-.MyAppointments .informations .propertyListAdm .user .ImgUser {
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
-}
-.MyAppointments .informations .propertyListAdm .user .ImgUser img {
-  width: 100%;
-  object-fit: cover;
-}
-
-.MyAppointments .informations .propertyListAdm .user .name {
-  margin: 5px 0;
-  padding: 3px 5px;
-  color: var(--Gray);
-  font-weight: 700;
-  background-color: var(--BorderHover);
-}
-.MyAppointments .aside .search {
+.MyClientsList .aside .search {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,7 +250,7 @@
   margin: 30px 10px;
   width: 90%;
 }
-.MyAppointments .aside .search .selection {
+.MyClientsList .aside .search .selection {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -279,7 +259,7 @@
 }
 
 
-.MyAppointments .aside .search input {
+.MyClientsList .aside .search input {
   width: 50%;
   height: 40px;
   padding: 10px 20px;
@@ -287,7 +267,7 @@
   border-radius: 6px;
   margin: 2px;
 }
-.MyAppointments .aside .search .selection select {
+.MyClientsList .aside .search .selection select {
   width: 100%;
   height: 40px;
   padding: 10px 20px;
@@ -298,7 +278,7 @@
 
 
 @media(max-width: 850px) {
-  .MyAppointments .aside .search {
+  .MyClientsList .aside .search {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -307,16 +287,16 @@
   }
   
   
-  .MyAppointments .aside .search input {
+  .MyClientsList .aside .search input {
     width: 100%;
   }
 
 
 @media (max-width: 700px) {
-    .MyAppointments .informations {
+    .MyClientsList .informationsClients {
         padding: 0 10px 100px 10px;
     }
-    .MyAppointments .aside {
+    .MyClientsList .aside {
         padding-left: 0px;
     }
 
@@ -324,7 +304,7 @@
 
     @media (max-width: 570px) {
 
-          .MyAppointments .informations .propertyListAdm{
+          .MyClientsList .informationsClients .clientListAdm{
             width: 100%;
             margin:20px 5px;
 
@@ -334,21 +314,16 @@
             flex-direction: column;
         }
 
-            .MyAppointments .informations .propertyListAdm .image{
-            width: 100%;
-            height: 100px;
-        }
-          .MyAppointments .informations .propertyListAdm .image img{
-            width: 100%;
-            height: 100px;
+            .MyClientsList .informationsClients .clientListAdm .image{
+           display: none;
         }
 
-        .MyAppointments .informations .propertyListAdm .infosContactData .infoUnicData {
+        .MyClientsList .informationsClients .clientListAdm .infosContactData .infoUnicData {
           padding: 5px;
         }
       
 
-        .MyAppointments .informations .propertyListAdm .buttons{
+        .MyClientsList .informationsClients .clientListAdm .buttonsClients{
           justify-content: space-evenly;
           flex-direction: row;
           width: 100%;
@@ -357,31 +332,32 @@
           padding: 5px;
       }
 
-      .MyAppointments .informations .propertyListAdm .buttons .linkEdit {
+        .MyClientsList .informationsClients .clientListAdm .buttonsClients .linkEdit {
         width: 100%;
       }
-      .MyAppointments .informations .propertyListAdm .buttons .delete {
+        .MyClientsList .informationsClients .clientListAdm .buttonsClients .delete {
         width: 100%;
       }
-      .MyAppointments .informations .propertyListAdm .buttons .notView {
+        .MyClientsList .informationsClients .clientListAdm .buttonsClients .notView {
         width: 100%;
       }
 
-      .MyAppointments .aside .search {
+
+      .MyClientsList .aside .search {
         width: 100%;
         padding: 10px;
       }
 
-      .MyAppointments .aside .search .selection {
+      .MyClientsList .aside .search .selection {
         flex-direction: column;
         width: 100%;
       }
 
-      .MyAppointments .aside .infoData .textInfo {
+      .MyClientsList .aside .infoData .textInfo {
         padding: 5px 10px;
         margin: 3px;
       }
-      .MyAppointments .aside .infoData .textInfo h5 {
+      .MyClientsList .aside .infoData .textInfo h5 {
         font-size: 12px;
       }
       

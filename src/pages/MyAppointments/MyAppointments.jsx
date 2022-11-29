@@ -8,8 +8,19 @@ import ImageHouse2 from "../../assets/images/house2.jpg";
 import ImageHouse3 from "../../assets/images/house3.jpg";
 import {IoCheckboxOutline, IoCalendarOutline, IoCloseOutline, IoCreateOutline, IoLocationOutline, IoPersonOutline, IoCarOutline, IoHomeOutline, IoCallOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
+import { useFetch } from "../../hooks/useFetch";
 
 export function MyAppointments() {
+    const Local = localStorage.getItem("suachave");
+    const user = JSON.parse(Local);
+
+    const {data} = useFetch(`/scheduling/company/${user.id}`);
+
+    if(!data) {
+        return (
+            <h5>Carregando...</h5>
+        )
+    }
     return (
         <div className="MyAppointments">
             <NavbarAdm />
@@ -58,229 +69,65 @@ export function MyAppointments() {
                     </div>
                 </div>
             <div className="informations">
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
+                {data?.map((scheduling) => {
+                    return (
+                        <div className="propertyListAdm">
+                        <div className="image">
+                            <a href="/conversa">
+                            <img src={scheduling.imageProperty} alt="" />
+                            </a>
                         </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                        <div className="textpropertyListAdm">
+                            <div className="textDatapropertyListAdm">
+                        <h3>{scheduling.titleProperty}</h3>
+                        <h5><IoCalendarOutline /> {scheduling.day} /{scheduling.month}/{scheduling.year}  {scheduling.hour}  | {scheduling.shift} </h5>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        <h4>Disponível</h4>
-                        </div>
-                    <div className="infosContactData">
-                        <div className="infoUnicData">
-                        <IoPersonOutline />
-                            <h5> 5 Pessoas</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoCarOutline />
-                            <h5> Possui carro? Sim</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoHomeOutline />
-                            <h5> Deseja ver outros imóveis? Sim</h5>
-                        </div>
-                    </div>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoCheckboxOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse1} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
-                        </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                            <div className="user">
+                                {/* <div className="ImgUser">
+                                    <img src={profile} alt="" />
+                                </div>
+                                <h4 className="name">João Felix Silva</h4> */}
+                            <h4>{scheduling.status}</h4>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        <h4>Disponível</h4>
-                        </div>
-                    <div className="infosContactData">
-                        <div className="infoUnicData">
-                        <IoPersonOutline />
-                            <h5> 5 Pessoas</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoCarOutline />
-                            <h5> Possui carro? Sim</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoHomeOutline />
-                            <h5> Deseja ver outros imóveis? Sim</h5>
-                        </div>
-                    </div>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoCheckboxOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse2} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
-                        </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                        <div className="infosContactData">
+                            <div className="infoUnicData">
+                            <IoPersonOutline />
+                                <h5> 5 Pessoas</h5>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        <h4>Disponível</h4>
-                        </div>
-                    <div className="infosContactData">
-                        <div className="infoUnicData">
-                        <IoPersonOutline />
-                            <h5> 5 Pessoas</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoCarOutline />
-                            <h5> Possui carro? Sim</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoHomeOutline />
-                            <h5> Deseja ver outros imóveis? Sim</h5>
-                        </div>
-                    </div>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoCheckboxOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse3} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
-                        </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                            <div className="infoUnicData">
+                            <IoCarOutline />
+                                <h5> Possui carro? Sim</h5>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        <h4>Disponível</h4>
+                            <div className="infoUnicData">
+                            <IoHomeOutline />
+                                <h5> Deseja ver outros imóveis? Sim</h5>
+                            </div>
                         </div>
-                    <div className="infosContactData">
-                        <div className="infoUnicData">
-                        <IoPersonOutline />
-                            <h5> 5 Pessoas</h5>
                         </div>
-                        <div className="infoUnicData">
-                        <IoCarOutline />
-                            <h5> Possui carro? Sim</h5>
-                        </div>
-                        <div className="infoUnicData">
-                        <IoHomeOutline />
-                            <h5> Deseja ver outros imóveis? Sim</h5>
+    
+    
+    
+    
+                        <div className="buttons">
+                        <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
+                        <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
+                         <span>Editar</span>
+                        </ReactTooltip>
+    
+                        <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
+                        <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
+                         <span>Cancelar</span>
+                        </ReactTooltip>
+    
+                        <button className="notView" data-tip data-for='Aprovar'><IoCheckboxOutline /></button>
+                        <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
+                         <span>Aprovar</span>
+                        </ReactTooltip>
+    
                         </div>
                     </div>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoCheckboxOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-
-
+                    )
+                })}
 
             </div>
             </div>

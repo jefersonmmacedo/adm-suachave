@@ -16,9 +16,131 @@ export function ChatAdmList() {
     return (
         <div className="ChatAdmList">
             <NavbarAdm />
-            <ToolBar />
+            {/* <ToolBar /> */}
             <div className="aside">
             <div className="informations">
+            <div className="ListConversations">
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile1} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse1} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile2} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse2} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile3} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile1} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse1} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile2} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse2} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile3} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile1} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse1} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile2} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse2} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile3} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile1} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse1} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile2} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse2} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile3} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile1} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse1} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile2} alt="" />
+                        </div>
+                    </div>
+                    <div className="UserConversarion">
+                        <div className="ImageProperty">
+                            <img src={ImageHouse2} alt="" />
+                        </div>
+                        <div className="ImageClient">
+                            <img src={Profile3} alt="" />
+                        </div>
+                    </div>
+                </div>
                 <div className="ListChatMobile">
             <div className="chat">
                     <div className="image">
@@ -132,128 +254,7 @@ export function ChatAdmList() {
 
 
 
-                <div className="ListConversations">
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile1} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse1} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile2} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse2} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile3} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile1} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse1} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile2} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse2} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile3} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile1} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse1} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile2} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse2} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile3} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile1} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse1} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile2} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse2} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile3} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile1} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse1} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile2} alt="" />
-                        </div>
-                    </div>
-                    <div className="UserConversarion">
-                        <div className="ImageProperty">
-                            <img src={ImageHouse2} alt="" />
-                        </div>
-                        <div className="ImageClient">
-                            <img src={Profile3} alt="" />
-                        </div>
-                    </div>
-                </div>
+
 
 
 

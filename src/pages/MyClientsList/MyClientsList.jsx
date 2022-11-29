@@ -1,19 +1,16 @@
 ﻿import NavbarAdm from "../../components/Nav/Navbar"
 import { ToolBar } from "../../components/ToolBar/ToolBar"
-import "./myPropertiesList.css";
-import ImageHouse from "../../assets/images/house.jpg";
-import ImageHouse1 from "../../assets/images/house1.jpg";
-import ImageHouse2 from "../../assets/images/house2.jpg";
-import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline} from 'react-icons/io5';
+import "./myClientsList.css";
+import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline, IoMailOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
-import { useEffect } from "react";
-import { DateFormat } from "../../components/DateFormat/DateFormat";
 import { useFetch } from "../../hooks/useFetch";
 import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
 
-export function MyPropertiesList() {
+export function MyClientsList() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
+
+    const profile = "https://www.forestcom.com.br/wp-content/uploads/2018/09/blank-profile-picture-973460_640.png";
 
     const {data} = useFetch(`/property/company/${user.id}`);
 
@@ -24,29 +21,13 @@ export function MyPropertiesList() {
     }
 
     return (
-        <div className="MyPropertiesList">
+        <div className="MyClientsList">
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
-                <h3>Meus imóveis</h3>
-                <div className="infoData">
-                    <div className="textInfo">
-                <h5><span>200</span> Total de Imóveis</h5>
-                    </div>
-                    <div className="textInfo">
-                <h5><span>200</span> Imóveis disponíveis</h5>
-                    </div>
-                    <div className="textInfo">
-                <h5><span>200</span> Imóveis vendidos</h5>
-                    </div>
-                    <div className="textInfo">
-                <h5><span>200</span> Imóveis alugados</h5>
-                    </div>
-                    <div className="textInfo">
-                <h5><span>200</span> Imóveis indisponíveis</h5>
-                    </div>
-                </div>
-                <a className="link" href="/novoimovel">Novo anúncio</a>
+                <h3>Meus clientes</h3>
+
+                <a className="link" href="/novocliente">Novo cliente</a>
 
                 <div className="search">
                     <input type="text" placeholder="Busque por: Título, código ou cidade" />
@@ -71,45 +52,28 @@ export function MyPropertiesList() {
                     </select>
                     </div>
                 </div>
-            <div className="informations">
+            <div className="informationsClients">
 
-                {data.map((property) => {
+                {data.map((client) => {
                     return (
-                        <div className="propertyListAdm" key={property.id}>
+                        <div className="clientListAdm" key={client.id}>
                         <div className="image">
                             <a href="/conversa">
-                            <img src={property.featuredImage} alt="" />
+                            <img src={profile} alt="" />
                             </a>
                         </div>
-                        <div className="textpropertyListAdm">
-                            <div className="textDatapropertyListAdm">
-                        <h3>{property.title}</h3>
-                        <h5><IoLocationOutline />{property.road} - {property.district} - {property.city} -{property.uf}</h5>
-                        <h6><DateFormat2 date={property.created_at} /></h6>
+                        <div className="textclientListAdm">
+                            <div className="textDataclientListAdm">
+                        <h4>{client.title}</h4>
+                        <h6><IoLocationOutline /> {client.road} - {client.district} - {client.city} -{client.uf} </h6>
+                        <h6><IoCallOutline /> (21)971684632 <IoMailOutline /> jefersonmacedowgf@gmail.com</h6>
+                        {/* <h6><DateFormat2 date={client.created_at} /></h6> */}
                             </div>
-                            <h4>{property.availability}</h4>
-                        <div className="infosContactData">
-                            <div className="infoUnicData">
-                            <IoEyeOutline />
-                                <h5> 157 Visualizações</h5>
-                            </div>
-                            <div className="infoUnicData">
-                            <IoHeartOutline />
-                                <h5> 78 Salvos</h5>
-                            </div>
-                            <div className="infoUnicData">
-                            <IoLogoWhatsapp />
-                                <h5> 37 Whatsapp</h5>
-                            </div>
-                            <div className="infoUnicData">
-                            <IoCallOutline />
-                                <h5>25 Ligações</h5>
-                            </div>
-                        </div>
+                            <h5>Compra</h5>
                         </div>
     
    
-                        <div className="buttons">
+                        <div className="buttonsClients">
                         <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
                         <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
                          <span>Editar</span>

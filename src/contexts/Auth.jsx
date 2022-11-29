@@ -313,18 +313,6 @@ async function newProperty({
 
 // Fim Propriedade
 
-// Fim da Sessão grupos
-    async function logout(idAccount) {
-        localStorage.removeItem("suachave");
-        localStorage.removeItem("informations-suachave");
-        localStorage.removeItem("preferences-suachave");
-        localStorage.removeItem("characteritics-suachave");
-        await api.delete(`/online/${idAccount}`)
-        window.open("/", "_self");
-
-        window.location.reload(false)
-    }
-
 
   // Deslogandop após tempo de inatividade
    function inactivityTime() {
