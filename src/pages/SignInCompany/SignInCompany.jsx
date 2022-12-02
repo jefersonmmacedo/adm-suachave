@@ -23,6 +23,7 @@ export function SignInCompany() {
 
       function handleLogin() {
         loginSessionCompany({login, password})
+        console.log({login, password})
       }
 
       

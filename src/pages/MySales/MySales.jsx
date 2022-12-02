@@ -8,12 +8,36 @@ import ImageHouse2 from "../../assets/images/house2.jpg";
 import ImageHouse3 from "../../assets/images/house3.jpg";
 import {IoFileTrayFullOutline, IoCalendarOutline, IoCloseOutline, IoCreateOutline, IoLocationOutline, IoPersonOutline, IoCarOutline, IoHomeOutline, IoCallOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
+import { useEffect } from "react";
+import api from "../../services/api";
+import { useState } from "react";
 
 export function MySales() {
+    const Local = localStorage.getItem("suachave");
+    const user = JSON.parse(Local);
+
+    const [plain, setPlain] = useState();
+    const [myPayment, setMyPayment] = useState();
+
+    useEffect(() => {
+        async function loadMyPlain() {
+          await api.get(`/myplain/${user.id}`).then((res) => {
+            loadPlains(res.data[0].idPlain)
+          })
+        }
+    
+        async function loadPlains(id) {
+          await api.get(`/plains/plain/${id}`).then((res) => {
+            setPlain(res.data[0])
+          })
+        }
+        loadMyPlain()
+      }, [])
     return (
         <div className="MySales">
             <NavbarAdm />
             <ToolBar />
+            {plain?.name === "Pro" ? 
             <div className="aside">
                 <h3>Minhas vendas</h3>
 
@@ -230,6 +254,11 @@ export function MySales() {
 
             </div>
             </div>
+            :
+            <div className="aside">
+                <h3>Serviço disponível em breve</h3>
+            </div>
+            }
         </div>
     )
 }

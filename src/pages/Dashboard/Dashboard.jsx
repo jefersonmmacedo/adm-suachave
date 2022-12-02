@@ -11,7 +11,7 @@ export function Dashboard() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
 
-
+    
     return (
         <div className="Dashboard">
             <NavbarAdm />
