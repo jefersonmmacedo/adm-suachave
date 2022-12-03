@@ -56,7 +56,7 @@ export function SignInCompany() {
                             <p>Recuperar senha</p>
                         </div>
                         <button onClick={handleLogin}>Entrar</button>
-                        <a href="/cadastrar">Cadastre-se aqui!</a>
+                        <a href="https://www.suachave.com.br/sobre" target="_blank" rel="noreferrer">Cadastre-se aqui!</a>
 
                     </div>
                     </div>
