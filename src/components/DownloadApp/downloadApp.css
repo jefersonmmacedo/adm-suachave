@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 80%;
+    width: 90%;
     border-radius: 20px;
     height: 250px;
     background-image: url("../../assets/images/background2.jpg"); /* The image used */
@@ -106,13 +106,15 @@
 .DownloadApp .imageApp {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: flex-end;
+    flex-direction: column;
     width: 200px;
+    height: 100%;
+    padding: 20px 10px;
 }
 
 .DownloadApp .imageApp img {
-    width: 220px;
+    width: 180px;
     margin: 0 40px;
 }
 

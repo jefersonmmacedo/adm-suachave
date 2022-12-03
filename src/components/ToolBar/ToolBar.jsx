@@ -34,20 +34,20 @@ export function ToolBar() {
       
     return (
         <div className="ToolBar">
-            <div className="image">
+            {/* <div className="image">
                 <img src={user.logo} alt="" />
-            </div>
+            </div> */}
             <div className="Tools">
                 <div className="ToolUnic">
                    <a href="/home">
                     <IoSpeedometerOutline /><p>Painel</p>                    
                     </a>
                 </div>
-                {/* <div className="ToolUnic">
+                <div className="ToolUnic">
                    <a href="/chat">
                     <IoChatboxEllipsesOutline /><p>Chat</p>
                     </a>
-                </div> */}
+                </div>
                 <div className="ToolUnic3">
                    <a href="/imoveis">
                     <IoHomeOutline /><p>Imóveis</p>
@@ -58,7 +58,7 @@ export function ToolBar() {
                     <IoCalendarOutline /><p>Agenda</p>
                     </a>
                 </div>
-                {/* {plain?.name === "Pro" ? "" :
+                {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
                    <a href="/alugueis">
                     <IoKeyOutline /><p>Aluguéis</p>
@@ -78,7 +78,7 @@ export function ToolBar() {
                     <IoSearchOutline /><p>Avaliações</p>
                     </a>
                 </div>
-                } */}
+                }
 
                 <div className="ToolUnic2">
                    <a href="/financeiro">
@@ -95,13 +95,13 @@ export function ToolBar() {
                    <IoFunnelOutline /><p>Leads</p>
                     </a>
                 </div>
-                {/* {plain?.name === "Pro" ? "" :
+                {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
                    <a href="/corretores">
                     <IoPeopleOutline /><p>Corretores</p>
                     </a>
                 </div>
-                } */}
+                }
                 <div className="ToolUnic2">
                    <a href="/planos">
                     <IoQrCodeOutline /><p>Meu plano</p>
@@ -117,16 +117,21 @@ export function ToolBar() {
                     <IoLaptopOutline /><p>Site/App</p>
                     </a>
                 </div>
-                {/* {plain?.name === "Pro" ? "" :
+                {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
                    <a href="/historico">
                    <IoTimerOutline /><p>Histórico</p>
                     </a>
                 </div>
-                } */}
+                }
                 <div className="ToolUnic2">
                    <a href="/suporte">
                     <TbHeadset /><p>Call Center</p>
+                    </a>
+                </div>
+                <div className="ToolUnic2">
+                   <a href="/">
+                  
                     </a>
                 </div>
             </div>

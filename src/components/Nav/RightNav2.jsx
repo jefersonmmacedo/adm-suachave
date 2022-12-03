@@ -16,7 +16,7 @@ const UlAdm = styled.ul`
     align-items: center;
     justify-content: center;
     padding:5px;
-    font-weight: 500;
+    font-weight: 700;
   }
   .nav-item2 {
     display: none;
@@ -28,8 +28,8 @@ const UlAdm = styled.ul`
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-weight: 500;
-    color: var(--White);
+    font-weight: 700;
+    color: var(--Paragraph);
     padding: 5px;
     border-radius: 6px;
     margin-left: -15px;
@@ -40,13 +40,11 @@ const UlAdm = styled.ul`
   }
   li a p {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
   }
   li a:hover{
     padding: 5px;
-    color: var(--White);
-    border-bottom: 1px solid var(--White);
-    border-radius: 0px;
+    color: var(--Primary);
   }
   button {
     display: none;
@@ -99,7 +97,7 @@ const UlAdm = styled.ul`
 
   @media (max-width: 900px) {
     flex-flow: column nowrap;
-        border-bottom: 1px solid var(--White);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
@@ -109,6 +107,7 @@ const UlAdm = styled.ul`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
+    background-color: rgba(255,255,255);
 
     li a{
       width: 80%;
@@ -118,10 +117,9 @@ const UlAdm = styled.ul`
       justify-content: flex-start;
       text-decoration: none;
       font-weight: 500;
-      color: var(--White);
+      color: var(--Paragraph);
       padding: 10px 20px;
       border-radius: 6px;
-      margin: 5px;
     }
     li a svg {
       margin-right: 10px;
@@ -138,7 +136,6 @@ const UlAdm = styled.ul`
       padding: 10px 20px;
       background-color: var(--Primary);
       border-radius: 6px;
-      margin: 5px;
     }
 
 

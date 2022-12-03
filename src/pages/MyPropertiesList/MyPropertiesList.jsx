@@ -28,7 +28,10 @@ export function MyPropertiesList() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
+                <div className="textHome">
                 <h3>Meus imóveis</h3>
+                <a className="link" href="/novoimovel">+ Novo anúncio</a>
+                </div>
                 <div className="infoData">
                     <div className="textInfo">
                 <h5><span>200</span> Total de Imóveis</h5>
@@ -46,7 +49,7 @@ export function MyPropertiesList() {
                 <h5><span>200</span> Imóveis indisponíveis</h5>
                     </div>
                 </div>
-                <a className="link" href="/novoimovel">Novo anúncio</a>
+               
 
                 <div className="search">
                     <input type="text" placeholder="Busque por: Título, código ou cidade" />

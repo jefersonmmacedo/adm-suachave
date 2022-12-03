@@ -1,75 +1,66 @@
 ﻿import NavbarAdm from "../../components/Nav/Navbar"
 import { ToolBar } from "../../components/ToolBar/ToolBar"
 import "./mySales.css";
-import profile from "../../assets/images/profile.png";
 import ImageHouse from "../../assets/images/house.jpg";
 import ImageHouse1 from "../../assets/images/house1.jpg";
 import ImageHouse2 from "../../assets/images/house2.jpg";
-import ImageHouse3 from "../../assets/images/house3.jpg";
-import {IoFileTrayFullOutline, IoCalendarOutline, IoCloseOutline, IoCreateOutline, IoLocationOutline, IoPersonOutline, IoCarOutline, IoHomeOutline, IoCallOutline} from 'react-icons/io5';
+import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
 import { useEffect } from "react";
-import api from "../../services/api";
-import { useState } from "react";
+import { DateFormat } from "../../components/DateFormat/DateFormat";
+import { useFetch } from "../../hooks/useFetch";
+import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
 
 export function MySales() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
 
-    const [plain, setPlain] = useState();
-    const [myPayment, setMyPayment] = useState();
+    const {data} = useFetch(`/property/company/${user.id}`);
 
-    useEffect(() => {
-        async function loadMyPlain() {
-          await api.get(`/myplain/${user.id}`).then((res) => {
-            loadPlains(res.data[0].idPlain)
-          })
-        }
-    
-        async function loadPlains(id) {
-          await api.get(`/plains/plain/${id}`).then((res) => {
-            setPlain(res.data[0])
-          })
-        }
-        loadMyPlain()
-      }, [])
+    if(!data) {
+        return (
+            <h5>Carregando...</h5>
+        )
+    }
+
     return (
         <div className="MySales">
             <NavbarAdm />
             <ToolBar />
-            {plain?.name === "Pro" ? 
             <div className="aside">
-                <h3>Minhas vendas</h3>
-
+                <div className="textHome">
+                <h3>Imóveis vendidos</h3>
+                <a className="link" href="/novoimovel">+ Nova venda</a>
+                </div>
                 <div className="infoData">
                     <div className="textInfo">
-                <h5>Total: <span>200</span></h5>
+                <h5><span>200</span> Total de Imóveis</h5>
                     </div>
                     <div className="textInfo">
-                <h5>Vendidos: <span>200</span></h5>
+                <h5><span>200</span> Imóveis disponíveis</h5>
                     </div>
                     <div className="textInfo">
-                <h5>Cancelados: <span>200</span></h5>
+                <h5><span>200</span> Imóveis vendidos</h5>
                     </div>
                     <div className="textInfo">
-                <h5>Em processo: <span>200</span></h5>
+                <h5><span>200</span> Imóveis alugados</h5>
+                    </div>
+                    <div className="textInfo">
+                <h5><span>200</span> Imóveis indisponíveis</h5>
                     </div>
                 </div>
-
-                <a className="link" href="/painel/novoimovel">Novo solicitação de compra</a>
+               
 
                 <div className="search">
-                    <input type="text" placeholder="Busque por: Título, código ou cliente" />
+                    <input type="text" placeholder="Busque por: Título, código ou cidade" />
                     <div className="selection">
                     <select>
-                        <option value="">Aprovado</option>
-                        <option value="">Pendente</option>
-                        <option value="">Cancelado</option>
+                        <option value="">Venda</option>
+                        <option value="">Aluguel</option>
                     </select>
                     <select>
-                        <option value="">Todos</option>
-                        <option value="">Hoje</option>
-                        <option value="">Próximos</option>
+                        <option value="">Disponível</option>
+                        <option value="">Indisponível</option>
                     </select>
                     <select>
                         <option value="">Tipo</option>
@@ -84,181 +75,67 @@ export function MySales() {
                     </div>
                 </div>
             <div className="informations">
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
+
+                {data.map((property) => {
+                    return (
+                        <div className="propertyListAdm" key={property.id}>
+                        <div className="image">
+                            <a href="/conversa">
+                            <img src={property.featuredImage} alt="" />
+                            </a>
                         </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                        <div className="textpropertyListAdm">
+                            <div className="textDatapropertyListAdm">
+                        <h3>{property.title}</h3>
+                        <h5><IoLocationOutline />{property.road} - {property.district} - {property.city} -{property.uf}</h5>
+                        <h6><DateFormat2 date={property.created_at} /></h6>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        </div>
-                        <h4>Em processo</h4>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoFileTrayFullOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse1} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
-                        </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                            <h4>{property.availability}</h4>
+                        <div className="infosContactData">
+                            <div className="infoUnicData">
+                            <IoEyeOutline />
+                                <h5> 157 Visualizações</h5>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        </div>
-                        <h4>Em processo</h4>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoFileTrayFullOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse2} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
-                        </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                            <div className="infoUnicData">
+                            <IoHeartOutline />
+                                <h5> 78 Salvos</h5>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
-                        </div>
-                        <h4>Em processo</h4>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoFileTrayFullOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-            <div className="propertyListAdm">
-                    <div className="image">
-                        <a href="/conversa">
-                        <img src={ImageHouse3} alt="" />
-                        </a>
-                    </div>
-                    <div className="textpropertyListAdm">
-                        <div className="textDatapropertyListAdm">
-                    <h3>Lindo apartamento luxuoso</h3>
-                    <h5><IoCalendarOutline /> 15/10/2022 16:45h | Manhã</h5>
-                        </div>
-                        <div className="user">
-                            <div className="ImgUser">
-                                <img src={profile} alt="" />
+                            <div className="infoUnicData">
+                            <IoLogoWhatsapp />
+                                <h5> 37 Whatsapp</h5>
                             </div>
-                            <h4 className="name">João Felix Silva</h4>
+                            <div className="infoUnicData">
+                            <IoCallOutline />
+                                <h5>25 Ligações</h5>
+                            </div>
                         </div>
-                        <h4>Em processo</h4>
-                    </div>
-
-
-
-
-                    <div className="buttons">
-                    <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                    <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                     <span>Editar</span>
-                    </ReactTooltip>
-
-                    <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
-                    <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
-                     <span>Cancelar</span>
-                    </ReactTooltip>
-
-                    <button className="notView" data-tip data-for='Aprovar'><IoFileTrayFullOutline /></button>
-                    <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
-                     <span>Aprovar</span>
-                    </ReactTooltip>
-
-                    </div>
-                </div>
-
+                        </div>
+    
+   
+                        <div className="buttons">
+                        <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
+                        <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
+                         <span>Editar</span>
+                        </ReactTooltip>
+    
+                        <button className="delete" data-tip data-for='Deletar'><IoTrashOutline /></button>
+                        <ReactTooltip id='Deletar' place="bottom" type="dark" effect="solid">
+                         <span>Deletar</span>
+                        </ReactTooltip>
+    
+                        <button className="notView" data-tip data-for='Vendido/Alugado'><IoFileTrayFullOutline /></button>
+                        <ReactTooltip id='Vendido/Alugado' place="bottom" type="dark" effect="solid">
+                         <span>Vendido/Alugado</span>
+                        </ReactTooltip>
+    
+                        </div>
+                    </div>  
+                    )
+                })}
 
 
             </div>
             </div>
-            :
-            <div className="aside">
-                <h3>Serviço disponível em breve</h3>
-            </div>
-            }
         </div>
     )
 }

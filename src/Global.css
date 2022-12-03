@@ -11,7 +11,7 @@
   --SecondaryHover: #37b2e6;
   --Description: #302f2f;
   --Paragraph: #4D4D4D;
-  --Background: #EEEEEE;
+  --Background: #F3F3F9;
   --Gray: #999999;
   --Gray2: #777777;
   --Border: #E6E7E8;
@@ -50,7 +50,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Archivo', sans-serif;
-  background: var(--White);
+  background: var(--Background);
 }
 
 .content {

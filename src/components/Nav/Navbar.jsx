@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
-import LogoImg from '../../assets/images/Logo2.png'
+import LogoImg from '../../assets/images/Logo.png'
 import LogoSimbol from '../../assets/images/Simbol.png'
 import {IoHome, IoNotifications, IoChatboxEllipses, IoCalendar} from 'react-icons/io5'
 import { Link } from 'react-router-dom';
@@ -10,7 +10,6 @@ import ReactTooltip from 'react-tooltip';
 const Nav = styled.nav`
   width: 100%;
   height: 65px;
-  border-bottom: 1px solid #f1f1f1;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -18,10 +17,11 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   z-index: 97;
-  background-color: rgba(170,0,0);
+  background-color: var(--White);
   backdrop-filter: blur(4px);
   font-size: 14px;
-  color: var(--Description)
+  color: var(--Description);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
 
 
 
@@ -29,7 +29,7 @@ const Nav = styled.nav`
     padding: 15px 0;
   }
   .logo a img {
-    height: 40px;
+    height: 30px;
   }
   .logo2 {
     display: none;
@@ -54,10 +54,11 @@ const Nav = styled.nav`
     padding: 18px 10px;
     font-weight: 700;
     text-decoration: none;
+    color: var(--Paragraph)
   }
   .account li a{
     text-decoration: none;
-    color: var(--Primary)
+    color: var(--Paragraph)
     font-weight: 700;
   }
   .account li a:hover{
@@ -69,12 +70,12 @@ const Nav = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: none;
+    border: 1px solid var(--Primary);
     border-radius: 6px;
     padding: 4px 15px;
-    background-color: var(--Button);
+    background-color: var(--White);
     font-weight:600;
-    color: var(--White);
+    color: var(--Primary);
 }
 
   .account .iconUnic {

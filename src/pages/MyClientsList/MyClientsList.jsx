@@ -25,9 +25,12 @@ export function MyClientsList() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
-                <h3>Meus clientes</h3>
-
+            <div className="textHome">
+                <h3>Meus imóveis</h3>
                 <a className="link" href="/novocliente">Novo cliente</a>
+                </div>
+
+               
 
                 <div className="search">
                     <input type="text" placeholder="Busque por: Título, código ou cidade" />

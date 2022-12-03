@@ -23,11 +23,12 @@
     text-align: center;
 }
 .FinancerAdm .infosFinancer {
-    width: 700px;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
 }
 .FinancerAdm .infosFinancer .infoFinancerUnic {
     width: 100%;
@@ -120,13 +121,17 @@
     font-weight: 700;
 }
 .FinancerAdm .financerList {
-    width: 800px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     margin: 10px 10px 80px 10px;
     padding: 15px;
+    background-color: var(--White);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    border-radius: 10px;
 
 }
 .FinancerAdm .financerList .searchFinance {

@@ -9,9 +9,7 @@
     overflow:auto;
     height: 100vh;
     padding: 75px 0 100px 0;
-    border: none;
-    border-right: 1px solid #f1f1f1;
-    background-color: var(--White);
+    background-color: var(--Primary);
 }
 
 .ToolBar::-webkit-scrollbar {
@@ -67,11 +65,12 @@
     align-items: flex-end;
     justify-content: flex-start;
     text-decoration: none;
-    background-color: var(--BorderHover);
     padding: 10px 20px;
     width: 100%;
     font-size: 16px;
-    color: var(--Black2);
+    color: var(--White);
+    background-color: var(--Primary);
+    border: none;
     border-radius: 6px;
 }
 .ToolBar .Tools .ToolUnic a:hover {
@@ -102,11 +101,12 @@
     align-items: center;
     justify-content: flex-start;
     text-decoration: none;
-    background-color: var(--BorderHover);
+    color: var(--White);
+    background-color: var(--Primary);
+    border: none;
     padding: 10px 20px;
     width: 100%;
     font-size: 16px;
-    color: var(--Black2);
     border-radius: 6px;
 }
 .ToolBar .Tools .ToolUnic2 a:hover {
@@ -137,11 +137,12 @@
     align-items: center;
     justify-content: flex-start;
     text-decoration: none;
-    background-color: var(--BorderHover);
+    color: var(--White);
+    background-color: var(--Primary);
+    border: none;
     padding: 10px 20px;
     width: 100%;
     font-size: 16px;
-    color: var(--Black2);
     border-radius: 6px;
 }
 .ToolBar .Tools .ToolUnic3 a:hover {
