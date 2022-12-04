@@ -21,13 +21,46 @@
     font-weight: bold;
     text-align: center;
 }
+
+.BrokersAdm .aside .textHome {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    }
+    
+    
+    .BrokersAdm .aside .textHome h3 {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--Paragraph);
+    }
+    
+
+.BrokersAdm .aside .link {
+    border: none;
+    border-radius: 6px;
+    background-color: none;
+    color: var(--Primary);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 10px;
+    }
+    
 .BrokersAdm .informations {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+background-color: var(--White);
+box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+border-radius: 6px;
 }
 .BrokersAdm .informations .infoData {
     width: 200px;

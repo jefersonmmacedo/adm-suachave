@@ -12,7 +12,6 @@ import { MenuAdm } from '../pages/MenuAdm/MenuAdm';
 import { SchedulingAdm } from '../pages/SchedulingAdm/SchedulingAdm';
 import { Checkout } from '../pages/Checkout/Checkout';
 import { PaymentCompleted } from '../pages/PaymentCompleted/PaymentCompleted';
-import { WebApp } from '../pages/WebApp/WebApp';
 import { MyPropertiesList } from '../pages/MyPropertiesList/MyPropertiesList';
 import { EditProperty } from '../pages/EditProperty/EditProperty';
 import { ChatAdmList } from '../pages/ChatAdmList/ChatAdmList';
@@ -25,6 +24,7 @@ import { AccessAdm } from '../pages/AccessAdm/AccessAdm';
 import { SupportAdm } from '../pages/SupportAdm/SupportAdm';
 import { NewClientsAdm } from '../pages/NewClientsAdm/NewClientsAdm';
 import { MyClientsList } from '../pages/MyClientsList/MyClientsList';
+import { WebApp } from '../pages/WebApp/WebApp';
 
 function Router () {
 const Local = localStorage.getItem("suachave");

@@ -13,35 +13,63 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 170px;
-    padding-top: 80px;
+    padding: 80px 0 40px 170px;
 }
 
-.WebApp .aside h3 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-align: center;
-}
 
-.WebApp .informations {
-    width: 100%;
+.WebApp .aside .textHome {
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+    justify-content: space-between;
+    margin-top: 20px;
+    }
 
-.WebApp .informations form{
-    width: 600px;
+    .WebApp .aside .link {
+        border: none;
+        border-radius: 6px;
+        background-color: none;
+        color: var(--Primary);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+
+      }
+      
+    
+    
+    .WebApp .aside .textHome h3 {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--Paragraph);
+    }
+    .WebApp .aside .textHome h4 {
+      font-weight: 500;
+      text-align: center;
+      margin: 10px 5px;
+      color: var(--Paragraph);
+    }
+
+
+
+.WebApp .aside .form{
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin: 20px 0 40px 0;
+    border-radius: 6px;
+    padding: 10px 15px;
+    background-color: var(--White);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+   border: none;
 }
 
-.WebApp .informations form .label-avatar{
+
+.WebApp .aside .label-avatar{
     width: 100px;
     height: 100px;
     display: flex;
@@ -49,83 +77,39 @@
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
-    margin: 20px 0;
+    margin: 30px 0 0 0;
 }
 
-.WebApp .informations form .label-avatar input {
+.WebApp .aside .label-avatar input {
     display: none;
 }
 
-.WebApp .informations form .label-avatar span {
+.WebApp .aside .label-avatar span {
     z-index: 99;
     position: absolute;
     opacity: 0.7;
     transition: all .5s;
 }
 
-.WebApp .informations form .label-avatar span:hover{
+.WebApp .aside .label-avatar span:hover{
     opacity: 1;
     transform: scale(1.4);
 }
 
-.WebApp .informations form .label-avatar img{
+.WebApp .aside .label-avatar img{
     margin-bottom: 1em;
     border-radius: 10px;
     object-fit: cover;
     width: 100px;
     height: 100px;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 
 
-.WebApp .informations form .dataInputs{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 15px 0;
-}
 
-.WebApp .informations form .dataInputsWeb{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.WebApp .informations form .dataInputsWeb .textInputWeb{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 10px 0 10px;
-}
-
-.WebApp .informations form .dataInputsWeb .textInputWeb h5{
-    color: var(--Gray);
-    font-weight: 700;
-}
-
-.WebApp .informations form .dataInputs .textInputWeb{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 10px 0 10px;
-}
-
-.WebApp .informations form .dataInputs .textInputWeb h5{
-    color: var(--Gray);
-    font-weight: 700;
-}
-
-.WebApp .informations form input{
-    width: 100%;
+.WebApp .aside .form input{
+    width: 99%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -133,20 +117,21 @@
     padding: 10px;
     margin: 5px;
     border-radius: 6px;
-    background-color: var(--BorderHover);
+    background-color: var(--White);
     border: 1px solid var(--Border);
+    font-weight: 500;
+    color: var(--Description);
 }
 
-.WebApp .informations form input::placeholder{
+
+.WebApp .aside .form input::placeholder{
     color: var(--Gray);
 }
-
-.WebApp .informations form textarea::placeholder{
+.WebApp .aside .form textarea::placeholder{
     color: var(--Gray);
 }
-
-.WebApp .informations form textarea{
-    width: 100%;
+.WebApp .aside .form select{
+    width: 99%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -154,39 +139,154 @@
     padding: 10px;
     margin: 5px;
     border-radius: 6px;
-    background-color: var(--BorderHover);
+    background-color: var(--White);
     border: 1px solid var(--Border);
-    resize: none;
+    font-weight: 500;
+    color: var(--Gray);
 }
-
-.WebApp .informations form button{
-    width: 100%;
-    padding: 10px 20px;
+.WebApp .aside .form .select{
+    width: 99%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin: 5px 0;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
     border-radius: 6px;
-    background-color: var(--Primary);
+    background-color: var(--White);
+    border: 1px solid var(--Primary);
+    font-weight: 500;
+    color: var(--Primary);
+}
+
+.WebApp .aside .form .data .select{
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Primary);
+    font-weight: 500;
+    color: var(--Primary);
+}
+
+
+.WebApp .aside .form select option {
+    margin: 40px;
+    background: var(--White);
+    color: var(--Primary);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 1px;
     border: none;
-    color: var(--White);
+  }
+.WebApp .aside .form textarea{
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Border);
+    font-weight: 500;
+    resize: none;
+    color: var(--Description);
+}
+
+.WebApp .aside .form textarea::placeholder{
+    color: var(--Gray);
+}
+
+.WebApp .aside .form .data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2px 0;
+}
+
+.WebApp .aside .form span{
+    font-size: 12px;
+    color: var(--Gray);
     font-weight: 700;
 }
+.WebApp .aside .form .data input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Border);
+    font-weight: 500;
+}
+.WebApp .aside .form .data select{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Border);
+    font-weight: 500;
+}
+.WebApp .aside .form .data .select{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Primary);
+    font-weight: 500;
+    color: var(--Primary);
+}
 
-@media (max-width: 700px) {
-    .WebApp .informations {
-        padding-bottom: 100px;
-    }
-    .WebApp .aside {
-        padding-left: 20px;
-        padding-right: 20px;
+
+
+@media (max-width: 950px) {
+    .WebApp .aside .form {
+        width: 95%;
     }
 
-    @media (max-width: 600px) {
-        .WebApp .informations form{
-            width: 100%;
+    @media (max-width: 700px) {
+        .WebApp .aside {
+            padding-left: 0px;
+            padding-bottom: 80px;
         }
-        
+
+        @media (max-width: 510px) {
+            .WebApp .aside .form {
+                width: 95%;
+            }
+
+            .WebApp .aside .form .data {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            
+        }
     }
 }
+
+

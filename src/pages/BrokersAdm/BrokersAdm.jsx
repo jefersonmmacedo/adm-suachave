@@ -9,7 +9,10 @@ export function BrokersAdm() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
+            <div className="textHome">
                 <h3>Corretores</h3>
+                <a className="link" href="/novoimovel">+ Novo corretor</a>
+                </div>
             <div className="informations">
                 <BrokerList />
             </div>
