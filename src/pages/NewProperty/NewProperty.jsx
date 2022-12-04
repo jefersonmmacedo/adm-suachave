@@ -298,14 +298,22 @@ function ChangeMaskValueIptu(e) {
         <div className="NewProperty">
             <NavbarAdm />
             <ToolBar />
-            <div className="aside">
-                <h3>Novo imóvel</h3>
+            <div className="
+            aside">
+            <div className="textHome">
+            <h3>Novo imóvel</h3>
+                <a className="link" href="/novoimovel">Voltar</a>
+                </div>
+
+            <div className="textHome">
+            <h4>Dados do imóvel</h4>
+                </div>
                 <div className="form">
-                    <input type="text" placeholder="Título" value={title} onChange={e => setTitle(e.target.value)}/>
+                    <input type="text" className={title === "" ? "" : "select"} placeholder="Título" value={title} onChange={e => setTitle(e.target.value)}/>
                     {/* <input type="text" placeholder="Endereço"/> */}
                     <div className="data">
-                    <input type="text" placeholder="Rua" value={road} onChange={e => setRoad(e.target.value)}/>
-                    <input type="text" placeholder="Bairro" value={district} onChange={e => setDistrict(e.target.value)}/>
+                    <input type="text" className={road === "" ? "" : "select"} placeholder="Rua" value={road} onChange={e => setRoad(e.target.value)}/>
+                    <input type="text" className={district === "" ? "" : "select"} placeholder="Bairro" value={district} onChange={e => setDistrict(e.target.value)}/>
                     <select value={uf} onChange={handleSetectUf} className={uf === "" ? "" : "select"}> 
                             <option value="">Escolha seu estado</option>
                             <option value="AC">Acre</option>
@@ -352,7 +360,7 @@ function ChangeMaskValueIptu(e) {
                     }     
                     </select>
                     </div>
-                    <textarea cols="30" rows="10" placeholder="Descrição" value={description} onChange={e => setDescription(e.target.value)}></textarea>
+                    <textarea cols="30" rows="10" className={description === "" ? "" : "select"} placeholder="Descrição" value={description} onChange={e => setDescription(e.target.value)}></textarea>
                     <div className="data">
                     <select value={type} onChange={handleType} className={type === "" ? "" : "select"}>
                         <option value="">Tipo</option>
@@ -485,8 +493,8 @@ function ChangeMaskValueIptu(e) {
                     </select>
                     </div>
                     <div className="data">
-                    <input type="text" placeholder="Preço Venda" value={priceSale} onChange={ChangeMaskValueSale}/>
-                    <input type="text" placeholder="Preço Aluguel" value={priceRent} onChange={ChangeMaskValueRent}/>
+                    <input type="text" className={priceSale === "" ? "" : "select"} placeholder="Preço Venda" value={priceSale} onChange={ChangeMaskValueSale}/>
+                    <input type="text" className={priceRent === "" ? "" : "select"} placeholder="Preço Aluguel" value={priceRent} onChange={ChangeMaskValueRent}/>
                     <select value={textRent} onChange={handleTextRent} className={textRent === "" ? "" : "select"}>
                         <option value="Diário">Diário</option>
                         <option value="Semanal">Semanal</option>
@@ -497,20 +505,20 @@ function ChangeMaskValueIptu(e) {
                     </select>
                     </div>
                     <div className="data">
-                    <input type="text" placeholder="Preço Condimínio" value={condominium} onChange={ChangeMaskValueCondominium}/>
-                    <input type="text" placeholder="Preço IPTU" value={iptu} onChange={ChangeMaskValueIptu}/>
-                    <input type="text" placeholder="Preço Outros encargos" value={otherPrices} onChange={ChangeMaskValueOtherPricing}/>
-                    <input type="text" placeholder="Ano de construção" value={yearOfConstruction} onChange={e => setYearOfConstruction(e.target.value)}/>
+                    <input type="text" className={condominium === "" ? "" : "select"} placeholder="Preço Condimínio" value={condominium} onChange={ChangeMaskValueCondominium}/>
+                    <input type="text" className={iptu === "" ? "" : "select"} placeholder="Preço IPTU" value={iptu} onChange={ChangeMaskValueIptu}/>
+                    <input type="text" className={otherPrices === "" ? "" : "select"} placeholder="Preço Outros encargos" value={otherPrices} onChange={ChangeMaskValueOtherPricing}/>
+                    <input type="text" className={yearOfConstruction === "" ? "" : "select"} placeholder="Ano de construção" value={yearOfConstruction} onChange={e => setYearOfConstruction(e.target.value)}/>
                     </div>
                     <div className="data">
-                    <input type="text" placeholder="Área total" value={totalArea} onChange={e => setTotalArea(e.target.value)}/>
+                    <input type="text" className={totalArea === "" ? "" : "select"} placeholder="Área total" value={totalArea} onChange={e => setTotalArea(e.target.value)}/>
                     <select value={siglaTotalArea} onChange={handleSiglaTotalArea} className={siglaTotalArea === "" ? "" : "select"}>
                         <option value="">Sigla área total</option>
                         <option value="M2">M2</option>
                         <option value="Km">Km</option>
                         <option value="Eq">Eq</option>
                     </select>
-                    <input type="text" placeholder="Área de construção" value={buildingArea} onChange={e => setBuildingArea(e.target.value)}/>
+                    <input type="text" className={buildingArea === "" ? "" : "select"} placeholder="Área de construção" value={buildingArea} onChange={e => setBuildingArea(e.target.value)}/>
                     <select value={siglaBuildingArea} onChange={handleSiglaBuildingArea} className={siglaBuildingArea === "" ? "" : "select"}>
                         <option value="">Sigla área construção</option>
                         <option value="M2">M2</option>
@@ -521,6 +529,9 @@ function ChangeMaskValueIptu(e) {
 
                     </div>
 
+                    <div className="textHome">
+            <h4>Características</h4>
+                </div>
                     <div className="form">
                         <div className="Check">
                         <button className='btnCheck' onClick={() => handleNewCharacteristcs("Imóvel novo")}>Imóvel novo</button>
@@ -572,6 +583,10 @@ function ChangeMaskValueIptu(e) {
                         }
                     </div>
                     </div>
+
+                    <div className="textHome">
+            <h4>Imagens</h4>
+                </div>
                     <div className="form">
                        
                        <MyButtonComponent id={idProperty} uploadFiles2={uploadFiles2}/>
@@ -589,6 +604,10 @@ function ChangeMaskValueIptu(e) {
                         })}
                        </div>
                     </div>
+
+                    <div className="textHome">
+            <h4>Vídeo</h4>
+                </div>
                     <div className="form">
                     <div className="data">
                     <select value={platformVideo} onChange={handlePlatformVideo} className={video === "" ? "" : "select"}>
@@ -596,9 +615,14 @@ function ChangeMaskValueIptu(e) {
                         <option value="Youtube">Youtube</option>
                         <option value="Vímeo">Vímeo</option>
                     </select>
-                    <input type="text" placeholder="Link Vídeo" value={video} onChange={e => setVideo(e.target.value)}/>
+                    <input type="text" className={video === "" ? "" : "select"} placeholder="Link Vídeo" value={video} onChange={e => setVideo(e.target.value)}/>
                     </div>
                     </div>
+
+
+                    <div className="textHome">
+            <h4>Slider e financiamento</h4>
+                </div>
                     <div className="form">
                     <div className="data">
                     <select value={slider} onChange={handleSlider} className={slider === "" ? "" : "select"}>

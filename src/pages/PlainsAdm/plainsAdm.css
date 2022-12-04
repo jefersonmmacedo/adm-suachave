@@ -23,12 +23,12 @@
 }
 
 .PlainsAdm .Payment {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .PlainsAdm .Payment .PlainSelected {
@@ -41,7 +41,7 @@
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     padding: 20px;
-    margin: 10px;
+    margin: 5px;
     background-color: var(--White);
 }
 .PlainsAdm .Payment .PlainSelected h3 {
@@ -133,7 +133,7 @@
 }
 
 .PlainsAdm .Payment .PaymentPlayn {
-    width: 700px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -141,7 +141,7 @@
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     background-color: var(--White);
 }
 
@@ -215,6 +215,11 @@ margin: 3px;
     width: 100%;
 }
 
+@media (max-width: 1000px) {
+    .PlainsAdm .Payment {
+        width: 100%;
+    }
+    
 @media (max-width: 850px) {
     .PlainsAdm .Payment {
         width: 100%;
@@ -222,7 +227,6 @@ margin: 3px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
     }
 
     .PlainsAdm .Payment .PlainSelected {
@@ -241,14 +245,21 @@ margin: 3px;
         padding-left: 0px;
         
     }
-
+    
     .PlainsAdm .Payment .PlainSelected {
         min-width: 95%;
     }
-
+    
     .PlainsAdm .Payment .PaymentPlayn {
         width: 95%;
         margin-bottom: 80px;
     }
+    @media (max-width: 500px) {
+        .PlainsAdm .Payment .PaymentPlayn .payments .itensPayment {
+            margin: 3px;
+            width: 30%;
+            }
+}
+}
 }
 }

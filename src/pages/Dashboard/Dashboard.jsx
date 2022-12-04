@@ -17,10 +17,11 @@ export function Dashboard() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
-                <div className="textDashboard">
-                <h4>Olá, {user.fantasyName}. Seja bem vindo!</h4>
+                <div className="textHome">
+                <h3>Olá, {user.fantasyName}. Seja bem vindo!</h3>
                 {/* <h4>Sair</h4> */}
                 </div>
+
             <div className="informations">
                 <div className="infoData">
                     <div className="topInfo">

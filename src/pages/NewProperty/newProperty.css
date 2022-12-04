@@ -5,7 +5,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: var(--White);
 }
 
 .NewProperty .aside {
@@ -17,11 +16,41 @@
     padding: 80px 0 40px 170px;
 }
 
-.NewProperty .aside h3 {
-    font-weight: bold;
-    text-align: center;
-    color:var(--Primary);
-}
+.NewProperty .aside .textHome {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    }
+
+    .NewProperty .aside .link {
+        border: none;
+        border-radius: 6px;
+        background-color: none;
+        color: var(--Primary);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+
+      }
+      
+    
+    
+    .NewProperty .aside .textHome h3 {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--Paragraph);
+    }
+    .NewProperty .aside .textHome h4 {
+      font-weight: 500;
+      text-align: center;
+      margin: 10px 5px;
+      color: var(--Paragraph);
+    }
+    
 .NewProperty .aside .btnSend {
     width: 300px;
     padding: 10px 20px;
@@ -38,16 +67,16 @@
 
 
 .NewProperty .aside .form {
-    width: 750px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px;
     border-radius: 6px;
-    margin-top: 20px;
+    padding: 10px 15px;
     background-color: var(--White);
-   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
    border: none;
 }
 
@@ -65,6 +94,7 @@
     font-weight: 500;
     color: var(--Description);
 }
+
 .NewProperty .aside .form input::placeholder{
     color: var(--Gray);
 }
@@ -95,14 +125,16 @@
     margin: 5px;
     border-radius: 6px;
     background-color: var(--White);
-    border: 1px solid var(--Border);
+    border: 1px solid var(--Primary);
     font-weight: 500;
-    color: var(--Description);
+    color: var(--Primary);
 }
+
+
 .NewProperty .aside .form select option {
     margin: 40px;
     background: var(--White);
-    color: var(--Description);
+    color: var(--Primary);
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
     border-radius: 1px;
     border: none;
@@ -204,7 +236,7 @@
     color: var(--Gray);
     margin: 5px 3px;
     font-size: 14px;
-    color: var(--Description);
+    color: var(--Gray);
     width: 24%;
 }
 .NewProperty .aside .form .Check .selected {
@@ -334,9 +366,9 @@
     margin: 5px;
     border-radius: 6px;
     background-color: var(--White);
-    border: 1px solid var(--Border);
+    border: 1px solid var(--Primary);
     font-weight: 500;
-    color: var(--Description);
+    color: var(--Primary);
 }
 
 .NewProperty .aside .form input[type="file"] {

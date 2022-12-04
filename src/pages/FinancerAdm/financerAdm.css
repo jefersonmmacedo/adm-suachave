@@ -39,7 +39,7 @@
     margin: 5px;
     padding: 10px 15px;
     background-color: var(--BorderHover);
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
 }
 .FinancerAdm .infosFinancer .infoFinancerUnicTotal {
@@ -53,7 +53,7 @@
     background-color: var(--AprovedHover);
     border-radius: 6px;
     color: var(--White);
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .FinancerAdm .infosFinancer .infoFinancerUnicTotal2 {
     width: 100%;
@@ -66,7 +66,7 @@
     background-color: var(--Primary);
     border-radius: 6px;
     color: var(--White);
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .FinancerAdm .infosFinancer .infoFinancerUnic .top {
     width: 100%;
@@ -126,11 +126,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 10px 10px 80px 10px;
     padding: 15px;
     background-color: var(--White);
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    margin: 10px 10px 100px 10px;
     border-radius: 10px;
 
 }
@@ -172,10 +171,11 @@ color: var(--Description);
     align-items: center;
     justify-content: space-between;
     margin: 5px 0;
-    padding: 5px;
+    padding: 0px 10px;
     background-color: var(--BorderHover);
     border-radius: 6px;
     color: var(--Gray);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 .FinancerAdm .financerList .FinancerListUnic h5 {

@@ -33,50 +33,68 @@ export function MyAccountAdm() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
-                <h3>Minha conta</h3>
-            <div className="informations">
-            <form action="">
+            <div className="textHome">
+            <h3>Minha conta</h3>
+                <a className="link" href="/novoimovel">Novo corretor</a>
+                </div>
+
+          
                 <label className="label-avatar">
                         <span><FiUpload color="#f65" size={25} /></span>
                         <input type="file" accept="image/*" onChange={handleFile} required/><br />
                         <img src={avatarUrl === null ? profile : avatarUrl} alt="Avatar" height={100} width={100}/>
                     </label>
+                <div className="textHome">
+                <h4>Cadastro</h4>
+                </div>            
+            <div className="form">
 
-                    <div className="textDataInputs">
-                    <h4>Cadastro</h4>
-                    </div>             
-                    <div className="dataInputs">  
+                    <div className="data">  
                     <input type="text" placeholder="CNPJ" value={user.cnpj}/>
                     <input type="text" placeholder="Razão Social" value={user.socialReason}/>
                     <input type="text" placeholder="Nome Fantasia" value={user.fantasyName}/>
                     <input type="text" placeholder="CRECI" value={user.creci}/>
                     </div>
-                    <div className="textDataInputs">
-                    <h4>Contato</h4>
-                    </div>             
-                    <div className="dataInputs">  
+                    </div>
+                    <div className="textHome">
+                       <h4>Contato</h4>
+                    </div>              
+                    <div className="form">
+                    <div className="data">  
                     <input type="email" placeholder="E-mail" value={user.email} />
                     <input type="text" placeholder="Telefone" value={user.phone} />
                     <input type="text" placeholder="Whatsapp" value={user.whatsapp} />
+                   
+                    </div>
+                    </div>     
+                    <div className="textHome">
+                       <h4>Redes Sociais</h4>
+                    </div>              
+                    <div className="form">
+                    <div className="data">  
                     <input type="text" placeholder="Facebook" value={user.facebook} />
                     <input type="text" placeholder="Instagram" value={user.instagram} />
                     <input type="text" placeholder="Linkedin" value={user.linkedin} />
                     <input type="text" placeholder="Youtube" value={user.youtube} />
                     </div>
+                    </div>     
 
-                    <div className="textDataInputs">
+                    <div className="textHome">
                     <h4>Responsável</h4>
-                    </div>               
-                    <div className="dataInputs"> 
+                    </div>          
+                    <div className="form">              
+                    <div className="data"> 
                     <input type="text" placeholder="Nome Responsável" value={user.responsibleName} />
                     <input type="email" placeholder="E-mail" value={user.emailResponsible} />
                     <input type="text" placeholder="Whatsapp" value={user.whatsappResponsible} />
                     </div>
+                    </div>     
 
-                    <div className="textDataInputs">
+                    <div className="textHome">
                     <h4>Endereço</h4>
                     </div>              
-                    <div className="dataInputs">   
+                    <div className="form"> 
+                    <div className="data">   
                     <input type="text" placeholder="Rua" value={user.road} />
                     <input type="text" placeholder="Número" value={user.number} />
                     <input type="text" placeholder="Bairro" value={user.district} />
@@ -87,21 +105,24 @@ export function MyAccountAdm() {
                         <option value="">{user.city}</option>
                     </select>
                     </div>
+                    </div>              
 
                     <button>Atualizar Dados</button>
-                    <div className="textDataInputs">
+                    <div className="textHome">
                     <h4>Alterar Senha</h4>
                     </div>
-                    <div className="dataInputs">               
+                    <div className="form"> 
+                    <div className="data">               
                     <input type="password" placeholder="Senha Atual" />
                     <input type="password" placeholder="Nova senha" />
                     <input type="password" placeholder="Confirmar nova senha" />
                     </div>
 
+                </div>
                     <button>Atualizar Senha</button>
-                </form>
+      
             </div>
             </div>
-        </div>
+
     )
 }

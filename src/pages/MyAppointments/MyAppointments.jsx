@@ -26,9 +26,13 @@ export function MyAppointments() {
             <NavbarAdm />
             <ToolBar />
             <div className="aside">
-                <h3>Meus Agendamentos</h3>
+            <div className="textHome">
+            <h3>Meus Agendamentos</h3>
+                {/* <a className="link" href="/novoimovel">+ Nova venda</a> */}
+                </div>
+               
 
-                <div className="infoData">
+                {/* <div className="infoData">
                     <div className="textInfo">
                 <h5>Total: <span>200</span></h5>
                     </div>
@@ -41,7 +45,7 @@ export function MyAppointments() {
                     <div className="textInfo">
                 <h5>Recusados: <span>200</span></h5>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="search">
                     <input type="text" placeholder="Busque por: Título, código ou cliente" />
