@@ -168,7 +168,7 @@ export function FinancerAdm() {
             overlayClassName="react-modal-overlay"
             className="react-modal-content">
             <button type="button" className="react-modal-button" onClick={handleCloseModalSearch}>
-            <IoCloseOutline /> 
+            <IoCloseOutline color={"#fff"}/> 
             </button>
             <div className="content-modal-home-Search">
             <div className="itensModalHome-Search">

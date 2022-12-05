@@ -33,9 +33,10 @@ function AuthProvider({children}) {
                 window.open("/home", "_self")
                 
             }).catch(error => {
-                console.log("Login não foi realizado" + error)
-                toast.error(`Falha no login. E-mail, usuário ou senha incorretos!`);
-                toast.error(`Verifique letras maiúsculas e minúsculas`);
+                console.log("Login não foi realizado" + error);
+                setLoading(false);
+                // toast.error(`Falha no login. E-mail, usuário ou senha incorretos!`);
+                // toast.error(`Verifique letras maiúsculas e minúsculas`);
             })
             
         } else {
@@ -52,9 +53,11 @@ function AuthProvider({children}) {
                 window.open("/home", "_self")
                 
             }).catch(error => {
-                console.log("Login não foi realizado" + error)
-                toast.error(`Falha no login. E-mail, usuário ou senha incorretos!`);
-                toast.error(`Verifique letras maiúsculas e minúsculas`);
+                console.log("Login não foi realizado" + error);
+                setLoading(false);
+                
+                // toast.error(`Falha no login. E-mail, usuário ou senha incorretos!`);
+                // toast.error(`Verifique letras maiúsculas e minúsculas`);
             })
         }
         

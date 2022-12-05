@@ -3,7 +3,7 @@ import Logo from "../../assets/images/Logo2.png";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../contexts/Auth";
-import {IoEyeOutline, IoEyeOffOutline} from 'react-icons/io5';
+import {IoEyeOutline, IoEyeOffOutline, IoAlertCircleOutline} from 'react-icons/io5';
 
 export function SignInCompany() {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ export function SignInCompany() {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
-    const {loginSessionCompany} = useContext(AuthContext);
+    const {loginSessionCompany, loading} = useContext(AuthContext);
 
     useEffect(() => {
         if(localStorage.getItem("suachave") !== null) {
@@ -52,6 +52,12 @@ export function SignInCompany() {
                         <div className="icon" onClick={handlePasswordView}>{passwordView === false ? <IoEyeOutline /> : <IoEyeOffOutline /> }
                         </div>
                         </div>
+                        {
+                          loading === true ? "" :
+                        <div className="message">
+                          <h5><IoAlertCircleOutline /> Login ou senha incorretos. Verifique e tente novamente</h5>
+                        </div>
+                        }
                         <div className="links">
                             <p>Recuperar senha</p>
                         </div>

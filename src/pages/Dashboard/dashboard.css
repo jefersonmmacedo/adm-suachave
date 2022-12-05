@@ -54,14 +54,13 @@
     width: 200px;
     height: 80px;
     background-color: var(--BorderHover);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     margin: 5px;
     padding: 10px;
     color: var(--Gray);
 }
-.Dashboard .aside .informations .infoData:hover {
-    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
-}
+
 .Dashboard .aside .informations .infoData .topInfo {
     display: flex;
     flex-direction: row;

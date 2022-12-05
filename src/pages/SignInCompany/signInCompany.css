@@ -91,6 +91,32 @@
 .SignInCompany .login .form .data input::placeholder {
     color: var(--Border);
 }
+.SignInCompany .login .form .data .message {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--Primary);
+    font-weight: bold;
+    margin: 10px 0;
+    background-color: var(--White);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.SignInCompany .login .form .data .message h5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.SignInCompany .login .form .data .message h5 svg {
+    margin-right: 5px;
+}
+
 .SignInCompany .login .form .data .links {
     width: 80%;
     display: flex;

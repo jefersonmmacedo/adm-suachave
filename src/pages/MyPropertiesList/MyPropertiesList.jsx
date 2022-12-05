@@ -1,19 +1,17 @@
 ﻿import NavbarAdm from "../../components/Nav/Navbar"
 import { ToolBar } from "../../components/ToolBar/ToolBar"
 import "./myPropertiesList.css";
-import ImageHouse from "../../assets/images/house.jpg";
-import ImageHouse1 from "../../assets/images/house1.jpg";
-import ImageHouse2 from "../../assets/images/house2.jpg";
-import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline} from 'react-icons/io5';
+import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline, IoHomeOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
-import { useEffect } from "react";
-import { DateFormat } from "../../components/DateFormat/DateFormat";
 import { useFetch } from "../../hooks/useFetch";
 import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
+import { NewNegotiations } from "../../components/NewNegotiations/NewNegotiations";
 
 export function MyPropertiesList() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
+
+
 
     const {data} = useFetch(`/property/company/${user.id}`);
 
@@ -22,6 +20,9 @@ export function MyPropertiesList() {
             <h5>Carregando...</h5>
         )
     }
+
+
+
 
     return (
         <div className="MyPropertiesList">
@@ -87,6 +88,7 @@ export function MyPropertiesList() {
                         <div className="textpropertyListAdm">
                             <div className="textDatapropertyListAdm">
                         <h3>{property.title}</h3>
+                        <h5><IoHomeOutline />{property.type} - {property.subType} - {property.status}</h5>
                         <h5><IoLocationOutline />{property.road} - {property.district} - {property.city} -{property.uf}</h5>
                         <h6><DateFormat2 date={property.created_at} /></h6>
                             </div>
@@ -127,6 +129,8 @@ export function MyPropertiesList() {
                         <ReactTooltip id='Vendido/Alugado' place="bottom" type="dark" effect="solid">
                          <span>Vendido/Alugado</span>
                         </ReactTooltip>
+
+                        <NewNegotiations idProperty={property.id}/>
     
                         </div>
                     </div>  
@@ -136,6 +140,9 @@ export function MyPropertiesList() {
 
             </div>
             </div>
+
+
+
         </div>
     )
 }

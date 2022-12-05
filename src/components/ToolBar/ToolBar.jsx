@@ -43,11 +43,11 @@ export function ToolBar() {
                     <IoSpeedometerOutline /><p>Painel</p>                    
                     </a>
                 </div>
-                <div className="ToolUnic">
+                {/* <div className="ToolUnic">
                    <a href="/chat">
                     <IoChatboxEllipsesOutline /><p>Chat</p>
                     </a>
-                </div>
+                </div> */}
                 <div className="ToolUnic3">
                    <a href="/imoveis">
                     <IoHomeOutline /><p>Imóveis</p>
