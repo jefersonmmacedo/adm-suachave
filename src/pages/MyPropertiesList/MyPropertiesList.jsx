@@ -1,11 +1,12 @@
 ﻿import NavbarAdm from "../../components/Nav/Navbar"
 import { ToolBar } from "../../components/ToolBar/ToolBar"
 import "./myPropertiesList.css";
-import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline, IoHomeOutline} from 'react-icons/io5';
+import {IoTrashOutline, IoCreateOutline, IoLocationOutline, IoEyeOutline, IoHeartOutline, IoLogoWhatsapp, IoCallOutline, IoHomeOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
 import { useFetch } from "../../hooks/useFetch";
 import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
 import { NewNegotiations } from "../../components/NewNegotiations/NewNegotiations";
+import { EditStatusProperty } from "../../components/EditStatusProperty/EditStatusProperty";
 
 export function MyPropertiesList() {
     const Local = localStorage.getItem("suachave");
@@ -124,11 +125,8 @@ export function MyPropertiesList() {
                         <ReactTooltip id='Deletar' place="bottom" type="dark" effect="solid">
                          <span>Deletar</span>
                         </ReactTooltip>
-    
-                        <button className="notView" data-tip data-for='Vendido/Alugado'><IoFileTrayFullOutline /></button>
-                        <ReactTooltip id='Vendido/Alugado' place="bottom" type="dark" effect="solid">
-                         <span>Vendido/Alugado</span>
-                        </ReactTooltip>
+                        
+                        <EditStatusProperty />
 
                         <NewNegotiations idProperty={property.id}/>
     

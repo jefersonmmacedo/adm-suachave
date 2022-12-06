@@ -97,8 +97,8 @@ export function ToolBar() {
                 </div>
                 {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
-                   <a href="/corretores">
-                    <IoPeopleOutline /><p>Corretores</p>
+                   <a href="/functionarios">
+                    <IoPeopleOutline /><p>Functionários</p>
                     </a>
                 </div>
                 }

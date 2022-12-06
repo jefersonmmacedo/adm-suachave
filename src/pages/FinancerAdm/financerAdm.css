@@ -212,168 +212,18 @@ color: var(--Description);
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: var(--BorderHover);
+    background-color: var(--BorderInput2);
     border: none;
     color: var(--Gray);
-    padding: 2px;
+    padding: 7px;
     border-radius: 6px;
+    margin: 3px;
 }
 
 
 
-.FinancerAdm .financerList button {
-    background-color: var(--White);
-    border: none;
-    color: var(--Primary);
-    margin: 10px 0;
-}
 
 
-
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 80%
-}
-
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form input {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    border-radius: 6px;
-    border: 1px solid var(--Border);
-    background-color: var(--White);
-    margin: 5px;
-    padding: 10px 20px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form input::placeholder {
-    color: var(--Gray);
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form select {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    border-radius: 6px;
-    border: 1px solid var(--Border);
-    background-color: var(--White);
-    margin: 5px;
-    padding: 10px 20px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form textarea {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    border-radius: 6px;
-    border: 1px solid var(--Border);
-    background-color: var(--White);
-    margin: 5px;
-    padding: 10px 20px;
-    resize: none;
-}
-
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 5px;
-    padding: 10pxx;
-    width: 100%;
-}
-
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 6px;
-    border: 1px solid var(--Aproved);
-    background-color: rgba(0,168,89, 0.05);
-    margin: 5px;
-    padding: 20px 20px;
-    color: var(--Aproved);
-    font-size: 16px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType2 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 6px;
-    border: 1px solid var(--Primary);
-    background-color: rgba(224, 40, 47, 0.05);
-    margin: 5px;
-    padding: 20px 20px;
-    color: var(--Primary);
-    font-size: 16px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType3 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 6px;
-    margin: 5px;
-    border: 1px solid var(--Aproved);
-    background-color: var(--AprovedHover);
-    padding: 20px 20px;
-    color: var(--White);
-    font-size: 16px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .TypeButtons .btnType4 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 6px;
-    margin: 5px;
-    border: 1px solid var(--Primary);
-    background-color: var(--PrimaryHover);
-    padding: 20px 20px;
-    color: var(--White);
-    font-size: 16px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 6px;
-    border: 1px solid var(--Primary);
-    background-color: var(--PrimaryHover);
-    margin: 5px;
-    padding: 10px 20px;
-    color: var(--White);
-}
-
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form button svg {
-    margin-right: 5px;
-    font-size: 20px;
-}
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .dataForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.react-modal-content .content-modal-home-Search .itensModalHome-Search .form .dataForm h4 {
-    color: var(--Gray);
-    margin: 5px;
-}
 
 
 @media (max-width: 990px) {
@@ -384,23 +234,12 @@ color: var(--Description);
         width: 90%;
     }
 
-    /* .FinancerAdm .infosFinancer .infoFinancerUnic {
-        width: 50%;
-    }
-    .FinancerAdm .infosFinancer .infoFinancerUnicTotal {
-        width: 50%;
-    }
-    .FinancerAdm .infosFinancer .infoFinancerUnicTotal2 {
-        width: 50%;
-    } */
 @media (max-width: 700px) {
     .FinancerAdm .aside {
         padding-left: 0px;
         padding-bottom: 80px;
     }
-    .react-modal-content .content-modal-home-Search .itensModalHome-Search .form {
-        width: 100%
-    }
+
 
     
     @media (max-width: 550px) {
@@ -439,6 +278,47 @@ color: var(--Description);
             justify-content: center;
             margin: 5px 0;
             padding: 5px 0px;
+        }
+
+        .FinancerAdm .financerList .FinancerListUnic  {
+            flex-wrap: wrap;
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .FinancerAdm .financerList .FinancerListUnic h5 {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 2px 0;
+        }
+
+        .FinancerAdm .financerList .FinancerListUnic .up {
+            color: var(--Aproved);
+            justify-content: center;
+            margin: 2px 0;
+        }
+        .FinancerAdm .financerList .FinancerListUnic .down {
+            color: var(--Primary);
+            justify-content: center;
+            margin: 2px 0;
+        }
+        .FinancerAdm .financerList .FinancerListUnic .date {
+            justify-content: center;
+            margin: 2px 0;
+        }
+        .FinancerAdm .financerList .FinancerListUnic  .buttons {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 2px 0;
+            margin: 0;
+            padding: 0px 10px;
+            border-radius: 6px;
+            color: var(--Gray);
         }
         
 }

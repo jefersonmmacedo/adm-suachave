@@ -5,6 +5,7 @@ import {IoFileTrayFullOutline, IoTrashOutline, IoCreateOutline, IoLocationOutlin
 import ReactTooltip from 'react-tooltip';
 import { useFetch } from "../../hooks/useFetch";
 import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
+import { NewClient } from "../../components/NewClient/NewClient";
 
 export function MyClientsList() {
     const Local = localStorage.getItem("suachave");
@@ -27,7 +28,7 @@ export function MyClientsList() {
             <div className="aside">
             <div className="textHome">
                 <h3>Meus imóveis</h3>
-                <a className="link" href="/novocliente">Novo cliente</a>
+                <NewClient />
                 </div>
 
                

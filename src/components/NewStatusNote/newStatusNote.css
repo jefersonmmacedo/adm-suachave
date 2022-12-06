@@ -109,6 +109,18 @@
     padding: 10px;
     margin: 3px 0;
 }
+.content-moda-Process .itensModal-Process .form .ProcessData .dataUser textarea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    padding: 10px;
+    margin: 3px 0;
+}
 
 .content-moda-Process .itensModal-Process .form .ProcessData .dataUser .btn {
     display: flex;
@@ -263,6 +275,27 @@
 }
 
 .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    padding: 10px 20px;
+}
+
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic2 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic2 textarea {
     width: 100%;
     display: flex;
     align-items: center;

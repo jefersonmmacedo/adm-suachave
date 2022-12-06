@@ -22,7 +22,6 @@ import { MyAssessments } from '../pages/MyAssessments/MyAssessments';
 import { FinancerAdm } from '../pages/FinancerAdm/FinancerAdm';
 import { AccessAdm } from '../pages/AccessAdm/AccessAdm';
 import { SupportAdm } from '../pages/SupportAdm/SupportAdm';
-import { NewClientsAdm } from '../pages/NewClientsAdm/NewClientsAdm';
 import { MyClientsList } from '../pages/MyClientsList/MyClientsList';
 import { WebApp } from '../pages/WebApp/WebApp';
 
@@ -70,7 +69,7 @@ function PrivateRoute({children} ) {
                    element={ <PrivateRoute> <MySales /> </PrivateRoute>} />
            <Route path="/avaliacoes"
                    element={ <PrivateRoute> <MyAssessments /> </PrivateRoute>} />
-            <Route path="/corretores"
+            <Route path="/functionarios"
                     element={ <PrivateRoute> <BrokersAdm /> </PrivateRoute>} />
             <Route path="/minhaconta"
                     element={ <PrivateRoute> <MyAccountAdm /> </PrivateRoute>} />
@@ -86,8 +85,6 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <MenuAdm /> </PrivateRoute>} />
             <Route path="/clientes"
                     element={ <PrivateRoute> <MyClientsList /> </PrivateRoute>} />
-            <Route path="/novocliente"
-                    element={ <PrivateRoute> <NewClientsAdm /> </PrivateRoute>} />
             </Routes>
            
     )

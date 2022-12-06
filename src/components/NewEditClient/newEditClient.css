@@ -1,17 +1,14 @@
-﻿.New {
-    padding: 10px;
+﻿.link {
     border: none;
     border-radius: 6px;
-    background-color: var(--Secondary);
-    color: var(--White);
-    margin: 5px;
+    background-color: none;
+    color: var(--Primary);
     font-size: 16px;
-    font-weight: 700;
-                  display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-direction: row;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--Background)
   }
+  
 
   .content-moda-Process {
     width: 100%;
@@ -29,6 +26,7 @@
   
     .content-moda-Process::-webkit-scrollbar-track {
     background: var(--BorderHover);        /* color of the tracking area */
+    border-radius: 6px;
   }
   
     .content-moda-Process::-webkit-scrollbar-thumb {
@@ -234,9 +232,13 @@
     width: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
-    padding: 5px;
+    padding: 10px 5px 15px 5px;
+    border: 1px solid var(--Border);
+    margin: 5px 0;
+    border-radius: 6px;
+    flex-wrap: wrap;
 }
 
 .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic {
@@ -245,12 +247,12 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 5px;
+    padding: 0 5px;
 }
 
 .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic h5 {
     color: var(--Paragraph);
-    margin: 5px 10px;
+    margin: 10px 10px 5px 10px;
     font-weight: 600;
 }
 

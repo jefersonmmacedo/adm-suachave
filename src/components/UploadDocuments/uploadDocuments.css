@@ -1,0 +1,18 @@
+﻿.btnDocuments {
+    background-color: var(--Secundary);
+    color: var(--White);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px;
+    width: 50%;
+}
+
+.btnDocuments svg {
+    font-size: 16px;
+    margin-right: 3px;
+}

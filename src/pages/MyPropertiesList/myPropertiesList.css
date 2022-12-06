@@ -30,7 +30,6 @@
 .MyPropertiesList .aside .textHome h3 {
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
     color: var(--Paragraph);
 }
 
@@ -244,20 +243,6 @@
             justify-content: center;
             flex-direction: row;
 }
-.MyPropertiesList .informations .propertyListAdm .buttons .notView {
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--Aproved);
-  color: var(--White);
-  margin: 5px;
-  font-size: 16px;
-  font-weight: 700;
-                display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-}
 
 .MyPropertiesList .aside .search {
   display: flex;
@@ -362,9 +347,6 @@
         width: 100%;
       }
         .MyPropertiesList .informations .propertyListAdm .buttons .delete {
-        width: 100%;
-      }
-        .MyPropertiesList .informations .propertyListAdm .buttons .notView {
         width: 100%;
       }
 
