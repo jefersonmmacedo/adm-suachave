@@ -31,15 +31,10 @@ export function NewEditCollaborator() {
         <Modal isOpen={isOpenModalProcess} onRequestClose={handleCloseModalProcess}
         overlayClassName="react-modal-overlay"
         className="react-modal-content">
-        {/* <button type="button" className="react-modal-button" onClick={handleCloseModalProcess}>
-        <IoCloseOutline color={"#fff"}/> 
-        </button> */}
-
-
 
         <div className="content-moda-Process">
         <div className="itensModal-Process">
-            <h3>Novo cliente</h3>
+            <h3>Editar Colaborador</h3>
 
             <div className="form">
                 <div className="DataInputs">

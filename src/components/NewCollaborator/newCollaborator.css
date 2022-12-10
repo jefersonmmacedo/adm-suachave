@@ -82,7 +82,7 @@
 }
 
 .content-moda-Process .itensModal-Process .form .ProcessData .dataUser  h5 {
-    color: var(--Paragraph);
+    color: var(--Primary);
     margin: 0px 0px 3px 3px;
     font-weight: 600;
 }
@@ -251,7 +251,7 @@
 }
 
 .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic h5 {
-    color: var(--Paragraph);
+    color: var(--Primary);
     margin: 10px 10px 5px 10px;
     font-weight: 600;
 }

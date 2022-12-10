@@ -6,9 +6,10 @@ import ImageHouse from "../../assets/images/house.jpg";
 import ImageHouse1 from "../../assets/images/house1.jpg";
 import ImageHouse2 from "../../assets/images/house2.jpg";
 import ImageHouse3 from "../../assets/images/house3.jpg";
-import {IoCheckboxOutline, IoCalendarOutline, IoCloseOutline, IoCreateOutline, IoLocationOutline, IoPersonOutline, IoCarOutline, IoHomeOutline, IoCallOutline} from 'react-icons/io5';
+import {IoCheckboxOutline, IoCalendarOutline, IoCloseOutline, IoCreateOutline, IoLocationOutline, IoPersonOutline, IoCarOutline, IoHomeOutline, IoCallOutline, IoEyeOutline} from 'react-icons/io5';
 import ReactTooltip from 'react-tooltip';
 import { useFetch } from "../../hooks/useFetch";
+import { SchedulingEdit } from "../../components/SchedulingEdit/SchedulingEdit";
 
 export function MyAppointments() {
     const Local = localStorage.getItem("suachave");
@@ -77,13 +78,15 @@ export function MyAppointments() {
                     return (
                         <div className="propertyListAdm">
                         <div className="image">
-                            <a href="/conversa">
+                            <a  href={`/agendamento/${scheduling.id}`} >
                             <img src={scheduling.imageProperty} alt="" />
                             </a>
                         </div>
                         <div className="textpropertyListAdm">
                             <div className="textDatapropertyListAdm">
+                            <a  href={`/agendamento/${scheduling.id}`} >
                         <h3>{scheduling.titleProperty}</h3>
+                            </a>
                         <h5><IoCalendarOutline /> {scheduling.day} /{scheduling.month}/{scheduling.year}  {scheduling.hour}  | {scheduling.shift} </h5>
                             </div>
                             <div className="user">
@@ -113,20 +116,22 @@ export function MyAppointments() {
     
     
                         <div className="buttons">
-                        <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                        <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                         <span>Editar</span>
-                        </ReactTooltip>
-    
+                        <SchedulingEdit id={`/agendamento/${scheduling.id}`}/>
+
                         <button className="delete" data-tip data-for='Cancelar'><IoCloseOutline /></button>
                         <ReactTooltip id='Cancelar' place="bottom" type="dark" effect="solid">
                          <span>Cancelar</span>
                         </ReactTooltip>
-    
+
                         <button className="notView" data-tip data-for='Aprovar'><IoCheckboxOutline /></button>
                         <ReactTooltip id='Aprovar' place="bottom" type="dark" effect="solid">
                          <span>Aprovar</span>
                         </ReactTooltip>
+
+                        {/* <a className="New" href={`/agendamento/${scheduling.id}`} data-tip data-for='Ver agendamento'><IoEyeOutline /></a>
+                        <ReactTooltip id='Ver agendamento' place="bottom" type="dark" effect="solid">
+                         <span>Ver agendamento</span>
+                        </ReactTooltip> */}
     
                         </div>
                     </div>

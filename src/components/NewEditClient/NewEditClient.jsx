@@ -1,12 +1,6 @@
 ﻿import "./newEditClient.css";
-
-import { IoCheckboxOutline, IoCloseOutline, IoHomeOutline, IoLocationOutline, IoLogoWhatsapp, IoMailOpenOutline, IoPhonePortraitOutline, IoSearchOutline} from 'react-icons/io5';
-import {VscNewFile} from 'react-icons/vsc';
-import ReactTooltip from 'react-tooltip';
 import Modal from 'react-modal';
 import { useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import api from "../../services/api";
 
 export function NewEditClient() {
     const [isOpenModalProcess, setIsOpenModaProcess] = useState(false);

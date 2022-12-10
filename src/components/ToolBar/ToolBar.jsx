@@ -91,14 +91,14 @@ export function ToolBar() {
                     </a>
                 </div>
                 <div className="ToolUnic2">
-                   <a href="/clientes">
+                   <a href="/leads">
                    <IoFunnelOutline /><p>Leads</p>
                     </a>
                 </div>
                 {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
                    <a href="/functionarios">
-                    <IoPeopleOutline /><p>Functionários</p>
+                    <IoPeopleOutline /><p>Equipe</p>
                     </a>
                 </div>
                 }

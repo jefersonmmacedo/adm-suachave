@@ -1,13 +1,18 @@
-﻿.link {
+﻿.linkEdit {
+    padding: 7px;
     border: none;
     border-radius: 6px;
-    background-color: none;
-    color: var(--Primary);
+    background-color: var(--Edit);
+    color: var(--White);
+    margin: 5px;
     font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    background-color: var(--Background)
+    font-weight: 700;
+                display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: row;
   }
+  
   
 
   .content-moda-Process {
@@ -82,7 +87,7 @@
 }
 
 .content-moda-Process .itensModal-Process .form .ProcessData .dataUser  h5 {
-    color: var(--Paragraph);
+    color: var(--Primary);
     margin: 0px 0px 3px 3px;
     font-weight: 600;
 }
@@ -236,58 +241,9 @@
     flex-direction: row;
     padding: 10px 5px 15px 5px;
     border: 1px solid var(--Border);
-    margin: 10px 0;
+    margin: 5px 0;
     border-radius: 6px;
     flex-wrap: wrap;
-}
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5px;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar h5 {
-    color: var(--Paragraph);
-    font-weight: 600;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar .label-avatar{
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar .label-avatar input {
-    display: none;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar .label-avatar span {
-    z-index: 99;
-    position: absolute;
-    opacity: 0.7;
-    transition: all .5s;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar .label-avatar span:hover{
-    opacity: 1;
-    transform: scale(1.4);
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .Avatar .label-avatar img{
-    margin-bottom: 1em;
-    border-radius: 6px;
-    object-fit: cover;
-    width: 100px;
-    height: 100px;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic {
@@ -298,23 +254,17 @@
     flex-direction: column;
     padding: 0 5px;
 }
-
-.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic h5 {
-    color: var(--Paragraph);
-    margin: 10px 10px 5px 10px;
-    font-weight: 600;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .searchInputs {
-    width: 100%;
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction: row;
-}
-
-.content-moda-Process .itensModal-Process .form .DataInputs .searchInputs input {
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnicSchedule {
     width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnicSchedule input {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -323,11 +273,27 @@
     border: 1px solid var(--Border);
     background-color: var(--White);
     padding: 10px 20px;
-    margin: 5px 0;
 }
-.content-moda-Process .itensModal-Process .form .DataInputs .searchInputs button {
-    background-color: var(--Primary);
-    color: var(--White);
+
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnicSchedule input::placeholder {
+    color: var(--Gray);
+}
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnicSchedule select {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    padding: 10px 20px;
+}
+
+.content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic h5 {
+    color: var(--Primary);
+    margin: 10px 10px 5px 10px;
+    font-weight: 600;
 }
 
 .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnic .doubleInputs {
@@ -476,6 +442,17 @@
         flex-direction: column;
         padding: 5px;
     }
+
+    .content-moda-Process .itensModal-Process .form .DataInputs .dataInputUnicSchedule {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 5px;
+        margin: 5px 0;
+    }
+    
     
     
 }

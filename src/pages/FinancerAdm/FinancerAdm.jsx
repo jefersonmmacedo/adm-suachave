@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import api from "../../services/api";
 import { DateFormat } from "../../components/DateFormat/DateFormat";
 import { NewFinancer } from "../../components/NewFinancer/NewFinancer";
+import { NewFinancerView } from "../../components/NewFinancerView/NewFinancerView";
 
 export function FinancerAdm() {
     const Local = localStorage.getItem("suachave");
@@ -93,7 +94,7 @@ export function FinancerAdm() {
                     <h5 className={financerUnci.type === "Receita" ? "up" : "down"}>R$ {financerUnci.value}</h5>
                     <h5 className="date"><DateFormat date={financerUnci.created_at}/></h5>
                     <div className="buttons">
-                    <button><IoEyeOutline /> </button>
+                   <NewFinancerView id={financerUnci.id}/>
                     <button><IoCreateOutline /> </button>
                     </div>
                 </div>

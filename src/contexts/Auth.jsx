@@ -127,6 +127,20 @@ function AuthProvider({children}) {
         })
 }
 
+async function newClientCompany({idProcess, idCompany, typeClient, name, fantasyName, rgInscEst, cpfCnpj, email, phone, whatsapp, avatar, road,
+    number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance}) {
+            const data = {idProcess, typeClient, name, fantasyName, rg: rgInscEst, cpf: cpfCnpj, email, phone, whatsapp, avatar, road,
+                number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance}
+
+                console.log(data)
+
+                await api.post("/clientCompany", data).then((res) => {
+                    window.open("/clientes", "_self")
+                }).catch(err => {
+                    console.log(err)
+                });
+    }
+
 
     async function updateAccount({id, avatar, cover, city, uf, relationship, nickname, cep, latitude, longitude, país, username, role, status, type, email, phone, online, patron}){
         const Local = localStorage.getItem("suachave");
@@ -361,7 +375,8 @@ async function newProperty({
             inactivityTime,
             createPayment,
             deleteConversation,
-            newProperty
+            newProperty,
+            newClientCompany
         }}>
             {children}
         </AuthContext.Provider>

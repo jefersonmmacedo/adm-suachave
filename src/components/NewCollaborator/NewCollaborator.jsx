@@ -31,15 +31,10 @@ export function NewCollaborator() {
         <Modal isOpen={isOpenModalProcess} onRequestClose={handleCloseModalProcess}
         overlayClassName="react-modal-overlay"
         className="react-modal-content">
-        {/* <button type="button" className="react-modal-button" onClick={handleCloseModalProcess}>
-        <IoCloseOutline color={"#fff"}/> 
-        </button> */}
-
-
-
+ 
         <div className="content-moda-Process">
         <div className="itensModal-Process">
-            <h3>Novo cliente</h3>
+            <h3>Novo colaborador</h3>
 
             <div className="form">
                 <div className="DataInputs">
@@ -64,59 +59,59 @@ export function NewCollaborator() {
                         <h5>Nome completo</h5>
                           
                     
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                        
                     </div>
                     <div className="dataInputUnic">
                         <h5>Nome de tratamento</h5>
                        
                     
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                     </div>
 
                     <div className="dataInputUnic">
                         <h5>RG</h5>
                            
                    
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                        
                     </div>
                     <div className="dataInputUnic">
                         <h5>CPF</h5>
                           
                     
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                     </div>
                 </div>
                 <div className="DataInputs">
                     <div className="dataInputUnic">
                     <h5>E-mail</h5>
-                    <input type="text" placeholder="Digite o prazo em números" />
+                    <input type="text" />
                        
                     </div>
                     <div className="dataInputUnic">
                     <h5>Telefone</h5>
-                    <input type="text" placeholder="Digite o prazo em números" />
+                    <input type="text" />
                     </div>
                     <div className="dataInputUnic">
                     <h5>Whatsapp</h5>
-                        <input type="text" placeholder="Digite o número de parcelas" />
+                        <input type="text" />
                     </div>
                 </div>
                 <div className="DataInputs">
                     <div className="dataInputUnic">
                     <h5>Rua</h5>
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                        
                     </div>
                     <div className="dataInputUnic">
                     <h5>Número</h5>
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                     </div>
 
                     <div className="dataInputUnic">
                     <h5>Bairro</h5>
-                    <input type="text" placeholder="Digite o prazo em números" />
+                    <input type="text" />
                        
                     </div>
                     <div className="dataInputUnic">
@@ -137,21 +132,21 @@ export function NewCollaborator() {
                 <div className="DataInputs">
                     <div className="dataInputUnic">
                     <h5>Instagram</h5>
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                        
                     </div>
                     <div className="dataInputUnic">
                     <h5>Facebook</h5>
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                     </div>
 
                 <div className="dataInputUnic">
                     <h5>Linkedin</h5>
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                     </div>
                 <div className="dataInputUnic">
                     <h5>Twitter</h5>
-                    <input type="text" placeholder="Nome"/>
+                    <input type="text" />
                     </div>
                 </div>
 

@@ -22,7 +22,6 @@ export function NewFinancer() {
     const [description, setDescription] = useState("");
     const [valueFinance, setValueFinance] = useState("");
 
-
     function handleNewFincancer(e) {
         e.preventDefault();
         const idTransaction = ""

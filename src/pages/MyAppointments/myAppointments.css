@@ -26,10 +26,15 @@
   }
   
   
+  .MyAppointments .aside .textHome a {
+    text-decoration: none;
+  }
+  
   .MyAppointments .aside .textHome h3 {
     font-weight: bold;
     text-align: center;
     color: var(--Paragraph);
+    text-decoration: none;
   }
   
 .MyAppointments .aside .infoData {
@@ -136,11 +141,15 @@
     width: 100%;
     height: 100%;
 }
+.MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm a {
+    text-decoration: none;
+  }
 .MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm h3 {
     color: var(--Primary);
     font-weight: 700;
     margin: 0 10px;
     text-align:left;
+    text-decoration: none;
   }
 
   .MyAppointments .informations .propertyListAdm .textpropertyListAdm .textDatapropertyListAdm h5 {
@@ -208,20 +217,6 @@
     border-left: 1px solid var(--Border);
 }
 
-.MyAppointments .informations .propertyListAdm .buttons .linkEdit {
-  padding: 7px;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--Edit);
-  color: var(--White);
-  margin: 5px;
-  font-size: 16px;
-  font-weight: 700;
-              display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-}
 .MyAppointments .informations .propertyListAdm .buttons .delete {
   padding: 7px;
   border: none;
@@ -250,6 +245,49 @@
             justify-content: center;
             flex-direction: row;
 }
+.MyAppointments .informations .propertyListAdm .buttons .notView {
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--Aproved);
+  color: var(--White);
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 700;
+              display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+}
+.MyAppointments .informations .propertyListAdm .buttons .New {
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--Secondary);
+  color: var(--White);
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 700;
+              display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            cursor: pointer;
+}
+
+.MyAppointments .informations .propertyListAdm .buttons .linkEdit svg {
+  margin-right: 0px;
+}
+.MyAppointments .informations .propertyListAdm .buttons .delete svg {
+  margin-right: 0px;
+}
+.MyAppointments .informations .propertyListAdm .buttons .notView svg {
+  margin-right: 0px;
+}
+.MyAppointments .informations .propertyListAdm .buttons .New svg {
+  margin-right: 0px;
+}
+
 .MyAppointments .informations .propertyListAdm .user {
   display: flex;
   align-items: center;

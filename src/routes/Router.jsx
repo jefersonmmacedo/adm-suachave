@@ -24,6 +24,8 @@ import { AccessAdm } from '../pages/AccessAdm/AccessAdm';
 import { SupportAdm } from '../pages/SupportAdm/SupportAdm';
 import { MyClientsList } from '../pages/MyClientsList/MyClientsList';
 import { WebApp } from '../pages/WebApp/WebApp';
+import { MyLeads } from '../pages/MyLeads/MyLeads';
+
 
 function Router () {
 const Local = localStorage.getItem("suachave");
@@ -61,7 +63,7 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <NotificationsAdm /> </PrivateRoute>} />
             <Route path="/agendamentos"
                     element={ <PrivateRoute> <MyAppointments /> </PrivateRoute>} />
-           <Route path="/agendamento/unico"
+           <Route path="/agendamento/:id"
                    element={ <PrivateRoute> <SchedulingAdm /> </PrivateRoute>} />
            <Route path="/alugueis"
                    element={ <PrivateRoute> <MyRents /> </PrivateRoute>} />
@@ -85,6 +87,8 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <MenuAdm /> </PrivateRoute>} />
             <Route path="/clientes"
                     element={ <PrivateRoute> <MyClientsList /> </PrivateRoute>} />
+            <Route path="/leads"
+                    element={ <PrivateRoute> <MyLeads /> </PrivateRoute>} />
             </Routes>
            
     )
