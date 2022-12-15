@@ -71,7 +71,7 @@ function PrivateRoute({children} ) {
                    element={ <PrivateRoute> <MySales /> </PrivateRoute>} />
            <Route path="/avaliacoes"
                    element={ <PrivateRoute> <MyAssessments /> </PrivateRoute>} />
-            <Route path="/functionarios"
+            <Route path="/funcionarios"
                     element={ <PrivateRoute> <BrokersAdm /> </PrivateRoute>} />
             <Route path="/minhaconta"
                     element={ <PrivateRoute> <MyAccountAdm /> </PrivateRoute>} />

@@ -65,7 +65,10 @@ export function MyLeads() {
                         <h5><IoHomeOutline /> {client.idProperty} </h5>
                         </a>
                         <div className="contactText">
-                        <h5><IoCallOutline /> {client.phone}</h5><h5> <IoLogoWhatsapp/> {client.whatsapp}</h5><h5> <IoMailOutline /> {client.email}</h5>
+                        <h5><IoCallOutline /> {client.phone}</h5><h5> <IoLogoWhatsapp/> {client.whatsapp}</h5>
+                        </div>
+                        <div className="contactText">
+                        <h5><IoMailOutline /> {client.email}</h5>
                         </div>
                         {/* <h6><DateFormat2 date={client.created_at} /></h6> */}
                             </div>
@@ -73,7 +76,8 @@ export function MyLeads() {
                         </div>
     
    
-                        {/* <div className="buttonsClients">
+                        <div className="buttonsClients">
+                            {/* 
                         <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
                         <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
                          <span>Editar</span>
@@ -83,13 +87,14 @@ export function MyLeads() {
                         <ReactTooltip id='Deletar' place="bottom" type="dark" effect="solid">
                          <span>Deletar</span>
                         </ReactTooltip>
+                        */}
     
-                        <button className="notView" data-tip data-for='Vendido/Alugado'><IoFileTrayFullOutline /></button>
-                        <ReactTooltip id='Vendido/Alugado' place="bottom" type="dark" effect="solid">
-                         <span>Vendido/Alugado</span>
+                        <button className="notView" data-tip data-for='Novo Cliente'><IoFileTrayFullOutline /></button>
+                        <ReactTooltip id='Novo Cliente' place="bottom" type="dark" effect="solid">
+                         <span>Novo Cliente</span>
                         </ReactTooltip>
     
-                        </div> */}
+                        </div> 
                     </div>  
                     )
                 })}

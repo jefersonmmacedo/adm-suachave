@@ -220,7 +220,7 @@ border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: col;
     padding: 10px;
     border-left: 1px solid var(--Border);
     height: 100%;
@@ -324,7 +324,7 @@ border-radius: 6px;
 
 @media (max-width: 700px) {
     .MyLeads .informationsClients {
-        padding: 0 10px 100px 10px;
+        padding: 0 10px 0px 10px;
     }
     .MyLeads .aside {
         padding-left: 0px;
@@ -335,7 +335,7 @@ border-radius: 6px;
     @media (max-width: 550px) {
 
       .MyLeads .informationsClients {
-        padding: 0 5px 100px 5px;
+        padding: 0 5px 0px 5px;
         width: 95%;
     }
 
@@ -347,13 +347,13 @@ border-radius: 6px;
         .MyLeads .informationsClients .clientListAdm .image{
           border-radius: 3px;
           width: 60px;
-          height: 60px;
+          height: 100%;
           object-fit: cover;
       }
       .MyLeads .informationsClients .clientListAdm .image img{
           border-radius: 3px;
           width: 60px;
-          height: 60px;
+          height: 100%;
           object-fit: cover;
       }
 
@@ -373,23 +373,11 @@ border-radius: 6px;
       
 
         .MyLeads .informationsClients .clientListAdm .buttonsClients{
-          justify-content: space-evenly;
-          flex-direction: row;
-          width: 100%;
-          border-left:none;
-          border-top: 1px solid var(--Border);
-          padding: 5px;
+          padding: 0px;
+          border: none;
       }
 
-        .MyLeads .informationsClients .clientListAdm .buttonsClients .linkEdit {
-        width: 100%;
-      }
-        .MyLeads .informationsClients .clientListAdm .buttonsClients .delete {
-        width: 100%;
-      }
-        .MyLeads .informationsClients .clientListAdm .buttonsClients .notView {
-        width: 100%;
-      }
+
 
 
       .MyLeads .aside .search {
@@ -409,7 +397,22 @@ border-radius: 6px;
       .MyLeads .aside .infoData .textInfo h5 {
         font-size: 12px;
       }
-      
+
+      @media(max-width:400px) {
+        .MyLeads .informationsClients .clientListAdm .image{
+          border-radius: 3px;
+          width: 40px;
+          height: 100%;
+          object-fit: cover;
+      }
+      .MyLeads .informationsClients .clientListAdm .image img{
+          border-radius: 3px;
+          width: 40px;
+          height: 100%;
+          object-fit: cover;
+      }
+      }
+
     }
 }
 }

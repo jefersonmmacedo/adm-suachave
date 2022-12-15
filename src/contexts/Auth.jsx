@@ -129,13 +129,30 @@ function AuthProvider({children}) {
 
 async function newClientCompany({idProcess, idCompany, typeClient, name, fantasyName, rgInscEst, cpfCnpj, email, phone, whatsapp, avatar, road,
     number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance}) {
-            const data = {idProcess, typeClient, name, fantasyName, rg: rgInscEst, cpf: cpfCnpj, email, phone, whatsapp, avatar, road,
+            const data = {idProcess,idCompany, typeClient, name, fantasyName, rg: rgInscEst, cpf: cpfCnpj, email, phone, whatsapp, avatar, road,
                 number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance}
 
                 console.log(data)
 
                 await api.post("/clientCompany", data).then((res) => {
                     window.open("/clientes", "_self")
+                }).catch(err => {
+                    console.log(err)
+                });
+    }
+async function newCollaborator({idCompany, avatar, profession, name, schooling, rg, cpf, birthday, register,
+    email, phone, whatsapp, road, number, district, city, uf,
+    instagram, facebook, linkedin, twitter,
+    bank, agency, typeAccount, account, typeKeyPix, keypix,}) {
+            const data = {idCompany, avatar, profession, name, schooling, rg, cpf, birthday, register,
+                email, phone, whatsapp, road, number, district, city, uf,
+                instagram, facebook, linkedin, twitter,
+                bank, agency, typeAccount, account, typeKeyPix, keypix,}
+
+                console.log(data)
+
+                await api.post("/team", data).then((res) => {
+                    window.open("/funcionarios", "_self")
                 }).catch(err => {
                     console.log(err)
                 });
@@ -376,7 +393,8 @@ async function newProperty({
             createPayment,
             deleteConversation,
             newProperty,
-            newClientCompany
+            newClientCompany,
+            newCollaborator
         }}>
             {children}
         </AuthContext.Provider>

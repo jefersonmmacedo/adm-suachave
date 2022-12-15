@@ -8,7 +8,6 @@ import { storage } from '../../services/firebaseConnection';
 import { ref, getDownloadURL, uploadBytes} from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from 'react-toastify';
-import {FiUpload} from "react-icons/fi"
 import { AuthContext } from "../../contexts/Auth";
 
 export function NewClient() {
@@ -144,11 +143,6 @@ export function NewClient() {
         <Modal isOpen={isOpenModalProcess} onRequestClose={handleCloseModalProcess}
         overlayClassName="react-modal-overlay"
         className="react-modal-content">
-        {/* <button type="button" className="react-modal-button" onClick={handleCloseModalProcess}>
-        <IoCloseOutline color={"#fff"}/> 
-        </button> */}
-
-
 
         <div className="content-moda-Process">
         <div className="itensModal-Process">
@@ -356,7 +350,7 @@ export function NewClient() {
                 </div>
 
                 <div className="ButtonsForm">
-                <button className="send" onClick={handleNewClient}>Cadastrar Cliente</button>
+                <button className="send" onClick={handleNewClient}>Cadastrar</button>
                 <button className="cancel" onClick={handleCloseModalProcess}>X Cancelar</button>
                 </div>
             </div>
