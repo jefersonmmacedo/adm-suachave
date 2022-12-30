@@ -1,0 +1,30 @@
+﻿
+.ConversationsList {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--BorderHover);
+}
+.ConversationsList .link {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--BorderInput);
+    border: none;
+    color: var(--Paragraph);
+    border-radius: 6px;
+    margin: 4px 0;
+    margin-left: -25px;
+    padding: 10px
+}
+
+.ConversationsList .link svg {
+    margin-right: 5px;
+    color: var(--Primary);
+}
+

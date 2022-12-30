@@ -43,11 +43,11 @@ export function ToolBar() {
                     <IoSpeedometerOutline /><p>Painel</p>                    
                     </a>
                 </div>
-                {/* <div className="ToolUnic">
-                   <a href="/chat">
+                <div className="ToolUnic">
+                   <a href="/mensagens">
                     <IoChatboxEllipsesOutline /><p>Chat</p>
                     </a>
-                </div> */}
+                </div>
                 <div className="ToolUnic3">
                    <a href="/imoveis">
                     <IoHomeOutline /><p>Imóveis</p>
@@ -58,7 +58,7 @@ export function ToolBar() {
                     <IoCalendarOutline /><p>Agenda</p>
                     </a>
                 </div>
-                {plain?.name === "Pro" ? "" :
+                {/* {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
                    <a href="/alugueis">
                     <IoKeyOutline /><p>Aluguéis</p>
@@ -71,7 +71,7 @@ export function ToolBar() {
                     <IoRocketOutline /><p>Vendas</p>
                     </a>
                 </div>
-                }
+                } */}
                 {plain?.name === "Pro" ? "" :
                 <div className="ToolUnic2">
                    <a href="/avaliacoes">

@@ -230,6 +230,7 @@
     border: 1px solid var(--Border);
     font-weight: 500;
 }
+
 .WebApp .aside .form .data select{
     width: 100%;
     display: flex;
@@ -259,6 +260,75 @@
 }
 
 
+.WebApp .aside .form .data .dataColor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 5px;
+}
+
+.WebApp .aside .form .data .dataColor span {
+    margin: 0px 10px;
+}
+.WebApp .aside .form .data .dataColor input[type="color"]{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1px 3px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Border);
+    font-weight: 500;
+}
+
+.WebApp .aside .form .data .dataColor input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Border);
+    font-weight: 500;
+}
+
+.WebApp .aside .form .data .dataColor select{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Border);
+    font-weight: 500;
+}
+.WebApp .aside .form .data .dataColor .select{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--White);
+    border: 1px solid var(--Primary);
+    font-weight: 500;
+    color: var(--Primary);
+}
+
+
 
 @media (max-width: 950px) {
     .WebApp .aside .form {
@@ -271,7 +341,7 @@
             padding-bottom: 80px;
         }
 
-        @media (max-width: 510px) {
+        @media (max-width: 650px) {
             .WebApp .aside .form {
                 width: 95%;
             }

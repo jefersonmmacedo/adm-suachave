@@ -25,6 +25,7 @@ import { SupportAdm } from '../pages/SupportAdm/SupportAdm';
 import { MyClientsList } from '../pages/MyClientsList/MyClientsList';
 import { WebApp } from '../pages/WebApp/WebApp';
 import { MyLeads } from '../pages/MyLeads/MyLeads';
+import { ChatMessage } from '../pages/ChatMessage/ChatMessage';
 
 
 function Router () {
@@ -55,10 +56,10 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <Pricing /> </PrivateRoute>} />
             <Route path="/pagamentofinalizado"
                     element={ <PrivateRoute> <PaymentCompleted /> </PrivateRoute>} />
-            <Route path="/chat"
+            <Route path="/mensagens"
                     element={ <PrivateRoute> <ChatAdmList /> </PrivateRoute>} />
-            <Route path="/chat-client"
-                    element={ <PrivateRoute> <ChatAdm /> </PrivateRoute>} />
+                    <Route path="/chat/:room/:idProperty/:idCompany/:idClient"
+                    element={ <PrivateRoute> <ChatMessage /> </PrivateRoute>} />
             <Route path="/notificacoes"
                     element={ <PrivateRoute> <NotificationsAdm /> </PrivateRoute>} />
             <Route path="/agendamentos"

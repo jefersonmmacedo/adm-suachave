@@ -8,6 +8,9 @@ export function WebApp() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
 
+    const [color1, setColor1] = useState()
+    const [color2, setColor2] = useState()
+
     const [avatarUrl, setAvatarUrl] = useState(null);
     const [imageAvatar, setImageAvatar] = useState('');
     const profile = "https://firebasestorage.googleapis.com/v0/b/foursome4-b925c.appspot.com/o/avatar.png?alt=media&token=f3b1f0bc-3885-4296-8363-ec1c3d43e240"
@@ -49,11 +52,23 @@ export function WebApp() {
                 </div>            
             <div className="form">
 
-                    <div className="data">  
-                    <input type="text" placeholder="Título"/>
-                    <input type="text" placeholder="Descrição" />
-                    <input type="text" placeholder="Ex.: 256,256,256 ou #FFFFFF" />
-                    <input type="text" placeholder="Ex.: 256,256,256 ou #FFFFFF" />
+                    <div className="data">
+                    <div className="dataColor">
+                    <span>Título</span>
+                    <input type="text" placeholder=""/>
+                    </div>
+                    <div className="dataColor">
+                    <span>Descrição</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Cor Principal</span>
+                    <input type="color" value={color1} onChange={e => setColor1(e.target.value)}/>
+                    </div>
+                    <div className="dataColor">
+                    <span>Cor Secundária</span>
+                    <input type="color" value={color2} onChange={e => setColor2(e.target.value)}/>
+                    </div>
                     </div>
                     </div>
 
@@ -121,22 +136,45 @@ export function WebApp() {
                        <h4>Contato</h4>
                     </div>              
                     <div className="form">
-                    <div className="data">  
-                    <input type="email" placeholder="E-mail"  />
-                    <input type="text" placeholder="Telefone" />
-                    <input type="text" placeholder="Whatsapp" />
-                   
+                    <div className="data">
+                    <div className="dataColor">
+                    <span>E-mail</span>
+                    <input type="email" placeholder=""  />
+                    </div>
+
+                    <div className="dataColor">
+                    <span>Telefone</span>
+                    <input type="text" placeholder="" />
+                    </div>
+
+                    <div className="dataColor">
+                    <span>Whatsapp</span>
+                    <input type="text" placeholder="" />
+                    </div>
+
                     </div>
                     </div>     
                     <div className="textHome">
                        <h4>Redes Sociais</h4>
                     </div>              
                     <div className="form">
-                    <div className="data">  
-                    <input type="text" placeholder="Facebook" />
-                    <input type="text" placeholder="Instagram" />
-                    <input type="text" placeholder="Linkedin" />
-                    <input type="text" placeholder="Youtube" />
+                    <div className="data">
+                    <div className="dataColor">
+                    <span>Facebook</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Instagram</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Linkedin</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Youtube</span>
+                    <input type="text" placeholder="" />
+                    </div>
                     </div>
                     </div>  
 
@@ -144,16 +182,36 @@ export function WebApp() {
                     <h4>Endereço</h4>
                     </div>              
                     <div className="form"> 
-                    <div className="data">   
-                    <input type="text" placeholder="Rua" />
-                    <input type="text" placeholder="Número" />
-                    <input type="text" placeholder="Bairro" />
+                    <div className="data">
+                    <div className="dataColor">
+                    <span>Rua</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Número</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Bairro</span>
+                    <input type="text" placeholder="" />
+                    </div>
+                    <div className="dataColor">
+                    <span>Estado(UF)</span>
                     <select value={user.uf}>
                         <option value="">{user.uf}</option>
                     </select>
+                    </div>
+                    <div className="dataColor">
+                    <span>Cidade</span>
                     <select value={user.city}>
                         <option value="">{user.city}</option>
                     </select>
+                    </div>  
+                    
+                    
+                    
+                   
+                    
                     </div>
                     </div>              
 

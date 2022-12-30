@@ -4,10 +4,10 @@ import { IoSearchOutline} from 'react-icons/io5';
 import Modal from 'react-modal';
 import { useContext, useState } from "react";
 import buscaCep from "../../services/api-buscaCep";
+import { toast } from 'react-toastify';
 import { storage } from '../../services/firebaseConnection';
 import { ref, getDownloadURL, uploadBytes} from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
-import { toast } from 'react-toastify';
 import { AuthContext } from "../../contexts/Auth";
 
 export function NewClient() {
