@@ -9,6 +9,7 @@ import api from "../../services/api";
 import { DateFormat } from "../../components/DateFormat/DateFormat";
 import { NewFinancer } from "../../components/NewFinancer/NewFinancer";
 import { NewFinancerView } from "../../components/NewFinancerView/NewFinancerView";
+import { FilterData } from "../../components/FilterData/FilterData";
 
 export function FinancerAdm() {
     const Local = localStorage.getItem("suachave");
@@ -47,8 +48,6 @@ export function FinancerAdm() {
                             </div>
                             <h2>R$ 45.000,00</h2>
                         </div>
-                        </div>
-                        <div className="infosFinancer">
                         <div className="infoFinancerUnicTotal">
                             <div className="top">
                                 <h5>Saldo</h5>
@@ -56,13 +55,22 @@ export function FinancerAdm() {
                             </div>
                             <h2>R$ 105.000,00</h2>
                         </div>
-                        <div className="infoFinancerUnicTotal2">
+                        </div>
+                        <div className="infosFinancer">
+                        {/* <div className="infoFinancerUnicTotal">
+                            <div className="top">
+                                <h5>Saldo</h5>
+                                <FiDollarSign color="fff" size={24}/>
+                            </div>
+                            <h2>R$ 105.000,00</h2>
+                        </div> */}
+                        {/* <div className="infoFinancerUnicTotal2">
                             <div className="top">
                                 <h5>Aluguéis em Atraso</h5>
                                 <FiThumbsDown color="fff" size={24}/>
                             </div>
                             <h2>R$ 105.000,00</h2>
-                        </div>
+                        </div> */}
                 </div>
             <div className="financerList">
              <NewFinancer />
@@ -95,7 +103,8 @@ export function FinancerAdm() {
                     <h5 className="date"><DateFormat date={financerUnci.created_at}/></h5>
                     <div className="buttons">
                    <NewFinancerView id={financerUnci.id}/>
-                    <button><IoCreateOutline /> </button>
+                    {/* <button><IoCreateOutline /> </button> */}
+                    <FilterData />
                     </div>
                 </div>
                     )

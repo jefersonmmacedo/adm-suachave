@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 import LogoImg from '../../assets/images/Logo.png'
@@ -6,6 +6,7 @@ import LogoSimbol from '../../assets/images/Simbol.png'
 import {IoHome, IoNotifications, IoChatboxEllipses, IoCalendar} from 'react-icons/io5'
 import { Link } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
+import { AuthContext } from '../../contexts/Auth';
 
 const Nav = styled.nav`
   width: 100%;
@@ -173,12 +174,32 @@ const Nav = styled.nav`
 
 `
 
-function HandleOpenLink(data) {
-  window.open(`${data}`, "_self")
-}
 
 
 const NavbarAdm = () => {
+  const Local = localStorage.getItem("suachave");
+  const user = JSON.parse(Local);
+  const { logout } = useContext(AuthContext);
+
+  function handleLogOut() {
+    logout()
+  }
+
+  if(user !== null ) {
+    readyType()
+  }
+
+  function readyType() {
+    if (user?.type === "client") {
+      handleLogOut()
+    }
+  }
+
+
+  function HandleOpenLink(data) {
+    window.open(`${data}`, "_self")
+  }
+  
 
   
   return (

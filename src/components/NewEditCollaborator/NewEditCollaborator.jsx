@@ -2,6 +2,7 @@
 
 import Modal from 'react-modal';
 import { useState } from "react";
+import { IoCreateOutline } from "react-icons/io5";
 
 export function NewEditCollaborator() {
     const [isOpenModalProcess, setIsOpenModaProcess] = useState(false);
@@ -25,7 +26,7 @@ export function NewEditCollaborator() {
         Modal.setAppElement('#root');
     return (
         <>
-         <button className="link" onClick={handleOpenModalProcess}>+ Novo funcionário</button>
+         <button className="linkEdit" onClick={handleOpenModalProcess}><IoCreateOutline /></button>
 
 
         <Modal isOpen={isOpenModalProcess} onRequestClose={handleCloseModalProcess}

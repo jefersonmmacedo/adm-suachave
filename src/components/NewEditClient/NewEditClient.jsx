@@ -1,6 +1,7 @@
 ﻿import "./newEditClient.css";
 import Modal from 'react-modal';
 import { useState } from "react";
+import { IoCreateOutline } from "react-icons/io5";
 
 export function NewEditClient() {
     const [isOpenModalProcess, setIsOpenModaProcess] = useState(false);
@@ -24,7 +25,7 @@ export function NewEditClient() {
         Modal.setAppElement('#root');
     return (
         <>
-         <button className="link" onClick={handleOpenModalProcess}>Novo cliente</button>
+         <button className="linkEdit" onClick={handleOpenModalProcess}><IoCreateOutline /></button>
 
 
         <Modal isOpen={isOpenModalProcess} onRequestClose={handleCloseModalProcess}

@@ -20,7 +20,7 @@ export function ToolBar() {
     useEffect(() => {
         async function loadMyPlain() {
           await api.get(`/myplain/${user.id}`).then((res) => {
-            loadPlains(res.data[0].idPlain)
+            loadPlains(res.data[0]?.idPlain)
           })
         }
     

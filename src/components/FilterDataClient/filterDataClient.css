@@ -1,0 +1,302 @@
+﻿.FilterDataClient {
+    width: 100%;
+    height: 100%;
+}
+ .btnAtiveFilter {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--Aproved);
+    color: var(--White);
+    margin: 3px;
+    font-size: 16px;
+    font-weight: 700;
+                  display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: row;
+  }
+
+  .FilterDataClient .btnFilter svg {
+    margin: 0px;
+  }
+
+.FilterDataClient .viewFilter {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    background: var(--BorderHover);
+    border-left: 1px solid var(--Border);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    transform: translateX(0);
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 650px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.3);
+}
+.FilterDataClient .viewFilterNone {
+    transform: translateX(100%);
+    flex-flow: column nowrap;
+    background: var(--White);
+    border-left: 1px solid var(--Border);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 500px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+}
+.FilterDataClient .viewFilter .buttonsFilter {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.FilterDataClient .viewFilter .buttonsFilter .btnFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 15px;
+    Background-color: var(--White);
+    color: var(--Paragraph);
+    font-weight: 500;
+    border: 1px solid var(--Gray);
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.FilterDataClient .viewFilter .dataClient {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.FilterDataClient .viewFilterNone .dataClient {
+    width: 95%;
+    display: none;
+}
+
+.FilterDataClient .viewFilterNone .buttons {
+    width: 95%;
+    display: none;
+}
+
+.FilterDataClient .viewFilter .dataClient button svg {
+    margin-right: 0px;
+}
+
+
+.FilterDataClient .viewFilter .dataClient .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%
+}
+
+.FilterDataClient .viewFilter .dataClient .form input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+}
+.FilterDataClient .viewFilter .dataClient .form input::placeholder {
+    color: var(--Gray);
+}
+.FilterDataClient .viewFilter .dataClient .form select {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+}
+.FilterDataClient .viewFilter .dataClient .form textarea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+    resize: none;
+}
+
+.FilterDataClient .viewFilter .dataClient .form .TypeButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 5px;
+    padding: 10pxx;
+    width: 100%;
+}
+
+.FilterDataClient .viewFilter .dataClient .form .TypeButtons .btnType1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Aproved);
+    background-color: rgba(0,168,89, 0.05);
+    margin: 5px;
+    padding: 20px 20px;
+    color: var(--Aproved);
+    font-size: 16px;
+}
+.FilterDataClient .viewFilter .dataClient .form .TypeButtons .btnType2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Primary);
+    background-color: rgba(224, 40, 47, 0.05);
+    margin: 5px;
+    padding: 20px 20px;
+    color: var(--Primary);
+    font-size: 16px;
+}
+.FilterDataClient .viewFilter .dataClient .form .TypeButtons .btnType3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    margin: 5px;
+    border: 1px solid var(--Aproved);
+    background-color: var(--AprovedHover);
+    padding: 20px 20px;
+    color: var(--White);
+    font-size: 16px;
+}
+.FilterDataClient .viewFilter .dataClient .form .TypeButtons .btnType4 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    margin: 5px;
+    border: 1px solid var(--Primary);
+    background-color: var(--PrimaryHover);
+    padding: 20px 20px;
+    color: var(--White);
+    font-size: 16px;
+}
+.FilterDataClient .viewFilter .dataClient .form .send {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Primary);
+    background-color: var(--PrimaryHover);
+    margin: 5px;
+    padding: 10px 20px;
+    color: var(--White);
+}
+
+.FilterDataClient .viewFilter .dataClient .form .send svg {
+    margin-right: 5px;
+    font-size: 20px;
+}
+.FilterDataClient .viewFilter .dataClient .form .btnDocuments {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 6px;
+    border: 1px solid var(--Border);
+    background-color: var(--White);
+    margin: 5px;
+    padding: 10px 20px;
+    color: var(--Gray);
+}
+
+.FilterDataClient .viewFilter .dataClient .form .btnDocuments svg {
+    margin-right: 5px;
+    font-size: 20px;
+}
+.FilterDataClient .viewFilter .dataClient .form .dataForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.FilterDataClient .viewFilter .dataClient .form .dataForm h4 {
+    color: var(--Gray);
+    margin: 5px;
+}
+@media(max-width:600px) {
+
+    
+    .FilterDataClient .viewFilter {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .FilterDataClient .viewFilter .buttons .btnFilter {
+        margin-top: 50px;
+    }
+
+    .FilterDataClient .viewFilter .dataClient .form {
+        width: 100%
+    }
+
+   
+    @media(max-width: 570px) { 
+        .FilterDataClient .btnAtiveFilter {
+            width: 100%;
+          }
+
+    @media(max-width: 450px) { 
+.FilterDataClient .viewFilter .dataClient {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .FilterDataClient .viewFilter .dataClient .form .btnDocuments {
+            width: 80%;
+        }
+    }
+    }
+
+}

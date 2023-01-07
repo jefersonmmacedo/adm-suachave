@@ -6,7 +6,7 @@ import { NewProperty } from '../pages/NewProperty/NewProperty';
 import { PlainsAdm } from '../pages/PlainsAdm/PlainsAdm';
 import { ChatAdm } from '../pages/ChatAdm/ChatAdm';
 import { NotificationsAdm } from '../pages/NotificationsAdm/NotificationsAdm';
-import { BrokersAdm } from '../pages/BrokersAdm/BrokersAdm';
+import { EquipeAdm } from '../pages/EquipeAdm/EquipeAdm';
 import { MyAccountAdm } from '../pages/MyAccountAdm/MyAccountAdm';
 import { MenuAdm } from '../pages/MenuAdm/MenuAdm';
 import { SchedulingAdm } from '../pages/SchedulingAdm/SchedulingAdm';
@@ -58,7 +58,7 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <PaymentCompleted /> </PrivateRoute>} />
             <Route path="/mensagens"
                     element={ <PrivateRoute> <ChatAdmList /> </PrivateRoute>} />
-                    <Route path="/chat/:room/:idProperty/:idCompany/:idClient"
+            <Route path="/chat/:room/:idProperty/:idCompany/:idClient"
                     element={ <PrivateRoute> <ChatMessage /> </PrivateRoute>} />
             <Route path="/notificacoes"
                     element={ <PrivateRoute> <NotificationsAdm /> </PrivateRoute>} />
@@ -73,7 +73,7 @@ function PrivateRoute({children} ) {
            <Route path="/avaliacoes"
                    element={ <PrivateRoute> <MyAssessments /> </PrivateRoute>} />
             <Route path="/funcionarios"
-                    element={ <PrivateRoute> <BrokersAdm /> </PrivateRoute>} />
+                    element={ <PrivateRoute> <EquipeAdm /> </PrivateRoute>} />
             <Route path="/minhaconta"
                     element={ <PrivateRoute> <MyAccountAdm /> </PrivateRoute>} />
             <Route path="/web"

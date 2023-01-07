@@ -220,6 +220,10 @@ color: var(--Description);
     margin: 3px;
 }
 
+.FinancerAdm .financerList .FinancerListUnic .buttons button svg {
+    margin: 0px;
+}
+
 
 
 
@@ -308,7 +312,7 @@ color: var(--Description);
             justify-content: center;
             margin: 2px 0;
         }
-        .FinancerAdm .financerList .FinancerListUnic  .buttons {
+        .FinancerAdm .financerList .FinancerListUnic .buttons {
             width: 50%;
             display: flex;
             flex-direction: row;
@@ -320,6 +324,8 @@ color: var(--Description);
             border-radius: 6px;
             color: var(--Gray);
         }
+
+
         
 }
 }

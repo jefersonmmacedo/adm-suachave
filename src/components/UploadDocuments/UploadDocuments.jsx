@@ -20,8 +20,8 @@ export const MyButtonDocument = () => {
     const options = {
         styles: {
             colors: {
-              primary: "#00afef",     // Hex codes only.
-              active: "#00afef"
+              primary: "#000000",     // Hex codes only.
+              active: "#000000"
             },
             fontSizes: {
               base: 16

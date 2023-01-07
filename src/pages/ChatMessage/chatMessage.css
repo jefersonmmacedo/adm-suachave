@@ -80,7 +80,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
 }
 .content .chat .main-chat .section-chat .topBarChat .buttonTopBarChat {
     display: flex;
@@ -131,7 +130,6 @@
     flex-direction: row;
     align-items: center;
     justify-content:center;
-    padding: 5px;
 }
 .content .chat .main-chat .section-chat .topBarChat .LinksMobile .buttonLinksMobile a {
     display: flex;

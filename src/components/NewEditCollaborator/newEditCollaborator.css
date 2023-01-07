@@ -1,14 +1,21 @@
-﻿.link {
+﻿.linkEdit {
+    padding: 10px;
     border: none;
     border-radius: 6px;
-    background-color: none;
-    color: var(--Primary);
+    background-color: var(--Edit);
+    color: var(--White);
+    margin: 3px;
     font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    background-color: var(--Background)
-  }
+    font-weight: 700;
+                  display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: row;
+    }
   
+    .linkEdit svg {
+        margin: 0px;
+    }
 
   .content-moda-Process {
     width: 100%;

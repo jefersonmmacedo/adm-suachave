@@ -15,6 +15,10 @@ import { toast } from 'react-toastify';
 import { IoArrowBackOutline, IoAttachOutline, IoBusinessOutline, IoChatboxOutline, IoHomeOutline, IoImageOutline, IoPersonOutline, IoEllipsisVerticalOutline, IoVideocamOutline } from 'react-icons/io5';
 import { ConversationUnic } from '../../components/ConversationUnic/ConversationUnic';
 import { ConversationsList } from '../../components/ConversationsList/ConversationsList';
+import { UserTopBarChat } from '../../components/UserTopBarChat/UserTopBarChat';
+import { PropertyTopBarChat } from '../../components/PropertyTopBarChat/PropertyTopBarChat';
+import { ViewPropertyChat } from '../../components/ViewPropertyChat/ViewPropertyChat';
+import { ViewClientChat } from '../../components/ViewClientChat/ViewClientChat';
 
    
 export function ChatMessage() {
@@ -22,58 +26,6 @@ export function ChatMessage() {
     const user = JSON.parse(Local);
   const {room,idProperty, idCompany, idClient} = useParams();
   const messageRef = useRef(null);
-
-   const cities = [
-    {id: 1,
-    Name: "John",
-    city: "Rio Bonito"},
-    {id: 2,
-    Name: "Jeff",
-    city: "Saquarema"},
-    {id: 3,
-    Name: "Klain",
-    city: "Rio de Janeiro"},
-    {id: 4,
-    Name: "Jhosh",
-    city: "Saquarema"},
-    {id: 5,
-    Name: "Mac",
-    city: "Rio Bonito"},
-    {id: 6,
-    Name: "Max",
-    city: "Rio de Janeiro"},
-    {id: 7,
-    Name: "Joe",
-    city: "Rio de Janeiro"},
-    {id: 8,
-    Name: "Mark",
-    city: "Niterói"},
-    {id: 9,
-    Name: "Tom",
-    city: "Niterói"},
-    {id: 10,
-    Name: "Cris",
-    city: "Rio Bonito"},
-   ]
-
-   const newCities = new Set(cities.value);
-
-   console.log(newCities)
-
-   var reduced = [];
-
-cities.forEach((item) => {
-    var duplicated  = reduced.findIndex(redItem => {
-        return item.city == redItem.city;
-    }) > -1;
-
-    if(!duplicated) {
-        reduced.push(item);
-    }
-});
-
-console.log(reduced);
-
 
 //   const { deleteConversation} = useContext(AuthContext);
 
@@ -271,9 +223,9 @@ const profile = "https://firebasestorage.googleapis.com/v0/b/foursome4-b925c.app
     <div className="content">
       <div className="chat">
         <div className="main-chat">
-          <div className="conversations">
+          {/* <div className="conversations">
                 <ConversationsList roomLink={room}/>
-          </div>
+          </div> */}
          <div className="section-chat">
             <div className="topBarChat">
 
@@ -282,36 +234,19 @@ const profile = "https://firebasestorage.googleapis.com/v0/b/foursome4-b925c.app
                 <a href="/home"><IoArrowBackOutline/> Ir ao painel</a>
                 </div>
 
-                <div className="UserTopBar">
-                  <div className="imageTop">
-                        <img src={profile} alt="" />
-                  </div>
-                  <div className="textTop">
-                    <h5>Name Company</h5>
-                    <h6>Cidade - Estado</h6>
-                  </div>
-                </div>
-
-                <div className="PropertyTopBar">
-                <div className="imageTop">
-                        <img src={profile} alt="" />
-                  </div>
-                  <div className="textTop">
-                    <h5>Título Propriedade</h5>
-                    <h6>Cidade - Estado</h6>
-                  </div>
-                </div>
+               <UserTopBarChat idClient={idClient}/>
+               <PropertyTopBarChat idProperty={idProperty}/>
 
                 <div className="LinksMobile">
                 <div className="buttonLinksMobile">
-                    <a href="/mensagens"> <IoHomeOutline/> Ver Imóvel</a>
+                <ViewPropertyChat id={idProperty} />
                 </div>
                 <div className="buttonLinksMobile">
-                    <a href="/mensagens"> <IoPersonOutline/> Ver Cliente</a>
+                <ViewClientChat id={idClient}/>
                 </div>
                 </div>
 
-                <div className="buttonTopBarChat2">
+                <div className="buttonTopBarChat">
                     <a href="/mensagens"> <IoChatboxOutline/> Conversas</a>
                 </div>
             </div>

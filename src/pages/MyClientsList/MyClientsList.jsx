@@ -6,12 +6,13 @@ import ReactTooltip from 'react-tooltip';
 import { useFetch } from "../../hooks/useFetch";
 import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
 import { NewClient } from "../../components/NewClient/NewClient";
+import { FilterDataClient } from "../../components/FilterDataClient/FilterDataClient";
+import { NewEditClient } from "../../components/NewEditClient/NewEditClient";
 
 export function MyClientsList() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
 
-    const profile = "https://www.forestcom.com.br/wp-content/uploads/2018/09/blank-profile-picture-973460_640.png";
 
     const {data} = useFetch(`/clientCompany/company/${user.id}`);
 
@@ -69,28 +70,23 @@ export function MyClientsList() {
                         <div className="textclientListAdm">
                             <div className="textDataclientListAdm">
                         <h4>{client.fantasyName}</h4>
-                        <h6><IoLocationOutline /> {client.road} - Nº{client.number} - {client.district} -{client.city} -{client.uf} </h6>
-                        <h6><IoCallOutline /> {client.phone} <IoCallOutline /> {client.whatsapp} <IoMailOutline /> jefersonmacedowgf@gmail.com</h6>
+                        <h5><IoHeartOutline /> {client.interest} - {client.type} - {client.subtype} </h5>
+                        <h5><IoLocationOutline /> {client.cityPreference} - {client.ufPreference}</h5>
                             </div>
-                            <h5>{client.interest} - {client.type} - {client.subtype} - {client.cityPreference} - {client.ufPreference}</h5>
+                            {/* <h5>{client.interest} - {client.type} - {client.subtype}</h5>
+                            <h5>{client.cityPreference} - {client.ufPreference}</h5> */}
                         </div>
    
                         <div className="buttonsClients">
-                        <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
-                        <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
-                         <span>Editar</span>
-                        </ReactTooltip>
+                        <NewEditClient />
     
                         <button className="delete" data-tip data-for='Deletar'><IoTrashOutline /></button>
                         <ReactTooltip id='Deletar' place="bottom" type="dark" effect="solid">
                          <span>Deletar</span>
                         </ReactTooltip>
-    
-                        <button className="notView" data-tip data-for='Ver Cliente'><IoFileTrayFullOutline /></button>
-                        <ReactTooltip id='Ver Cliente' place="bottom" type="dark" effect="solid">
-                         <span>Ver Cliente</span>
-                        </ReactTooltip>
-    
+                        
+                        <FilterDataClient name={client.fantasyName} address={`${client.road} - Nº${client.number} - ${client.district} -${client.city} -${client.uf}`} phone={client.phone} whatsapp={client.whatsapp} email={client.email} interess={`${client.interest} - ${client.type} - ${client.subtype} - ${client.cityPreference} - ${client.ufPreference}`}/>
+   
                         </div>
                     </div>  
                     )

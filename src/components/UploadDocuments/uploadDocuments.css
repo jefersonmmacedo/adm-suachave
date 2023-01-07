@@ -1,7 +1,7 @@
 ﻿.btnDocuments {
-    background-color: var(--Secundary);
-    color: var(--White);
-    border: none;
+    background-color: var(--White);
+    color: var(--Black);
+    border: 1ps solid var(--Black);
     border-radius: 6px;
     padding: 10px 20px;
     display: flex;
