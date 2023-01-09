@@ -4,7 +4,7 @@ import { MyButtonComponent } from "../../components/UploadFiles/UploadFiles";
 import "./newProperty.css";
 import { useState } from "react";
 import {v4 as uuidv4} from 'uuid';
-import { IoCheckmarkOutline, IoStar, IoStarOutline, IoTrash} from "react-icons/io5";
+import { IoCheckmarkOutline, IoSearchOutline, IoStar, IoStarOutline, IoTrash} from "react-icons/io5";
 import { mask as masker, unMask } from "remask";
 import buscaDistrito from "../../services/api-buscaDistrito";
 import { toast } from 'react-toastify';
@@ -52,6 +52,13 @@ export function NewProperty() {
     const [slider, setSlider] = useState("");
     const [financing, setFinancing] = useState("");
     const [characteristcs, setCharacteristcs] = useState([]);
+    const [furnished, setFurnished] = useState("");
+    const [pets, setPets] = useState("");
+    const [newProperties, setNewProperties] = useState("");
+    const [firstLease, setFirstLease] = useState("");
+
+    
+    
 
     const idv4 = uuidv4();
     const idProperty = idv4.substring(0,8);
@@ -91,13 +98,12 @@ export function NewProperty() {
         return;
         } 
     }
-
-
+    
 
 function handleNewProperty() {
     newProperty({
-        id:idProperty, idCompany: user.id, title, road, district, city, uf, description, type, subType, status,
-        availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+        id:idProperty, idCompany: user.id,avatarCompany: user.logo, fantasyName: user.fantasyName, title, road, district, city, uf, description, type, subType, status,
+        availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium, pets, furnished, newProperty: newProperties, firstLease,
         iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
         images, featuredImage, platformVideo, video, slider, financing, characteristcs
     })
@@ -168,6 +174,22 @@ function handleSuite(e) {
 }
 function handleGarage(e) {
     setGarage(e.target.value)
+    console.log(e.target.value)
+}
+function handlePets(e) {
+    setPets(e.target.value)
+    console.log(e.target.value)
+}
+function handleFurnished(e) {
+    setFurnished(e.target.value)
+    console.log(e.target.value)
+}
+function handleNewProperties(e) {
+    setNewProperties(e.target.value)
+    console.log(e.target.value)
+}
+function handleFirstLease(e) {
+    setFirstLease(e.target.value)
     console.log(e.target.value)
 }
 function handleTextRent(e) {
@@ -310,57 +332,17 @@ function ChangeMaskValueIptu(e) {
                 </div>
                 <div className="form">
                     <input type="text" className={title === "" ? "" : "select"} placeholder="Título" value={title} onChange={e => setTitle(e.target.value)}/>
+                    <textarea cols="30" rows="10" className={description === "" ? "" : "select"} placeholder="Descrição" value={description} onChange={e => setDescription(e.target.value)}></textarea>
                     {/* <input type="text" placeholder="Endereço"/> */}
                     <div className="data">
+                    <input type="text" placeholder="CEP"/>
+                        <button className="btnData"><IoSearchOutline /></button>
                     <input type="text" className={road === "" ? "" : "select"} placeholder="Rua" value={road} onChange={e => setRoad(e.target.value)}/>
                     <input type="text" className={district === "" ? "" : "select"} placeholder="Bairro" value={district} onChange={e => setDistrict(e.target.value)}/>
-                    <select value={uf} onChange={handleSetectUf} className={uf === "" ? "" : "select"}> 
-                            <option value="">Escolha seu estado</option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                            <option value="EX">Estrangeiro</option>     
-                    </select>
-                    <select value={city} onChange={handleSetectCity} className={city === "" ? "" : "select"}> 
-                    {districtAll.length === 0 ?
-                    <option value={city}>{city}</option>
-                    :
-                    <>
-                    <option value="">Escolha sua cidade</option>
-                    {districtAll?.map((district) => {
-                            return (
-                                <option autocomplete="off" key={district.id} value={district.nome}>{district.nome}</option>
-                            )
-                        })}
-                    </>
-                    }     
-                    </select>
+                    <input type="text" className={city === "" ? "" : "select"} placeholder="Cidade" value={city} onChange={e => setCity(e.target.value)}/>
+                    <input type="text" className={uf === "" ? "" : "select"} placeholder="Estado(UF)" value={uf} onChange={e => setUf(e.target.value)}/>
                     </div>
-                    <textarea cols="30" rows="10" className={description === "" ? "" : "select"} placeholder="Descrição" value={description} onChange={e => setDescription(e.target.value)}></textarea>
+                  
                     <div className="data">
                     <select value={type} onChange={handleType} className={type === "" ? "" : "select"}>
                         <option value="">Tipo</option>
@@ -493,6 +475,28 @@ function ChangeMaskValueIptu(e) {
                     </select>
                     </div>
                     <div className="data">
+                    <select value={pets} onChange={handlePets} className={pets === "" ? "" : "select"}>
+                        <option value="">Aceita pets?</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                    <select value={furnished} onChange={handleFurnished} className={furnished === "" ? "" : "select"}>
+                        <option value="">Mobilhado?</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                    <select value={newProperties} onChange={handleNewProperties} className={newProperties === "" ? "" : "select"}>
+                        <option value="">Novo?</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                    <select value={firstLease} onChange={handleFirstLease} className={firstLease === "" ? "" : "select"}>
+                        <option value="">Primeira Locação?</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                    </div>
+                    <div className="data">
                     <input type="text" className={priceSale === "" ? "" : "select"} placeholder="Preço Venda" value={priceSale} onChange={ChangeMaskValueSale}/>
                     <input type="text" className={priceRent === "" ? "" : "select"} placeholder="Preço Aluguel" value={priceRent} onChange={ChangeMaskValueRent}/>
                     <select value={textRent} onChange={handleTextRent} className={textRent === "" ? "" : "select"}>
@@ -502,6 +506,11 @@ function ChangeMaskValueIptu(e) {
                         <option value="Trimestral">Trimestral</option>
                         <option value="Semestral">Semestral</option>
                         <option value="Anual">Anual</option>
+                    </select>
+                    <select value={financing} onChange={handleFinancing} className={financing === "" ? "" : "select"}>
+                        <option value="">Aceita financiamento?</option>
+                        <option value="Sim">Aceita financiamento</option>
+                        <option value="Não">Não aceita financiamento</option>
                     </select>
                     </div>
                     <div className="data">
@@ -619,7 +628,7 @@ function ChangeMaskValueIptu(e) {
                     </div>
                     </div>
 
-
+{/* 
                     <div className="textHome">
             <h4>Slider e financiamento</h4>
                 </div>
@@ -637,7 +646,7 @@ function ChangeMaskValueIptu(e) {
                     </select>
                     
                     </div>
-                    </div>
+                    </div> */}
                     <button className="btnSend" onClick={handleNewProperty}>Cadastrar anúncio</button>
             </div>
         </div>

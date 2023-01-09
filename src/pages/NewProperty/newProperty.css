@@ -329,6 +329,20 @@
     color: var(--Gray);
     font-weight: 700;
 }
+.NewProperty .aside .form .data .btnData{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: var(--Edit);
+    color: var(--White);
+    border: none;
+    font-weight: 500;
+}
 .NewProperty .aside .form .data input{
     width: 100%;
     display: flex;
@@ -405,7 +419,7 @@
             padding-bottom: 80px;
         }
 
-        @media (max-width: 510px) {
+        @media (max-width: 550px) {
             .NewProperty .aside .form {
                 width: 95%;
             }

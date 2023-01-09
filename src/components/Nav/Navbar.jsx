@@ -30,7 +30,7 @@ const Nav = styled.nav`
     padding: 15px 0;
   }
   .logo a img {
-    height: 30px;
+    height: 40px;
   }
   .logo2 {
     display: none;

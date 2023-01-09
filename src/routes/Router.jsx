@@ -44,7 +44,7 @@ function PrivateRoute({children} ) {
                     element={ <PrivateRoute> <Dashboard /> </PrivateRoute>} />
             <Route path="/novoimovel"
                     element={ <PrivateRoute> <NewProperty /> </PrivateRoute>} />
-            <Route path="/editarimovel"
+            <Route path="/editarimovel/:id"
                     element={ <PrivateRoute> <EditProperty /> </PrivateRoute>} />
             <Route path="/imoveis"
                     element={ <PrivateRoute> <MyPropertiesList /> </PrivateRoute>} />

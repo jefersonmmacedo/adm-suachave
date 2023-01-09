@@ -7,12 +7,14 @@ import { useFetch } from "../../hooks/useFetch";
 import { DateFormat2 } from "../../components/DateFormat2/DateFormat2";
 import { NewNegotiations } from "../../components/NewNegotiations/NewNegotiations";
 import { EditStatusProperty } from "../../components/EditStatusProperty/EditStatusProperty";
+import { CountersViews } from "../../components/CountersProperties/CountersViews";
+import { CountersFavorites } from "../../components/CountersProperties/CountersFavorites";
+import { CountersContact } from "../../components/CountersProperties/CountersContact";
+import { CountersWhatsapp } from "../../components/CountersProperties/CountersWhatsapp";
 
 export function MyPropertiesList() {
     const Local = localStorage.getItem("suachave");
     const user = JSON.parse(Local);
-
-
 
     const {data} = useFetch(`/property/company/${user.id}`);
 
@@ -21,9 +23,6 @@ export function MyPropertiesList() {
             <h5>Carregando...</h5>
         )
     }
-
-
-
 
     return (
         <div className="MyPropertiesList">
@@ -36,19 +35,19 @@ export function MyPropertiesList() {
                 </div>
                 <div className="infoData">
                     <div className="textInfo">
-                <h5><span>200</span> Total de Imóveis</h5>
+                <h5><span>200</span> Total</h5>
                     </div>
                     <div className="textInfo">
-                <h5><span>200</span> Imóveis disponíveis</h5>
+                <h5><span>200</span> Disponíveis</h5>
                     </div>
                     <div className="textInfo">
-                <h5><span>200</span> Imóveis vendidos</h5>
+                <h5><span>200</span> Vendidos</h5>
                     </div>
                     <div className="textInfo">
-                <h5><span>200</span> Imóveis alugados</h5>
+                <h5><span>200</span> Alugados</h5>
                     </div>
                     <div className="textInfo">
-                <h5><span>200</span> Imóveis indisponíveis</h5>
+                <h5><span>200</span> Indisponíveis</h5>
                     </div>
                 </div>
                
@@ -97,26 +96,26 @@ export function MyPropertiesList() {
                         <div className="infosContactData">
                             <div className="infoUnicData">
                             <IoEyeOutline />
-                                <h5> 157 Visualizações</h5>
+                                <h5> <CountersViews id={property.id}/> Visualizações</h5>
                             </div>
                             <div className="infoUnicData">
                             <IoHeartOutline />
-                                <h5> 78 Salvos</h5>
+                                <h5> <CountersFavorites id={property.id}/> Salvos</h5>
                             </div>
                             <div className="infoUnicData">
                             <IoLogoWhatsapp />
-                                <h5> 37 Whatsapp</h5>
+                                <h5> <CountersWhatsapp id={property.id}/> Whatsapp</h5>
                             </div>
                             <div className="infoUnicData">
                             <IoCallOutline />
-                                <h5>25 Ligações</h5>
+                                <h5><CountersContact id={property.id}/> Ligações</h5>
                             </div>
                         </div>
                         </div>
     
    
                         <div className="buttons">
-                        <a href="/painel/editarimovel" className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
+                        <a href={`/editarimovel/${property.id}`} className="linkEdit" data-tip data-for='Editar'><IoCreateOutline /></a>
                         <ReactTooltip id='Editar' place="bottom" type="dark" effect="solid">
                          <span>Editar</span>
                         </ReactTooltip>

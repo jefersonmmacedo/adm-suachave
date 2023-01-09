@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 5px;
   background-color: var(--White);
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
@@ -200,6 +200,10 @@
   .MyPropertiesList .informations .propertyListAdm .infosContactData .infoUnicData  h5 {
     font-weight: 600;
     color: var(--Gray);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
   }
 
   .MyPropertiesList .informations .propertyListAdm .infosContactData .infoUnicData:hover {
